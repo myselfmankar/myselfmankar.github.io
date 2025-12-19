@@ -25,7 +25,6 @@
   </div>
   <div id="about">
     <div class="profile-zone">
-      <img class="profile-img" src="{{ site.profile_img | prepend: site.baseurl }}" alt="My Photo">
       <ul class="personal-info">
         {% if site.phone_number %}
         <li><a aria-label="My Phone">
@@ -76,7 +75,7 @@
           </a></li>
         {% endif %}
         {% if site.youtube_username %}
-        <li><a aria-label="My Youtube" href="https://www.youtube.com/{{ site.youtube_username }}">
+        <li><a aria-label="My Youtube" href="https://www.youtube.com/@{{ site.youtube_username }}">
             <img src="{{ '/assets/img/youtube.svg' | prepend: site.baseurl }}" alt="My Youtube">
             <div><span>@{{ site.youtube_username }}</span></div>
           </a></li>

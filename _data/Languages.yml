@@ -2,4 +2,6 @@ subject: Languages
 listing-order: 7
 icon: "/assets/img/globe.svg"
 contents:
-  # - title: "English: <span style='color: cornflowerblue; margin: auto 8px; font-family: cursive;'>●●●●○</span>"
+  - title: Marathi (*Native*) <span style="color&#58; goldenrod; margin&#58; auto 8px; font-family&#58; cursive;">●●●●●</span>
+  - title: English (*Fluent*) <span style="color&#58; indianred; margin&#58; auto 8px; font-family&#58; cursive;">●●●●○</span>
+  - title: German (*Learning - Duolingo Level 17*) <span style="color&#58; indianred; margin&#58; auto 8px; font-family&#58; cursive;">●●○○○</span>
