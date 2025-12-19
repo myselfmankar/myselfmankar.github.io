@@ -1,0 +1,7 @@
+subject: Achievements
+listing-order: 6
+icon: "/assets/img/trophy.svg"
+contents:
+  - title: GDG Hackathon 2025 – Team Lead
+    description: Led a cross-functional team to deliver a working solution under strict time constraints.
+    # date: 2025

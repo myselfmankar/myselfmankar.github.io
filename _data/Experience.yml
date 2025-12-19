@@ -1,0 +1,13 @@
+subject: Experience
+listing-order: 2
+icon: "/assets/img/briefcase.svg"
+contents:
+  - title: Across The Globe
+    role: Software Engineering Intern & Team Lead – Visualization
+    description:
+      - "**Performance Optimization**: Reduced Slide Creation Node (SCN) execution time by **~30%** by introducing **parallel processing (3–5 slides concurrently)** within an AI-driven content generation pipeline on **AWS Lambda**, improving throughput."
+      - "**Reliability Engineering**: Owned and stabilised a core visualization pipeline component used across the platform, improving reliability and maintainability of production workflows."
+      - "**Backend Architecture**: Designed routing logic to dynamically select cloud execution paths based on course metadata and programming language, improving scalability."
+      - "**Tooling**: Built internal developer-facing tools to automate content workflows, including a **Markdown-to-PDF documentation generator** used by the product team."
+      - "**Leadership**: Led a visualization sub-team of **2 interns**, owning task breakdown, reviewing implementations, and unblocking production issues."
+    date: Aug. 2025 - Present
