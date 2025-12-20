@@ -1,30 +1,33 @@
-<h1 align="center">Vaishnav Mukund Mankar</h1>
-<p align="center">
-  <strong>Software Engineering Intern</strong><br>
-  Pune, India · Remote<br>
+<div align="center">
+<h1>Vaishnav Mukund Mankar</h1>
+<p>
+  <strong>Software Engineer</strong><br>
+  Pune, India <br>
   <a href="mailto:vaishnav.mankar04@gmail.com">vaishnav.mankar04@gmail.com</a> | 
   <a href="https://github.com/myselfmankar">GitHub</a> | 
   <a href="https://linkedin.com/in/vaishnav-mankar">LinkedIn</a>
 </p>
+</div>
 
 ---
 
 ## Summary
 
-Python-native software engineering intern with experience building internal tools, cloud-native pipelines, and developer-facing systems. Exploring **Rust** for performance-aware tooling and backend infrastructure. Comfortable owning ambiguous problems and turning prototypes into reliable production systems.
+Python-native software engineer with experience building internal tools, cloud-native pipelines, and developer-facing systems. Exploring **Rust** for performance-aware tooling and backend infrastructure. Comfortable owning ambiguous problems and turning prototypes into reliable production systems.
 
 ---
 
 ## Experience
 
-### Software Engineering Intern & Team Lead – Visualization
-**Across The Globe** | Aug 2025 – Present | Remote
+### **AI Developer & Team Lead — Visualization**
 
-- **Performance Optimization**: Reduced Slide Creation Node (SCN) execution time by **~30%** by introducing **parallel processing (3–5 slides concurrently)** within an AI-driven content generation pipeline on **AWS Lambda**, improving throughput.
-- **Reliability Engineering**: Owned and stabilised a core visualization pipeline component used across the platform, improving reliability and maintainability of production workflows.
-- **Backend Architecture**: Designed routing logic to dynamically select cloud execution paths based on course metadata and programming language, improving scalability.
-- **Tooling**: Built internal developer-facing tools to automate content workflows, including a **Markdown-to-PDF documentation generator** used by the product team.
-- **Leadership**: Led a visualization sub-team of **2 interns**, owning task breakdown, reviewing implementations, and unblocking production issues.
+**Across The Globe** | Remote | Aug 2025 – Present
+
+* **Optimized performance** of the Slide Creation Node (SCN) engine by introducing **parallel processing**, reducing execution time by **~30%** for AI-driven content generation workflows on **AWS Lambda**.
+* **Stabilized and improved reliability** of a core visualization pipeline component used across the product, enhancing production stability and developer confidence.
+* **Architected backend routing logic** to dynamically select execution paths based on course metadata and programming language, improving scalability and maintainability.
+* **Developed internal automation tooling**, including a **Markdown-to-PDF documentation generator**, accelerating documentation workflows for the product team.
+* **Led and mentored a sub-team** of **2 interns**, driving task breakdown, implementation reviews, and production issue resolution.
 
 ---
 

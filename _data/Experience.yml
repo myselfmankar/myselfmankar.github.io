@@ -3,7 +3,7 @@ listing-order: 2
 icon: "/assets/img/briefcase.svg"
 contents:
   - title: Across The Globe
-    role: Software Engineering Intern & Team Lead – Visualization
+    role: Software Engineering Intern & Team Lead - Visualization
     description:
       - "**Performance Optimization**: Reduced Slide Creation Node (SCN) execution time by **~30%** by introducing **parallel processing (3–5 slides concurrently)** within an AI-driven content generation pipeline on **AWS Lambda**, improving throughput."
       - "**Reliability Engineering**: Owned and stabilised a core visualization pipeline component used across the platform, improving reliability and maintainability of production workflows."

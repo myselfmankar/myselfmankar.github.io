@@ -2,20 +2,20 @@ subject: Projects
 listing-order: 3
 icon: "/assets/img/clipboard-list.svg"
 contents:
-  - title: "Content Automation Pipeline ([/content-automation-pipeline](https://myselfmankar.github.io/content-automation-pipeline))"
+  - title: "[Content Automation Pipeline](https://myselfmankar.github.io/Agentic-Content-Generation-Workflow)"
     description:
       - "**Stack**: Python, Langchain, Gemini AI"
       - Built an automated pipeline that ingests source content, applies structured transformations, and persists results using a relational database.
       - Designed with a human-in-the-loop approval flow to balance automation and correctness.
       - Reduced manual content preparation effort by up to **70%**.
 
-  - title: "Digital Asset Management System ([/dam](https://myselfmankar.github.io/dam))"
+  - title: "[Digital Asset Management System](https://myselfmankar.github.io/digital-asset-management-system)"
     description:
       - "**Stack**: Python (FastAPI), SQLAlchemy, PostgreSQL"
       - Designed a metadata-driven image storage and retrieval system using **PostgreSQL**, enabling indexed queries by attributes such as location and category.
       - Implemented a clean backend API with **FastAPI** and **SQLAlchemy**, focusing on extensibility and maintainability.
 
-  - title: "WhatsApp Chat Analytics ([/whatsapp-chat-analytics](https://myselfmankar.github.io/whatsapp-chat-analytics))"
+  - title: "[WhatsApp Chat Analytics](https://myselfmankar.github.io/Conversational-Intelligence-Platform)"
     description:
       - "**Stack**: Python, Streamlit, Pandas"
       - Built a data processing pipeline to convert raw chat logs into structured datasets for analysis and visualisation.
