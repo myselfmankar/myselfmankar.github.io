@@ -1,25 +1,126 @@
 ---
 permalink: /404.html
-layout: default
+layout: home
 ---
 
 <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
+  /* Hide typical resume elements to center the 404 content */
+  #about,
+  #sidebar,
+  #footer {
+    display: none !important;
   }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
+
+  #contents {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+    background: var(--color-background);
+  }
+
+  .error-container {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .error-title {
+    font-size: 2.5rem;
+    color: var(--theme1-dark);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .error-message {
+    font-size: 1.1rem;
+    color: var(--font-dark);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .btn-home {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    background-color: var(--theme4-dark);
+    color: white !important;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(61, 114, 93, 0.2);
+  }
+
+  .btn-home:hover {
+    background-color: var(--theme4-dim);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(61, 114, 93, 0.3);
+  }
+
+  .ghost-icon {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-15px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  /* Force override any theme margin/padding on #contents */
+  @media (min-width: 768px) {
+    #contents {
+      margin-left: 0 !important;
+      width: 100% !important;
+    }
+  }
+
+  #contents>ul,
+  #contents>div>ul {
+    display: none !important;
   }
 </style>
 
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<div class="error-container">
+  <div class="ghost-icon">👻</div>
+  <h1 class="error-title">Caught me!</h1>
+  <p class="error-message">
+    Sorry, the dev has either unpublished this project page<br>
+    or it never existed in the first place.
+  </p>
+  <a href="{{ '/' | prepend: site.baseurl }}" class="btn-home">Take me back home</a>
 </div>
