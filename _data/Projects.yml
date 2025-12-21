@@ -9,7 +9,7 @@ contents:
       - Designed with a human-in-the-loop approval flow to balance automation and correctness.
       - Reduced manual content preparation effort by up to **70%**.
 
-  - title: "[Digital Asset Management System](https://myselfmankar.github.io/digital-asset-management-system)"
+  - title: "[Digital Asset Management System](https://myselfmankar.github.io/digital-asset-mangement)"
     description:
       - "**Stack**: Python (FastAPI), SQLAlchemy, PostgreSQL"
       - Designed a metadata-driven image storage and retrieval system using **PostgreSQL**, enabling indexed queries by attributes such as location and category.
