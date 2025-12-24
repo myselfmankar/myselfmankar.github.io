@@ -449,119 +449,108 @@ a {
             min-width: 768px;
         }
 
-        .profile-zone .personal-info {
-            a:hover {
-                span {
-                    font-size: 1rem;
-                    clip-path: inset(0 0 0 0);
-                }
+        li:nth-child(1) {
+            margin-right: 7.25rem;
+        }
 
-                ;
-            }
+        li:nth-child(2) {
+            margin-right: 8.25rem;
+        }
 
-            li:nth-child(1) {
-                margin-right: 7.25rem;
-            }
+        li:nth-child(3) {
+            margin-right: 8.75rem;
+        }
 
-            li:nth-child(2) {
-                margin-right: 8.25rem;
-            }
+        li:nth-child(4) {
+            margin-right: 8.25rem;
+        }
 
-            li:nth-child(3) {
-                margin-right: 8.75rem;
-            }
+        li:nth-child(5) {
+            margin-right: 7.25rem;
+        }
 
-            li:nth-child(4) {
-                margin-right: 8.25rem;
-            }
+        li:nth-child(6) {
+            margin-left: 7.25rem;
+        }
 
-            li:nth-child(5) {
-                margin-right: 7.25rem;
-            }
+        li:nth-child(7) {
+            margin-left: 8.25rem;
+        }
 
-            li:nth-child(6) {
-                margin-left: 7.25rem;
-            }
+        li:nth-child(8) {
+            margin-left: 8.75rem;
+        }
 
-            li:nth-child(7) {
-                margin-left: 8.25rem;
-            }
+        li:nth-child(9) {
+            margin-left: 8.25rem;
+        }
 
-            li:nth-child(8) {
-                margin-left: 8.75rem;
-            }
+        li:nth-child(10) {
+            margin-left: 7.25rem;
+        }
+    }
+}
 
-            li:nth-child(9) {
-                margin-left: 8.25rem;
-            }
+#contents {
+    width: 78%;
+    margin-left: 17%;
 
-            li:nth-child(10) {
-                margin-left: 7.25rem;
-            }
+    img {
+        max-width: 640px;
+    }
+
+    .subject {
+        margin-top: 6rem;
+    }
+
+    .item:nth-child(1) {
+        margin-top: 2rem;
+    }
+
+    .item ul {
+        margin-top: 0;
+    }
+
+    .subject-name {
+        margin-left: auto;
+        margin-bottom: 3rem;
+        padding: 0;
+        border: none;
+
+        div {
+            background: var(--theme3-dim);
+            border-radius: 50%;
+            position: absolute;
+            top: -16px;
+            padding: 8px;
+            margin-right: 24px;
+            margin-left: -72px;
+            transform: none;
+            display: inline-table;
         }
     }
 
-    #contents {
-        width: 78%;
-        margin-left: 17%;
+    .content-date {
+        font-size: 16px;
+    }
 
-        img {
-            max-width: 640px;
+    .content-date img {
+        width: 24px;
+    }
+
+    .content-header {
+        p {
+            font-size: 18px;
         }
 
-        .subject {
-            margin-top: 6rem;
+        &:before {
+            visibility: visible !important;
         }
+    }
 
-        .item:nth-child(1) {
-            margin-top: 2rem;
-        }
-
-        .item ul {
-            margin-top: 0;
-        }
-
-        .subject-name {
-            margin-left: auto;
-            margin-bottom: 3rem;
-            padding: 0;
-            border: none;
-
-            div {
-                background: var(--theme3-dim);
-                border-radius: 50%;
-                position: absolute;
-                top: -16px;
-                padding: 8px;
-                margin-right: 24px;
-                margin-left: -72px;
-                transform: none;
-                display: inline-table;
-            }
-        }
-
-        .content-date {
-            font-size: 16px;
-        }
-
-        .content-date img {
-            width: 24px;
-        }
-
-        .content-header {
-            p {
-                font-size: 18px;
-            }
-
-            &:before {
-                visibility: visible !important;
-            }
-        }
-
-        .content-header p,
-        .content-date {
-            display: table-cell;
-        }
+    .content-header p,
+    .content-date {
+        display: table-cell;
     }
 }
 
