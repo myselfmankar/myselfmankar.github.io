@@ -9,7 +9,7 @@ Create a "V-Agent" that acts as a personalized recruiter/navigator, answering qu
 - **Visuals**: Glassmorphism (frosted glass) with neon purple/cyan glows.
 - **Micro-Animations**: Pulsing "AGENT ONLINE" status and floating entry/exit.
 - **Interface**: Terminal-style input (`> Awaiting command...`) to maintain a developer-centric feel.
-- **Reference**: See `assets/img/mockups/ai_assistant_mockup.png` (Planned).
+- **Reference**: See `docs/ai_assistant_mockup.png` (Planned).
 
 ## 🛠️ Implementation Strategy
 
