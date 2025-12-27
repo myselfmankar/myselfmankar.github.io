@@ -87,6 +87,12 @@
             <div><span>@{{ site.discord_username }}</span></div>
           </a></li>
         {% endif %}
+        {% if site.resume_url %}
+        <li><a aria-label="Download Resume" href="{{ site.resume_url | prepend: site.baseurl }}" download>
+            <img src="{{ '/assets/img/download.svg' | prepend: site.baseurl }}" alt="Download Resume">
+            <div><span>Download Resume</span></div>
+          </a></li>
+        {% endif %}
         {% if site.reddit_username %}
         <li><a aria-label="My Reddit" href="https://www.reddit.com/user/{{ site.reddit_username }}">
             <img src="{{ '/assets/img/reddit.svg' | prepend: site.baseurl }}" alt="My Reddit">
