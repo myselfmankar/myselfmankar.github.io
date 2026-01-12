@@ -2,21 +2,22 @@ subject: Projects
 listing-order: 3
 icon: "/assets/img/clipboard-list.svg"
 contents:
-  - title: "[Content Automation Pipeline](https://myselfmankar.github.io/Agentic-Content-Generation-Workflow)"
+  - title: "[AI Architecture Diagram Generator](https://github.com/myselfmankar/architecture-gen)"
     description:
-      - "**Stack**: Python, Langchain, Gemini AI"
-      - Built an automated pipeline that ingests source content, applies structured transformations, and persists results using a relational database.
-      - Designed with a human-in-the-loop approval flow to balance automation and correctness.
-      - Reduced manual content preparation effort by up to **70%**.
+      - "**Stack**: Python (FastAPI), LangChain, Gemini AI, Rust, Mermaid.js"
+      - Engineered an AI-powered tool that reduces architecture diagram creation time from **2-3 hours to 60 seconds**, automating icon search, layout generation, and validation.
+      - Implemented self-healing validation pipeline with LangChain structured outputs, achieving **99% first-generation success rate** through automated syntax repair.
+      - Designed dual-mode architecture (post-processing + LLM tool calling) enabling both deterministic reliability and experimental agentic workflows.
+
+  - title: "[Icon Search Engine](https://github.com/myselfmankar/icon-search)"
+    description:
+      - "**Stack**: Rust, CLI tooling"
+      - Built a custom Rust search engine that fuzzy-matches **3,600+ icons in <100ms**, eliminating 45 minutes of manual icon hunting per diagram.
+      - Implemented deterministic ranking algorithm with name normalization for reliable automation and LLM integration.
+      - Designed for developer tooling with JSON output mode for seamless integration into AI-assisted workflows.
 
   - title: "[Digital Asset Management System](https://myselfmankar.github.io/digital-asset-mangement)"
     description:
       - "**Stack**: Python (FastAPI), SQLAlchemy, PostgreSQL"
       - Designed a metadata-driven image storage and retrieval system using **PostgreSQL**, enabling indexed queries by attributes such as location and category.
       - Implemented a clean backend API with **FastAPI** and **SQLAlchemy**, focusing on extensibility and maintainability.
-
-  - title: "[WhatsApp Chat Analytics](https://myselfmankar.github.io/Conversational-Intelligence-Platform)"
-    description:
-      - "**Stack**: Python, Streamlit, Pandas"
-      - Built a data processing pipeline to convert raw chat logs into structured datasets for analysis and visualisation.
-      - Delivered insights through a Streamlit dashboard, reducing analysis time from hours to minutes.
