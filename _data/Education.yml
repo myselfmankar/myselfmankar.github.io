@@ -2,12 +2,17 @@ subject: Education
 listing-order: 1
 icon: "/assets/img/graduation-cap.svg"
 contents:
-  - title: Pune Institute of Computer Technology, B.E. Computer Engineering
-    grade: "**CGPA**: `9.2`"
-    date: 2027
-  - title: Global Public School, Nashik, Class XII
-    grade: "**Score**: `80%`"
+  - title: Pune Institute of Computer Technology
+    subtitle: B.E. Computer Engineering
+    date: 2023–2027
+    description: "CGPA: 9.2"
+
+  - title: Global Public School
+    subtitle: Class XII (HSC)
     date: 2023
-  - title: Ryan International School, Nashik, Class X
-    grade: "**Score**: `90%`"
+    description: "Score: 80%"
+
+  - title: Ryan International School
+    subtitle: Class X (SSC)
     date: 2021
+    description: "Score: 90%"

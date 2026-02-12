@@ -1,7 +1,10 @@
 subject: Publications
-listing-order: 8
-icon: "/assets/img/graduation-cap.svg"
+listing-order: 4
+icon: "/assets/img/clipboard-list.svg"
 contents:
-  - title: "**GNN-Based Friend Recommendation: A Graph Embedding Approach for Social Networks** *(Submitted)*"
-    description: Empirical comparison of supervised MLP vs. retrieval-based friend recommendation systems, demonstrating that ANN-indexed retrieval achieves superior scalability and efficiency while maintaining competitive link prediction accuracy on social network graphs.
-    # link: "Add conference link here once accepted"
+  - title: "GNN-Based Friend Recommendation: A Graph Embedding Approach for Social Networks"
+    subtitle: Accepted for Conference Presentation
+    description:
+      - Compared supervised MLP and retrieval-based friend recommendation systems.
+      - Demonstrated scalability benefits of ANN-indexed retrieval while maintaining competitive accuracy.
+      - Designed graph embedding workflows for large-scale social network datasets.
