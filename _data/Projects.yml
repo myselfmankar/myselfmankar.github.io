@@ -3,25 +3,23 @@ listing-order: 3
 icon: "/assets/img/flask.svg"
 contents:
   - title: Nao Medical Translator
-    subtitle: Python, FastAPI, WebSockets, Gemini, Whisper, React
-    # image: /assets/img/projects/nao_medical.webp # Commented out as I don't know if image exists
-    description: Built a real-time bilingual communication platform enabling live translation between doctor and patient using LLM-based translation and speech-to-text. Implemented WebSocket-based architecture for low-latency communication. Designed AI-based structured medical summary generation from consultation transcripts.
-    links:
-      - text: GitHub
-        url: https://github.com/myselfmankar/nao-medical-translator
+    subtitle: "**Tech Stack:** Python, FastAPI, WebSockets, Gemini, Whisper, React"
+    description:
+      - Built a real-time bilingual communication platform enabling live translation between doctor and patient using LLM-based translation and speech-to-text.
+      - Implemented WebSocket-based architecture for low-latency communication.
+      - Designed AI-based structured medical summary generation from consultation transcripts.
+    code: "[View on GitHub](https://github.com/myselfmankar/nao-medical-translator)"
 
   - title: Intelligent Digital Asset Management System
-    subtitle: Python, FastAPI, PostgreSQL
-    # image: /assets/img/projects/asset_management.webp
-    description: Developed AI-driven image tagging and text-to-SQL search system enabling natural language queries on unstructured media data. Optimized database queries for efficient semantic retrieval across large datasets.
-    links:
-      - text: GitHub
-        url: https://github.com/myselfmankar/intelligent-dam
+    subtitle: "**Tech Stack:** Python, FastAPI, PostgreSQL"
+    description:
+      - Developed AI-driven image tagging and text-to-SQL search system enabling natural language queries on unstructured media data.
+      - Optimized database queries for efficient semantic retrieval across large datasets.
+    code: "[View on GitHub](https://github.com/myselfmankar/intelligent-dam)"
 
   - title: AI Architecture Diagram Generator
-    subtitle: Python, LangChain, Rust
-    # image: /assets/img/projects/diagram_generator.webp
-    description: Built automated system design diagram generator using structured LLM outputs. Reduced manual diagram creation effort through automated rendering workflows.
-    links:
-      - text: GitHub
-        url: https://github.com/myselfmankar/ai-diagram-generator
+    subtitle: "**Tech Stack:** Python, LangChain, Rust"
+    description:
+      - Built automated system design diagram generator using structured LLM outputs.
+      - Reduced manual diagram creation effort through automated rendering workflows.
+    code: "[View on GitHub](https://github.com/myselfmankar/ai-diagram-generator)"
