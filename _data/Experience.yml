@@ -4,7 +4,7 @@ icon: "/assets/img/briefcase.svg"
 contents:
   - title: AI Developer Intern
     subtitle: Across The Globe (Remote)
-    date: Aug 2025 – Present
+    date: Aug 2025 – Feb 2026
     description:
       - Contributed to backend components of an AI-driven educational content generation pipeline producing personalized multi-language video content.
       - Optimized AWS Lambda execution time from ~20 minutes to ~14 minutes (~30% improvement), improving system efficiency and reducing compute cost.
