@@ -2,24 +2,30 @@ subject: Projects
 listing-order: 3
 icon: "/assets/img/flask.svg"
 contents:
-  - title: Nao Medical Translator
-    subtitle: "**Tech Stack:** Python, FastAPI, WebSockets, Gemini, Whisper, React"
+  - title: Real-Time AI Translation Chat Application
+    subtitle: "**Tech Stack:** Python, TypeScript, WebSockets, Whisper, and Google Gemini AI."
     description:
-      - Built a real-time bilingual communication platform enabling live translation between doctor and patient using LLM-based translation and speech-to-text.
-      - Implemented WebSocket-based architecture for low-latency communication.
-      - Designed AI-based structured medical summary generation from consultation transcripts.
+      - Built a chat platform that translates medical conversations instantly between different languages for doctors and patients.
+      - Achieved ultra-fast translation (under 200ms), ensuring seamless real-time communication.
     code: "[View on GitHub](https://github.com/myselfmankar/nao-medical-translator)"
 
-  - title: Intelligent Digital Asset Management System
-    subtitle: "**Tech Stack:** Python, FastAPI, PostgreSQL"
+  - title: Cloud-Native Developer Utility Suite
+    subtitle: "**Tech Stack:** SolidJS, TypeScript, and Serverless Functions."
     description:
-      - Developed AI-driven image tagging and text-to-SQL search system enabling natural language queries on unstructured media data.
-      - Optimized database queries for efficient semantic retrieval across large datasets.
-    code: "[View on GitHub](https://github.com/myselfmankar/intelligent-dam)"
+      - Developed a suite of high-performance developer utilities including Markdown-to-PDF and LaTeX-to-PDF converters.
+      - Streamlined documentation workflows, achieving near-instant conversion and seamless user interaction.
+    code: "[View on GitHub](https://github.com/myselfmankar/tools)"
 
-  - title: AI Architecture Diagram Generator
-    subtitle: "**Tech Stack:** Python, LangChain, Rust"
+  - title: RAG-Powered Educational AI Agent
+    subtitle: "**Tech Stack:** Python, LangChain, Vector Databases, and Large Language Models (LLMs)."
     description:
-      - Built automated system design diagram generator using structured LLM outputs.
-      - Reduced manual diagram creation effort through automated rendering workflows.
-    code: "[View on GitHub](https://github.com/myselfmankar/ai-diagram-generator)"
+      - Created an AI tutor that helps students by using only verified textbook information to ensure 100% accurate answers.
+      - Prevented AI \"hallucinations\" by grounding responses in official curriculum data.
+    code: "[View on GitHub](https://github.com/myselfmankar/Cogni-Mesh)"
+
+  - title: AI-Powered Smart Photo Gallery
+    subtitle: "**Tech Stack:** React, FastAPI, PostgreSQL, Google Gemini, and Docker."
+    description:
+      - Engineered a private \"Google Photos\" alternative that allows users to search for images using natural, descriptive sentences.
+      - Enabled instant search and automatic image tagging while keeping 100% of user data on their own server.
+    code: "[View on GitHub](https://github.com/myselfmankar/digital-asset-mangement)"

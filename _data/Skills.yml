@@ -6,10 +6,10 @@ contents:
     description: Python, Rust, SQL, TypeScript, JavaScript
 
   - title: Frameworks
-    description: FastAPI, Flask, React, LangChain
+    description: FastAPI, React, Next.js, LangChain
 
   - title: Cloud & Tools
-    description: AWS (Lambda), Docker, Git, Linux, PostgreSQL
+    description: AWS/Azure, Git, Linux, PostgreSQL, MongoDB
 
   - title: Concepts
-    description: Data Structures & Algorithms, OOPS, DBMS, Operating Systems, Computer Networks
+    description: Data Structures & Algorithms, Distributed Systems, System Design, NLP, RAG
