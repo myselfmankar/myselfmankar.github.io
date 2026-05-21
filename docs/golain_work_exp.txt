@@ -1,0 +1,4 @@
+OCPP-proxy-service; connected to companies IOT focused dashboard service ( use mqtt broker ) 
+
+- Built a high-performance EV proxy system in Rust for Enable Energy U.K. to connect physical charging stations with their central software system using the industry-standard OCPP 1.6 protocol.
+- Designed a robust messaging system using ZeroMQ/MQTT to route real-time telemetry and commands, implementing a smart connection model that prevented data loss during temporary network drops.

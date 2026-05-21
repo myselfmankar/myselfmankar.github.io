@@ -2,11 +2,27 @@ subject: Experience
 listing-order: 2
 icon: "/assets/img/briefcase.svg"
 contents:
-  - title: AI Developer Intern
-    subtitle: Across The Globe (Remote)
-    date: Aug 2025 – Feb 2026
+  - title: Backend & Systems Engineer Intern
+    subtitle: Golain (Remote/Hybrid)
+    date: May 2026 – Present
     description:
-      - Contributed to backend components of an AI-driven educational content generation pipeline producing personalized multi-language video content.
-      - Optimized AWS Lambda execution time from ~20 minutes to ~14 minutes (~30% improvement), improving system efficiency and reducing compute cost.
-      - Developed internal automation tools including Markdown-to-PDF conversion and architecture diagram generation workflows.
-      - Assisted in building a document-grounded RAG system for answering internal queries and generating explanatory summaries.
+      - "**OCPP Rust Proxy Gateway:** Engineered a high-performance EV proxy system in Rust for **Enough Energy (UK)** to connect physical charging stations with central software using the OCPP-J 1.6 protocol over WebSockets."
+      - "**Low-Latency Messaging:** Designed a low-latency communication system using ZeroMQ (ZMQ) and MQTT to route real-time telemetry, implementing a smart local cache using Sled DB to prevent telemetry loss during network drops."
+      - "**AI-Agent Orchestration:** Controlled AI coding workflows (using coding agents to generate boilerplate and test suites) to accelerate deployment speed while owning system design, database schemas, and integration testing."
+
+
+  - title: Freelance Full-Stack Developer & Agent Operator
+    subtitle: Independent (Self-Employed)
+    date: April 2026
+    description:
+      - Built a student performance analytics dashboard for investor presentations, integrating physical pen-tech hardware telemetry (CAN/Modbus sensors) with a preprocessed backend data pipeline using React, TypeScript, and Firebase.
+      - Designed dynamic KPI charts, visualizations, and client-side AI summarizers to provide real-time strengths, weaknesses, and writing dynamics analysis.
+      - Managed AI coding agents to rapidly scaffold UI components and routing, focusing manual cognitive effort on system schema, database design, and hardware-software data mapping.
+
+  - title: AI Developer Intern
+    subtitle: Banao.tech (Remote)
+    date: Aug 2025 – May 2026
+    description:
+      - Engineered backend infrastructure components for an AI-driven EdTech video generation pipeline, automating personalized multilingual video creation from images and textual summaries.
+      - Deployed serverless workflows using AWS Lambda, implementing comprehensive cloud logging and telemetry metrics using Python and LangChain to optimize execution and debug latency.
+

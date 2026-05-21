@@ -42,8 +42,8 @@
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.2in}
 
 \urlstyle{same}
 
@@ -53,8 +53,8 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-8pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -72,31 +72,31 @@
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
+    \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=3pt, topsep=2pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-2pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=1.5pt, topsep=1.5pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,7 +117,7 @@
 %-----------SUMMARY-----------
 \section{Summary}
   \small{
-    Computer Engineering student focused on building scalable AI and distributed systems. Experienced in Python, Rust, and cloud-native development with projects in NLP, LLM pipelines, and real-time applications, with strong foundations in system design and data structures.
+    Computer Engineering student specializing in backend systems, distributed IoT architectures, and performance optimization. Experienced in Rust, Go, Python, and C++ with expertise in low-latency communication bridges (OCPP, ZMQ, MQTT) and high-throughput data pipelines (gRPC, TimescaleDB, Redis). Adept at orchestrating AI coding agents as a force multiplier under direct human system design control.
   }
 
 
@@ -141,12 +141,29 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {AI Developer Intern}{Aug 2025 -- Feb 2026}
-      {Across The Globe}{Remote}
+      {Backend \& Systems Engineer Intern}{May 2026 -- Present}
+      {Golain}{Remote/Hybrid}
       \resumeItemListStart
-        \resumeItem{Engineered the backend infrastructure for an AI-driven video generation pipeline, delivering personalized multi-lingual content at scale.}
-        \resumeItem{Optimized AWS Lambda execution efficiency, reducing processing time by 30\% (from 20m to 14m) and significantly cutting compute costs.}
-        \resumeItem{Architected internal automation workflows, including a Markdown-to-PDF engine and a document-grounded RAG system for instant knowledge retrieval.}
+        \resumeItem{Engineered a high-performance EV proxy system in Rust for \textbf{Enough Energy (UK)} to connect physical charging stations with central software utilizing the OCPP-J 1.6 protocol over WebSockets.}
+        \resumeItem{Designed a low-latency messaging loop using ZeroMQ (ZMQ) and MQTT to route real-time telemetry, using an embedded Sled DB cache to prevent telemetry data loss during temporary network drops.}
+        \resumeItem{Leveraged AI-agent workflows to generate boilerplate and test suites under direct system design control, accelerating deployment speed while owning database schemas, query optimizations, and container orchestration.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Freelance Full-Stack Developer \& Agent Operator}{April 2026}
+      {Independent}{Pune, India}
+      \resumeItemListStart
+        \resumeItem{Built a student performance analytics dashboard for investor presentations, integrating physical pen-tech hardware telemetry (CAN/Modbus sensors) with a preprocessed backend data pipeline using React, TypeScript, and Firebase.}
+        \resumeItem{Designed dynamic KPI charts, visualizations, and client-side AI summarizers to provide real-time strengths, weaknesses, and writing dynamics analysis.}
+        \resumeItem{Managed AI coding agents to rapidly scaffold UI components and routing, focusing manual cognitive effort on system schema, database design, and hardware-software data mapping.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {AI Developer Intern}{Aug 2025 -- May 2026}
+      {Banao.tech}{Remote}
+      \resumeItemListStart
+        \resumeItem{Engineered backend components for an AI-driven EdTech video generation pipeline, automating personalized multilingual video creation from images and textual summaries.}
+        \resumeItem{Learned and applied python-langchain, GitHub workflows, AWS Lambda serverless execution, and cloud logging telemetry to optimize execution and debug latency.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -156,35 +173,17 @@
 \section{Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Real-Time AI Translation Chat Application}}{}
+          {\textbf{FieldPulse (Industrial IoT Backend Platform)}}{Tech Stack: Go, gRPC, TimescaleDB, Redis, MQTT, OpenTelemetry (OTLP)}
           \resumeItemListStart
-            \resumeItem{Built a chat platform that translates medical conversations instantly between different languages for doctors and patients.}
-            \resumeItem{\textbf{Tech Stack:} Python, TypeScript, WebSockets, Whisper, and Google Gemini AI.}
-            \resumeItem{\textbf{Impact:} Achieved ultra-fast translation (under 200ms), ensuring seamless real-time communication.}
-          \resumeItemListEnd
-          
-      \resumeProjectHeading
-          {\textbf{Cloud-Native Developer Utility Suite}}{}
-          \resumeItemListStart
-            \resumeItem{Developed a suite of high-performance developer utilities including Markdown-to-PDF and LaTeX-to-PDF converters.}
-            \resumeItem{\textbf{Tech Stack:} SolidJS, TypeScript, and Serverless Functions.}
-            \resumeItem{\textbf{Impact:} Streamlined documentation workflows, achieving near-instant conversion and seamless user interaction.}
+            \resumeItem{Developed a distributed industrial IoT telemetry ingestion backend in Go, utilizing gRPC microservices and TimescaleDB hypertables.}
+            \resumeItem{Optimized database storage using TimescaleDB time-partitioning, automatic 7-day compression (~90\% savings), and data retention policies.}
+            \resumeItem{Integrated Redis for sensor telemetry deduplication and alert suppression, and instrumented all services with OpenTelemetry to trace across HTTP, gRPC, and MQTT boundaries.}
           \resumeItemListEnd
 
       \resumeProjectHeading
-          {\textbf{RAG-Powered Educational AI Agent}}{}
+          {\textbf{AI-Powered Smart Photo Gallery (digital-asset-management)}}{Tech Stack: React, FastAPI, PostgreSQL, Gemini, Docker}
           \resumeItemListStart
-            \resumeItem{Created an AI tutor that helps students by using only verified textbook information to ensure 100\% accurate answers.}
-            \resumeItem{\textbf{Tech Stack:} Python, LangChain, Vector Databases, and Large Language Models (LLMs).}
-            \resumeItem{\textbf{Impact:} Prevented AI "hallucinations" by grounding responses in official curriculum data.}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\textbf{AI-Powered Smart Photo Gallery}}{}
-          \resumeItemListStart
-            \resumeItem{Engineered a private "Google Photos" alternative that allows users to search for images using natural, descriptive sentences.}
-            \resumeItem{\textbf{Tech Stack:} React, FastAPI, PostgreSQL, Google Gemini, and Docker.}
-            \resumeItem{\textbf{Impact:} Enabled instant search and automatic image tagging while keeping 100\% of user data on their own server.}
+            \resumeItem{Engineered a private, local-first "Google Photos" alternative allowing natural language search queries on unstructured media, implementing AI-driven semantic image tagging and text-to-SQL search query optimizations.}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -202,12 +201,13 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python, Rust, SQL, TypeScript, JavaScript} \\
-     \textbf{Frameworks}{: FastAPI, React, Next.js, LangChain} \\
-     \textbf{Cloud \& Tools}{: AWS/Azure,Git, Linux, PostgreSQL, MongoDB} \\
-     \textbf{Concepts}{: Data Structures \& Algorithms, Distributed Systems, System Design, NLP, RAG}
+     \textbf{Languages}{: Rust, Go, Python, C++, SQL, TypeScript, JavaScript} \\
+     \textbf{Frameworks}{: FastAPI, React, Next.js, LangChain, ZeroMQ, gRPC} \\
+     \textbf{Cloud \& Tools}{: AWS, Docker, Git, Linux, TimescaleDB, PostgreSQL, Redis, Firebase, OpenTelemetry (OTLP)} \\
+     \textbf{Concepts}{: Data Structures \& Algorithms (DSA), Operating Systems (OS), Database Management Systems (DBMS), Computer Networks (CN), Object-Oriented Programming (OOP), Concurrency, System Design, IoT Protocols (OCPP, MQTT)}
     }}
  \end{itemize}
+
 
 
 %-------------------------------------------

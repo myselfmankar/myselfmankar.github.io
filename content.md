@@ -31,7 +31,7 @@ This is clean, structured, safe for mass recruiters, product companies, and even
 
 ## SUMMARY
 
-Computer Engineering student (PICT, 2027) with hands-on experience in backend development, AI systems, and performance optimization. Built scalable cloud-based pipelines and real-time applications using Python, FastAPI, AWS, and modern AI frameworks. Strong foundation in data structures, system design, and problem solving.
+Computer Engineering student (PICT, 2027) specializing in backend systems, distributed IoT architectures, and performance engineering. Proficient in Rust, Go, Python, and C++, with hands-on experience building low-latency communication bridges (OCPP, ZeroMQ, MQTT) and high-throughput data pipelines (gRPC, TimescaleDB, Redis). Adept at orchestrating AI coding agents as a development velocity multiplier while owning system design, database schemas, and integration testing.
 
 ---
 
@@ -44,43 +44,46 @@ B.E. Computer Engineering | CGPA: 9.2 | 2023–2027
 
 ## EXPERIENCE
 
-**AI Developer Intern – Across The Globe (Remote)**
-Aug 2025 – Present
+**Backend & Systems Engineer Intern — Golain**
+May 2026 – Present
 
-* Contributed to backend components of an AI-driven educational content generation pipeline producing personalized multi-language video content.
-* Optimized AWS Lambda execution time from ~20 minutes to ~14 minutes (~30% improvement), improving system efficiency and reducing compute cost.
-* Developed internal automation tools including Markdown-to-PDF conversion and architecture diagram generation workflows.
-* Assisted in building a document-grounded RAG system for answering internal queries and generating explanatory summaries.
+* **OCPP Rust Proxy Gateway:** Engineered a high-performance EV proxy system in Rust for **Enough Energy (UK)** to connect physical charging stations with central software using the OCPP-J 1.6 protocol over WebSockets.
+* **Low-Latency Messaging:** Designed a low-latency communication system using ZeroMQ (ZMQ) and MQTT to route real-time telemetry, implementing a smart local cache using Sled DB to prevent telemetry loss during network drops.
+* **AI-Agent Orchestration:** Controlled AI coding workflows (using coding agents to generate boilerplate and test suites) to accelerate deployment speed while owning system design, database schemas, and integration testing.
+
+**Freelance Full-Stack Developer & Agent Operator**
+April 2026
+
+* **Telemetry Integration:** Designed and built a student performance analytics dashboard for investor presentations, integrating physical pen-tech hardware telemetry with a backend database using React, TypeScript, and Firebase.
+* **AI Summarization:** Built dynamic KPI charts, visualizations, and client-side AI summarizers to provide real-time strengths, weaknesses, and writing dynamics analysis.
+* **Human-in-the-Loop Design:** Managed AI coding agents to rapidly scaffold UI components and routing, focusing manual cognitive effort on system schema, database design, and hardware-software data mapping.
+
+**AI Developer Intern — Banao.tech**
+Aug 2025 – May 2026
+
+* **EdTech Pipeline:** Engineered backend components for an AI-driven video generation pipeline, automating personalized multilingual video creation from textual summaries and images.
+* **Serverless Telemetry:** Deployed serverless workflows using AWS Lambda, implementing cloud logging and telemetry metrics with Python and LangChain to optimize execution and debug latency.
 
 ---
 
 ## PROJECTS
 
-### Nao Medical Translator
+### FieldPulse (Industrial IoT Backend Platform)
 
-Python, FastAPI, WebSockets, Gemini, Whisper, React
+Go, gRPC, TimescaleDB, Redis, MQTT, OpenTelemetry (OTLP)
 
-* Built a real-time bilingual communication platform enabling live translation between doctor and patient using LLM-based translation and speech-to-text.
-* Implemented WebSocket-based architecture for low-latency communication.
-* Designed AI-based structured medical summary generation from consultation transcripts.
+* Developed a distributed industrial IoT telemetry ingestion backend in Go, utilizing gRPC microservices (Device, Telemetry, Alert) and TimescaleDB hypertables.
+* Optimized database storage by implementing TimescaleDB time-partitioning, automatic 7-day compression (~90% savings), and retention policies.
+* Integrated Redis for sensor telemetry deduplication and alert suppression, and instrumented all services with OpenTelemetry to trace across HTTP, gRPC, and MQTT boundaries.
 
 ---
 
 ### Intelligent Digital Asset Management System
 
-Python, FastAPI, PostgreSQL
+React, FastAPI, PostgreSQL, Google Gemini, Docker
 
-* Developed AI-driven image tagging and text-to-SQL search system enabling natural language queries on unstructured media data.
-* Optimized database queries for efficient semantic retrieval across large datasets.
-
----
-
-### AI Architecture Diagram Generator
-
-Python, LangChain, Rust
-
-* Built automated system design diagram generator using structured LLM outputs.
-* Reduced manual diagram creation effort through automated rendering workflows.
+* Engineered a private, local-first "Google Photos" alternative (digital-asset-management) allowing natural language search queries on unstructured media.
+* Implemented AI-driven semantic image tagging and text-to-SQL search, optimizing query performance for instant image retrieval.
 
 ---
 
@@ -97,10 +100,12 @@ Accepted for Conference Presentation
 
 ## TECHNICAL SKILLS
 
-Languages: Python, Rust, SQL, TypeScript, JavaScript
-Frameworks: FastAPI, Flask, React, LangChain
-Cloud & Tools: AWS (Lambda), Docker, Git, Linux
-Concepts: Data Structures & Algorithms, OOPS, DBMS, Operating Systems, Computer Networks
+Languages: Rust, Go, Python, C++, SQL, TypeScript, JavaScript
+Frameworks: FastAPI, React, Next.js, LangChain, ZeroMQ, gRPC
+Cloud & Tools: AWS, Docker, Git, Linux, TimescaleDB, PostgreSQL, Redis, Firebase, OpenTelemetry (OTLP)
+Concepts: Data Structures & Algorithms (DSA), Operating Systems (OS), Database Management Systems (DBMS), Computer Networks (CN), Object-Oriented Programming (OOP), Concurrency, System Design, IoT Protocols (OCPP, MQTT)
+
+
 
 ---
 
