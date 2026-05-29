@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p class="desc">Go, gRPC, TimescaleDB, Redis, MQTT, OpenTelemetry (OTLP).</p>
                 <p class="desc">Distributed telemetry ingestion backend. Optimized DB storage by 90% via time-partitioning & compression.</p>
                 <br>
-                <p><span class="highlight">2. PhotoSeek (Intelligent Asset Management)</span></p>
+                <p><span class="highlight">2. PhotoStack AI (Intelligent Photo Gallery)</span></p>
                 <p class="desc">React, FastAPI, PostgreSQL, Google Gemini, Docker.</p>
                 <p class="desc">Local-first Google Photos alternative with NLP search and Text-to-SQL query generation.</p>
-                <p class="desc"><a href="/digital-asset-management/" style="color: #0ea5e9; text-decoration: underline;">Open Project Page & Architecture</a></p>
+                <p class="desc"><a href="/photostack/" style="color: #0ea5e9; text-decoration: underline;">Open Project Page & Architecture</a></p>
             </div>
         `,
         experience: `
