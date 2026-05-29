@@ -16,7 +16,7 @@
   <link rel="icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
   <link rel="shortcut icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
-  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -111,6 +111,26 @@
       <h1>{{ site.name }}</h1>
       <h2>{{ site.job }}</h2>
     </div>
+    
+    <!-- Interactive Terminal CLI Console -->
+    <div class="terminal-container">
+      <div class="terminal-header">
+        <div class="terminal-header-buttons">
+          <span class="term-dot close"></span>
+          <span class="term-dot minimize"></span>
+          <span class="term-dot expand"></span>
+        </div>
+        <span class="terminal-title">vaishnav@pict:~</span>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-line output">Welcome to Vaishnav's interactive terminal!</div>
+        <div class="terminal-line output">Type <span class="highlight">help</span> to view available commands.</div>
+      </div>
+      <div class="terminal-input-line">
+        <span class="terminal-prompt">vaishnav@pict:~$</span>
+        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="type 'help'...">
+      </div>
+    </div>
   </div>
   <div id="contents">
     <ul>
@@ -165,5 +185,6 @@
   </div>
 </body>
 <script src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/assets/js/terminal.js' | prepend: site.baseurl }}"></script>
 
 </html>
