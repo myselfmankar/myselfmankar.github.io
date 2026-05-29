@@ -15,6 +15,6 @@ contents:
     description:
       - Engineered a private, local-first \"Google Photos\" alternative (digital-asset-management) allowing natural language search queries on unstructured media.
       - Implemented AI-driven semantic image tagging and text-to-SQL search, optimizing query performance for instant image retrieval.
-    code: "[View on GitHub](https://github.com/myselfmankar/digital-asset-mangement)"
+    code: "[View on GitHub](https://github.com/myselfmankar/digital-asset-mangement) | [Project Showcase & Architecture](/digital-asset-management/)"
 
 
