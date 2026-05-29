@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PhotoSeek: A local-first, self-hosted smart photo gallery alternative with AI-driven natural language search and semantic tagging, engineered for private digital asset management.">
+    <title>PhotoSeek - AI-Powered Smart Photo Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons for premium visual highlights -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                PhotoSeek <span>/ AI Gallery</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#engineering">Engineering Challenges</a></li>
+                <li><a href="https://github.com/myselfmankar/digital-asset-mangement" class="btn-github" target="_blank">
+                    <i data-lucide="github"></i> GitHub
+                </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="tagline-badge">Self-Hosted & Local-First AI</span>
+        <h1>Private Photo Gallery with<br><span>Semantic Search & NLP-to-SQL</span></h1>
+        <p class="hero-description">
+            PhotoSeek is a high-performance alternative to Google Photos, engineered to let you query physical media directories using natural language and automatically index assets locally with computer vision embeddings.
+        </p>
+        <div class="cta-group">
+            <a href="https://github.com/myselfmankar/digital-asset-mangement" class="btn-primary" target="_blank">
+                <i data-lucide="code" style="display:inline-block; vertical-align:middle; margin-right:5px;"></i> View Source Code
+            </a>
+            <a href="#architecture" class="btn-secondary">Explore Architecture</a>
+        </div>
+
+        <!-- App Interface Mockup -->
+        <div class="mockup-container">
+            <div class="mockup-header">
+                <div class="mockup-dot red"></div>
+                <div class="mockup-dot yellow"></div>
+                <div class="mockup-dot green"></div>
+                <div class="mockup-title">photoseek_ui_v1.0.local</div>
+            </div>
+            <img class="mockup-img" src="/assets/img/project_dam_ui.png" alt="PhotoSeek Dashboard Mockup Visualizing Semantic Search and Image Tagging">
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="tech-stack" id="tech">
+        <h2 class="section-title">The <span>Tech Stack</span></h2>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <span class="tech-icon"><i data-lucide="layers" style="color: #38bdf8;"></i></span>
+                <h3>React & Tailwind</h3>
+                <p>Modern component architecture with fluid responsive states, lazy-loaded visual feeds, and async operation states.</p>
+            </div>
+            <div class="tech-card">
+                <span class="tech-icon"><i data-lucide="zap" style="color: #a855f7;"></i></span>
+                <h3>FastAPI</h3>
+                <p>Python web gateway serving high-throughput endpoints, utilizing asynchronous coroutines for heavy file handling.</p>
+            </div>
+            <div class="tech-card">
+                <span class="tech-icon"><i data-lucide="database" style="color: #10b981;"></i></span>
+                <h3>PostgreSQL & pgvector</h3>
+                <p>Relational storage with high-performance vector indexing. Handles standard photo metadata alongside 1536-dimensional image embeddings.</p>
+            </div>
+            <div class="tech-card">
+                <span class="tech-icon"><i data-lucide="brain-circuit" style="color: #f43f5e;"></i></span>
+                <h3>Google Gemini API</h3>
+                <p>Powers multimodal zero-shot classification, tagging unstructured imagery and generating semantic search vector embeddings.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="features" id="features">
+        <h2 class="section-title">Key <span>Features</span></h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-badge"><i data-lucide="search" style="color: #0ea5e9;"></i></div>
+                <h3>Natural Language Search</h3>
+                <p>Forget tags! Search photos like "workspace setup with coffee on desk" or "a dynamic sunset over the water." The semantic search uses vector cosine similarity to fetch high-confidence matches instantly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-badge"><i data-lucide="terminal" style="color: #a855f7;"></i></div>
+                <h3>Text-to-SQL Search</h3>
+                <p>A secondary database-driven engine. Converts temporal and analytical text prompts (e.g. "photos taken last Wednesday") into valid PostgreSQL query syntax, resolving complex filtering logic on the fly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-badge"><i data-lucide="shield-check" style="color: #10b981;"></i></div>
+                <h3>Private & Local-First</h3>
+                <p>Organizes media directly from your specified local directories. Keeps raw assets on your server, ensuring full ownership and data compliance for digital assets.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-badge"><i data-lucide="tag" style="color: #fb923c;"></i></div>
+                <h3>Auto-Tagging Pipeline</h3>
+                <p>Automatically scans folders and runs zero-shot image classification. Discovers and tags objects, text, sentiments, dominant colors, and EXIF parameters without manual entry.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-badge"><i data-lucide="cpu" style="color: #f43f5e;"></i></div>
+                <h3>Performance Tuning</h3>
+                <p>Utilizes TimescaleDB partitionings, pgvector's HNSW vector indexing, and caching of common queries to achieve sub-10ms response times for large visual directories.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-badge"><i data-lucide="server" style="color: #22c55e;"></i></div>
+                <h3>Docker Orchestrated</h3>
+                <p>Fully containerized system. Run a simple <code>docker-compose up</code> to spin up the React app, FastAPI server, and pre-configured pgvector database container.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="architecture" id="architecture">
+        <h2 class="section-title">System <span>Architecture</span></h2>
+        <div class="architecture-container">
+            <p style="color: var(--text-secondary); margin-bottom: 2rem; text-align: center;">
+                The platform splits operations into two optimized pipelines: the <strong>Ingestion Pipeline</strong> (parsing folders and generating embeddings) and the <strong>Query Pipeline</strong> (handling real-time search queries).
+            </p>
+            <div class="arch-flow">
+                <!-- Ingestion pipeline -->
+                <div class="arch-lane">
+                    <div class="lane-title">Ingestion & Indexing Pipeline</div>
+                    <div class="arch-node">Local Directories (RAW)</div>
+                    <div class="arch-arrow"><i data-lucide="arrow-right"></i></div>
+                    <div class="arch-node highlight">FastAPI Ingest Worker</div>
+                    <div class="arch-arrow"><i data-lucide="arrow-right"></i></div>
+                    <div class="arch-node">Gemini / CLIP Model</div>
+                    <div class="arch-arrow"><i data-lucide="arrow-right"></i></div>
+                    <div class="arch-node highlight">Postgres (pgvector Index)</div>
+                </div>
+
+                <!-- Query pipeline -->
+                <div class="arch-lane">
+                    <div class="lane-title">Real-Time Query Pipeline</div>
+                    <div class="arch-node">User NLP Prompt</div>
+                    <div class="arch-arrow"><i data-lucide="arrow-right"></i></div>
+                    <div class="arch-node highlight">Vector Conversion (Embedding)</div>
+                    <div class="arch-arrow"><i data-lucide="arrow-right"></i></div>
+                    <div class="arch-node">PostgreSQL Cosine Match</div>
+                    <div class="arch-arrow"><i data-lucide="arrow-right"></i></div>
+                    <div class="arch-node highlight">React Render Grid</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Section -->
+    <section class="engineering" id="engineering">
+        <h2 class="section-title">Engineering <span>Challenges</span></h2>
+        <div class="engineering-grid">
+            
+            <div class="eng-card">
+                <h3><span>01</span> Optimizing Vector Search Latency</h3>
+                <p>
+                    <strong>Problem:</strong> Standard linear scan (flat) vector lookups scale linearly with the gallery size, creating high latency spikes when searching thousands of photos.
+                </p>
+                <p>
+                    <strong>Solution:</strong> We implemented the Hierarchical Navigable Small World (HNSW) index using pgvector. This constructs a multi-layered graph for proximity matching, reducing search complexity to logarithmic time.
+                </p>
+                <div class="code-block">
+                    <span class="comment">-- Create HNSW index on the embeddings field for cosine similarity</span><br>
+                    <span class="keyword">CREATE INDEX</span> ON photos <span class="keyword">USING</span> hnsw (embedding vector_cosine_ops)<br>
+                    <span class="keyword">WITH</span> (m = 16, ef_construction = 64);
+                </div>
+            </div>
+
+            <div class="eng-card">
+                <h3><span>02</span> Securing Natural Language to SQL</h3>
+                <p>
+                    <strong>Problem:</strong> Using LLMs to construct SQL statements from free-form user text is a high-risk vector for SQL injection if the model decides to delete or alter records.
+                </p>
+                <p>
+                    <strong>Solution:</strong> Implemented a multi-tier safety bridge. First, SQL generation queries are constrained by system prompt rules to read-only schemas. Second, the backend parses the generated abstract syntax tree (AST) via Python's SQL parsing library to verify only <code>SELECT</code> operations are present before executing in database transactions.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-banner">
+        <h2>Interested in the Implementation Details?</h2>
+        <p>Explore the full system configuration, REST API endpoints, and instructions for local docker setups.</p>
+        <div class="cta-group">
+            <a href="https://github.com/myselfmankar/digital-asset-mangement" class="btn-primary" target="_blank">
+                <i data-lucide="github" style="display:inline-block; vertical-align:middle; margin-right:5px;"></i> Explore GitHub Repository
+            </a>
+            <a href="/" class="btn-secondary">Return to Resume Portfolio</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-nav">
+        <p>&copy; 2026 Vaishnav Mankar. Made with passion for high-performance self-hosted infrastructure.</p>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
