@@ -54,4 +54,27 @@ document.addEventListener('DOMContentLoaded', function(){
             tocLink.classList.add('active');
         }
     }, 200);
+
+    // Convert Skills section comma-separated lists into beautiful interactive badges
+    const skillsSection = document.getElementById("Skills");
+    if (skillsSection) {
+        const listItems = skillsSection.querySelectorAll(".item");
+        listItems.forEach(item => {
+            // Find paragraphs other than the title
+            const paragraphs = item.querySelectorAll("p");
+            paragraphs.forEach(p => {
+                const parentHeader = p.closest(".content-header");
+                if (!parentHeader && p.textContent.includes(",")) {
+                    const skills = p.textContent.split(",").map(s => s.trim());
+                    p.innerHTML = "";
+                    skills.forEach(skill => {
+                        const badge = document.createElement("span");
+                        badge.className = "skill-badge";
+                        badge.textContent = skill;
+                        p.appendChild(badge);
+                    });
+                }
+            });
+        });
+    }
 });
