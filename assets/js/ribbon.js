@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.appendChild(container);
 
     // Initialize OGL Renderer
-    const renderer = new Renderer({ dpr: window.devicePixelRatio || 2, alpha: true });
+    const renderer = new Renderer({ dpr: Math.min(window.devicePixelRatio, 2), alpha: true });
     const gl = renderer.gl;
-    gl.clearColor(0, 0, 0, 0); // transparent background
+    gl.clearColor(0, 0, 0, 0);
 
     gl.canvas.style.position = 'absolute';
     gl.canvas.style.top = '0';
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const scene = new Transform();
     const lines = [];
 
-    // GLSL Shaders from ReactBits
+    // Vertex shader — standard Polyline with optional sine wave distortion
     const vertex = `
       precision highp float;
       
@@ -40,9 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
       uniform vec2 uResolution;
       uniform float uDPR;
       uniform float uThickness;
-      uniform float uTime;
-      uniform float uEnableShaderEffect;
-      uniform float uEffectAmplitude;
       
       varying vec2 vUV;
       
@@ -61,9 +58,6 @@ document.addEventListener("DOMContentLoaded", function() {
           float pixelWidth = current.w * pixelWidthRatio;
           normal *= pixelWidth * uThickness;
           current.xy -= normal * side;
-          if(uEnableShaderEffect > 0.5) {
-            current.xy += normal * sin(uTime + current.x * 10.0) * uEffectAmplitude;
-          }
           return current;
       }
       
@@ -73,17 +67,14 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     `;
 
+    // Fragment shader — fades along the ribbon's length for a natural trail
     const fragment = `
       precision highp float;
       uniform vec3 uColor;
       uniform float uOpacity;
-      uniform float uEnableFade;
       varying vec2 vUV;
       void main() {
-          float fadeFactor = 1.0;
-          if(uEnableFade > 0.5) {
-              fadeFactor = 1.0 - smoothstep(0.0, 1.0, vUV.y);
-          }
+          float fadeFactor = 1.0 - smoothstep(0.0, 1.0, vUV.y);
           gl_FragColor = vec4(uColor, uOpacity * fadeFactor);
       }
     `;
@@ -91,34 +82,30 @@ document.addEventListener("DOMContentLoaded", function() {
     function resize() {
       const width = container.clientWidth;
       const height = container.clientHeight;
+      if (width === 0 || height === 0) return;
       renderer.setSize(width, height);
       lines.forEach(line => line.polyline.resize());
     }
     window.addEventListener('resize', resize);
 
-    // Colors: Pastel/Light palette for white theme
+    // Subtle, elegant colors that complement the white glassmorphic theme
     const colors = ['#3b82f6', '#6366f1', '#a855f7'];
     
-    // Core parameters
-    const baseSpring = 0.04;
-    const baseFriction = 0.88;
-    const baseThickness = 22;
-    const offsetFactor = 0.04;
-    const maxAge = 400;
-    const pointCount = 45;
-    const speedMultiplier = 0.7;
-    const enableFade = true;
-    const enableShaderEffect = true;
-    const effectAmplitude = 1.5;
+    // Parameters tuned for a smooth, trailing ribbon feel
+    const baseSpring = 0.03;
+    const baseFriction = 0.85;
+    const baseThickness = 18;
+    const offsetFactor = 0.02;
+    const pointCount = 50;
 
     const center = (colors.length - 1) / 2;
     colors.forEach((color, index) => {
-      const spring = baseSpring + (Math.random() - 0.5) * 0.01;
-      const friction = baseFriction + (Math.random() - 0.5) * 0.02;
-      const thickness = baseThickness + (Math.random() - 0.5) * 2;
+      const spring = baseSpring + (Math.random() - 0.5) * 0.005;
+      const friction = baseFriction + (Math.random() - 0.5) * 0.01;
+      const thickness = baseThickness + (Math.random() - 0.5) * 4;
       const mouseOffset = new Vec3(
-        (index - center) * offsetFactor + (Math.random() - 0.5) * 0.005,
-        (Math.random() - 0.5) * 0.05,
+        (index - center) * offsetFactor,
+        0,
         0
       );
 
@@ -142,11 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
         uniforms: {
           uColor: { value: new Color(color) },
           uThickness: { value: thickness },
-          uOpacity: { value: 0.55 }, // Translucent overlay
-          uTime: { value: 0.0 },
-          uEnableShaderEffect: { value: enableShaderEffect ? 1.0 : 0.0 },
-          uEffectAmplitude: { value: effectAmplitude },
-          uEnableFade: { value: enableFade ? 1.0 : 0.0 }
+          uOpacity: { value: 0.5 }
         }
       });
       line.polyline.mesh.setParent(scene);
@@ -157,6 +140,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const mouse = new Vec3();
     let hasMoved = false;
+    let lastMouseTime = 0;
+    let idleFadeOpacity = 0.5;
+    const maxOpacity = 0.5;
 
     function updateMouse(e) {
       let x, y;
@@ -170,9 +156,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       const width = container.clientWidth;
       const height = container.clientHeight;
-      mouse.set((x / width) * 2 - 1, (y / height) * -2 + 1, 0);
+      if (width === 0 || height === 0) return;
 
-      // Initialize points on first movement
+      mouse.set((x / width) * 2 - 1, (y / height) * -2 + 1, 0);
+      lastMouseTime = performance.now();
+
+      // Initialize all ribbon points to cursor position on first interaction
       if (!hasMoved) {
         hasMoved = true;
         lines.forEach(line => {
@@ -181,42 +170,54 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
     
-    window.addEventListener('mousemove', updateMouse);
-    window.addEventListener('touchstart', updateMouse);
-    window.addEventListener('touchmove', updateMouse);
+    window.addEventListener('mousemove', updateMouse, { passive: true });
+    window.addEventListener('touchstart', updateMouse, { passive: true });
+    window.addEventListener('touchmove', updateMouse, { passive: true });
 
     const tmp = new Vec3();
-    let frameId;
-    let lastTime = performance.now();
 
     function update() {
-      frameId = requestAnimationFrame(update);
-      const currentTime = performance.now();
-      const dt = currentTime - lastTime;
-      lastTime = currentTime;
+      requestAnimationFrame(update);
 
-      if (hasMoved) {
-        lines.forEach(line => {
-          tmp.copy(mouse).add(line.mouseOffset).sub(line.points[0]).multiply(line.spring);
-          line.mouseVelocity.add(tmp).multiply(line.friction);
-          line.points[0].add(line.mouseVelocity);
+      if (!hasMoved) return;
 
-          for (let i = 1; i < line.points.length; i++) {
-            if (isFinite(maxAge) && maxAge > 0) {
-              const segmentDelay = maxAge / (line.points.length - 1);
-              const alpha = Math.min(1, (dt * speedMultiplier) / segmentDelay);
-              line.points[i].lerp(line.points[i - 1], alpha);
-            } else {
-              line.points[i].lerp(line.points[i - 1], 0.95);
-            }
-          }
-          if (line.polyline.mesh.program.uniforms.uTime) {
-            line.polyline.mesh.program.uniforms.uTime.value = currentTime * 0.001;
-          }
-          line.polyline.updateGeometry();
-        });
+      const now = performance.now();
+      const timeSinceMove = now - lastMouseTime;
 
+      // Gradually fade ribbons out when mouse is idle (after 800ms)
+      if (timeSinceMove > 800) {
+        idleFadeOpacity = Math.max(0, idleFadeOpacity - 0.012);
+      } else {
+        // Quickly restore opacity when cursor is actively moving
+        idleFadeOpacity = Math.min(maxOpacity, idleFadeOpacity + 0.05);
+      }
+
+      lines.forEach(line => {
+        // Spring physics: the head of the ribbon chases the mouse
+        tmp.copy(mouse).add(line.mouseOffset).sub(line.points[0]).multiply(line.spring);
+        line.mouseVelocity.add(tmp).multiply(line.friction);
+        line.points[0].add(line.mouseVelocity);
+
+        // Each subsequent point follows the previous one with easing
+        for (let i = 1; i < line.points.length; i++) {
+          const t = 0.2 + (0.6 * i) / line.points.length; // Slower towards the tail
+          line.points[i].lerp(line.points[i - 1], 1 - t);
+        }
+
+        // Update opacity for idle fade
+        if (line.polyline.mesh.program.uniforms.uOpacity) {
+          line.polyline.mesh.program.uniforms.uOpacity.value = idleFadeOpacity;
+        }
+
+        line.polyline.updateGeometry();
+      });
+
+      // Only render if ribbons are visible
+      if (idleFadeOpacity > 0.001) {
         renderer.render({ scene });
+      } else {
+        // Clear the canvas when fully faded to avoid ghost frames
+        gl.clear(gl.COLOR_BUFFER_BIT);
       }
     }
     
