@@ -1,0 +1,6 @@
+subject: Technical Languages
+listing-order: 1
+icon: "/assets/img/screwdriver-wrench.svg"
+contents:
+  - title: Languages
+    description: Python, Rust, Go, AI
