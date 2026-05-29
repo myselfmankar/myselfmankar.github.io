@@ -10,11 +10,11 @@ contents:
       - Integrated Redis for sensor telemetry deduplication and alert suppression, and instrumented all services with OpenTelemetry to trace across HTTP, gRPC, and MQTT boundaries.
     code: "[View on GitHub](https://github.com/myselfmankar/FieldPulse)"
 
-  - title: AI-Powered Smart Photo Gallery
+  - title: PhotoStack AI (Intelligent Photo Gallery)
     subtitle: "**Tech Stack:** React, FastAPI, PostgreSQL, Google Gemini, and Docker."
     description:
-      - Engineered a private, local-first \"Google Photos\" alternative (digital-asset-management) allowing natural language search queries on unstructured media.
+      - Engineered a private, local-first \"Google Photos\" alternative (PhotoStack AI) allowing natural language search queries on unstructured media.
       - Implemented AI-driven semantic image tagging and text-to-SQL search, optimizing query performance for instant image retrieval.
-    code: "[View on GitHub](https://github.com/myselfmankar/digital-asset-mangement) | [Project Showcase & Architecture](/digital-asset-management/)"
+    code: "[View on GitHub](https://github.com/myselfmankar/photostack) | [Project Showcase & Architecture](/photostack/)"
 
 

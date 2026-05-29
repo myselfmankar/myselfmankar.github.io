@@ -78,11 +78,11 @@ Go, gRPC, TimescaleDB, Redis, MQTT, OpenTelemetry (OTLP)
 
 ---
 
-### Intelligent Digital Asset Management System
+### PhotoStack AI (Intelligent Photo Gallery)
 
 React, FastAPI, PostgreSQL, Google Gemini, Docker
 
-* Engineered a private, local-first "Google Photos" alternative (digital-asset-management) allowing natural language search queries on unstructured media.
+* Engineered a private, local-first "Google Photos" alternative (PhotoStack AI) allowing natural language search queries on unstructured media.
 * Implemented AI-driven semantic image tagging and text-to-SQL search, optimizing query performance for instant image retrieval.
 
 ---
