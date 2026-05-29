@@ -1,135 +1,224 @@
+import { Renderer, Transform, Vec3, Color, Polyline } from 'https://cdn.jsdelivr.net/npm/ogl@0.0.116/dist/index.mjs';
+
 document.addEventListener("DOMContentLoaded", function() {
-    const canvas = document.createElement("canvas");
-    canvas.id = "ribbon-canvas";
-    canvas.style.position = "fixed";
-    canvas.style.top = "0";
-    canvas.style.left = "0";
-    canvas.style.width = "100vw";
-    canvas.style.height = "100vh";
-    canvas.style.pointerEvents = "none";
-    canvas.style.zIndex = "9999";
-    document.body.appendChild(canvas);
+    const container = document.createElement("div");
+    container.id = "ribbon-container";
+    container.style.position = "fixed";
+    container.style.top = "0";
+    container.style.left = "0";
+    container.style.width = "100vw";
+    container.style.height = "100vh";
+    container.style.pointerEvents = "none";
+    container.style.zIndex = "9999";
+    document.body.appendChild(container);
 
-    const ctx = canvas.getContext("2d");
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
+    // Initialize OGL Renderer
+    const renderer = new Renderer({ dpr: window.devicePixelRatio || 2, alpha: true });
+    const gl = renderer.gl;
+    gl.clearColor(0, 0, 0, 0); // transparent background
 
-    window.addEventListener("resize", function() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
+    gl.canvas.style.position = 'absolute';
+    gl.canvas.style.top = '0';
+    gl.canvas.style.left = '0';
+    gl.canvas.style.width = '100%';
+    gl.canvas.style.height = '100%';
+    container.appendChild(gl.canvas);
+
+    const scene = new Transform();
+    const lines = [];
+
+    // GLSL Shaders from ReactBits
+    const vertex = `
+      precision highp float;
+      
+      attribute vec3 position;
+      attribute vec3 next;
+      attribute vec3 prev;
+      attribute vec2 uv;
+      attribute float side;
+      
+      uniform vec2 uResolution;
+      uniform float uDPR;
+      uniform float uThickness;
+      uniform float uTime;
+      uniform float uEnableShaderEffect;
+      uniform float uEffectAmplitude;
+      
+      varying vec2 vUV;
+      
+      vec4 getPosition() {
+          vec4 current = vec4(position, 1.0);
+          vec2 aspect = vec2(uResolution.x / uResolution.y, 1.0);
+          vec2 nextScreen = next.xy * aspect;
+          vec2 prevScreen = prev.xy * aspect;
+          vec2 tangent = normalize(nextScreen - prevScreen);
+          vec2 normal = vec2(-tangent.y, tangent.x);
+          normal /= aspect;
+          normal *= mix(1.0, 0.1, pow(abs(uv.y - 0.5) * 2.0, 2.0));
+          float dist = length(nextScreen - prevScreen);
+          normal *= smoothstep(0.0, 0.02, dist);
+          float pixelWidthRatio = 1.0 / (uResolution.y / uDPR);
+          float pixelWidth = current.w * pixelWidthRatio;
+          normal *= pixelWidth * uThickness;
+          current.xy -= normal * side;
+          if(uEnableShaderEffect > 0.5) {
+            current.xy += normal * sin(uTime + current.x * 10.0) * uEffectAmplitude;
+          }
+          return current;
+      }
+      
+      void main() {
+          vUV = uv;
+          gl_Position = getPosition();
+      }
+    `;
+
+    const fragment = `
+      precision highp float;
+      uniform vec3 uColor;
+      uniform float uOpacity;
+      uniform float uEnableFade;
+      varying vec2 vUV;
+      void main() {
+          float fadeFactor = 1.0;
+          if(uEnableFade > 0.5) {
+              fadeFactor = 1.0 - smoothstep(0.0, 1.0, vUV.y);
+          }
+          gl_FragColor = vec4(uColor, uOpacity * fadeFactor);
+      }
+    `;
+
+    function resize() {
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      renderer.setSize(width, height);
+      lines.forEach(line => line.polyline.resize());
+    }
+    window.addEventListener('resize', resize);
+
+    // Colors: Pastel/Light palette for white theme
+    const colors = ['#3b82f6', '#6366f1', '#a855f7'];
+    
+    // Core parameters
+    const baseSpring = 0.04;
+    const baseFriction = 0.88;
+    const baseThickness = 22;
+    const offsetFactor = 0.04;
+    const maxAge = 400;
+    const pointCount = 45;
+    const speedMultiplier = 0.7;
+    const enableFade = true;
+    const enableShaderEffect = true;
+    const effectAmplitude = 1.5;
+
+    const center = (colors.length - 1) / 2;
+    colors.forEach((color, index) => {
+      const spring = baseSpring + (Math.random() - 0.5) * 0.01;
+      const friction = baseFriction + (Math.random() - 0.5) * 0.02;
+      const thickness = baseThickness + (Math.random() - 0.5) * 2;
+      const mouseOffset = new Vec3(
+        (index - center) * offsetFactor + (Math.random() - 0.5) * 0.005,
+        (Math.random() - 0.5) * 0.05,
+        0
+      );
+
+      const line = {
+        spring,
+        friction,
+        mouseVelocity: new Vec3(),
+        mouseOffset
+      };
+
+      const points = [];
+      for (let i = 0; i < pointCount; i++) {
+        points.push(new Vec3());
+      }
+      line.points = points;
+
+      line.polyline = new Polyline(gl, {
+        points,
+        vertex,
+        fragment,
+        uniforms: {
+          uColor: { value: new Color(color) },
+          uThickness: { value: thickness },
+          uOpacity: { value: 0.55 }, // Translucent overlay
+          uTime: { value: 0.0 },
+          uEnableShaderEffect: { value: enableShaderEffect ? 1.0 : 0.0 },
+          uEffectAmplitude: { value: effectAmplitude },
+          uEnableFade: { value: enableFade ? 1.0 : 0.0 }
+        }
+      });
+      line.polyline.mesh.setParent(scene);
+      lines.push(line);
     });
 
-    const pointer = { x: width / 2, y: height / 2 };
+    resize();
+
+    const mouse = new Vec3();
     let hasMoved = false;
 
-    window.addEventListener("mousemove", function(e) {
-        pointer.x = e.clientX;
-        pointer.y = e.clientY;
+    function updateMouse(e) {
+      let x, y;
+      const rect = container.getBoundingClientRect();
+      if (e.changedTouches && e.changedTouches.length) {
+        x = e.changedTouches[0].clientX - rect.left;
+        y = e.changedTouches[0].clientY - rect.top;
+      } else {
+        x = e.clientX - rect.left;
+        y = e.clientY - rect.top;
+      }
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      mouse.set((x / width) * 2 - 1, (y / height) * -2 + 1, 0);
+
+      // Initialize points on first movement
+      if (!hasMoved) {
         hasMoved = true;
-    });
-
-    window.addEventListener("touchmove", function(e) {
-        if (e.touches.length > 0) {
-            pointer.x = e.touches[0].clientX;
-            pointer.y = e.touches[0].clientY;
-            hasMoved = true;
-        }
-    });
-
-    // Define ribbon parameters
-    const ribbonColors = [
-        { r: 59,  g: 130, b: 246, a: 0.4 },  // Blue
-        { r: 99,  g: 102, b: 241, a: 0.45 }, // Indigo
-        { r: 168, g: 85,  b: 247, a: 0.35 }  // Purple
-    ];
-
-    const ribbons = ribbonColors.map((color, index) => {
-        const pointCount = 35;
-        const points = [];
-        // Add random offsets for organic spring movement
-        const offset = {
-            x: (index - 1) * 8 + (Math.random() - 0.5) * 4,
-            y: (Math.random() - 0.5) * 6
-        };
-
-        for (let i = 0; i < pointCount; i++) {
-            points.push({ x: pointer.x, y: pointer.y, vx: 0, vy: 0 });
-        }
-
-        return {
-            points,
-            color,
-            offset,
-            spring: 0.025 + index * 0.005,
-            friction: 0.85 + (Math.random() - 0.5) * 0.02,
-            thickness: 18 + index * 3
-        };
-    });
-
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-
-        if (hasMoved) {
-            ribbons.forEach(ribbon => {
-                const points = ribbon.points;
-                
-                // Head point follows pointer with spring
-                const targetX = pointer.x + ribbon.offset.x;
-                const targetY = pointer.y + ribbon.offset.y;
-                
-                const dx = targetX - points[0].x;
-                const dy = targetY - points[0].y;
-                
-                points[0].vx += dx * ribbon.spring;
-                points[0].vy += dy * ribbon.spring;
-                points[0].vx *= ribbon.friction;
-                points[0].vy *= ribbon.friction;
-                points[0].x += points[0].vx;
-                points[0].y += points[0].vy;
-
-                // Subsequent points follow ahead
-                for (let i = 1; i < points.length; i++) {
-                    const curr = points[i];
-                    const prev = points[i - 1];
-                    
-                    const sdx = prev.x - curr.x;
-                    const sdy = prev.y - curr.y;
-                    
-                    curr.vx += sdx * ribbon.spring * 1.5;
-                    curr.vy += sdy * ribbon.spring * 1.5;
-                    curr.vx *= ribbon.friction;
-                    curr.vy *= ribbon.friction;
-                    curr.x += curr.vx;
-                    curr.y += curr.vy;
-                }
-
-                // Render ribbon using thin overlaying segments for smooth tapering opacity
-                ctx.lineJoin = "round";
-                ctx.lineCap = "round";
-
-                for (let i = 0; i < points.length - 1; i++) {
-                    const p1 = points[i];
-                    const p2 = points[i + 1];
-
-                    // Check if points are valid numbers
-                    if (isNaN(p1.x) || isNaN(p1.y) || isNaN(p2.x) || isNaN(p2.y)) continue;
-
-                    ctx.beginPath();
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.lineTo(p2.x, p2.y);
-
-                    const ratio = 1 - (i / points.length);
-                    ctx.lineWidth = ribbon.thickness * ratio;
-                    
-                    const col = ribbon.color;
-                    ctx.strokeStyle = `rgba(${col.r}, ${col.g}, ${col.b}, ${ratio * col.a})`;
-                    ctx.stroke();
-                }
-            });
-        }
-
-        requestAnimationFrame(animate);
+        lines.forEach(line => {
+          line.points.forEach(p => p.copy(mouse).add(line.mouseOffset));
+        });
+      }
     }
+    
+    window.addEventListener('mousemove', updateMouse);
+    window.addEventListener('touchstart', updateMouse);
+    window.addEventListener('touchmove', updateMouse);
 
-    animate();
+    const tmp = new Vec3();
+    let frameId;
+    let lastTime = performance.now();
+
+    function update() {
+      frameId = requestAnimationFrame(update);
+      const currentTime = performance.now();
+      const dt = currentTime - lastTime;
+      lastTime = currentTime;
+
+      if (hasMoved) {
+        lines.forEach(line => {
+          tmp.copy(mouse).add(line.mouseOffset).sub(line.points[0]).multiply(line.spring);
+          line.mouseVelocity.add(tmp).multiply(line.friction);
+          line.points[0].add(line.mouseVelocity);
+
+          for (let i = 1; i < line.points.length; i++) {
+            if (isFinite(maxAge) && maxAge > 0) {
+              const segmentDelay = maxAge / (line.points.length - 1);
+              const alpha = Math.min(1, (dt * speedMultiplier) / segmentDelay);
+              line.points[i].lerp(line.points[i - 1], alpha);
+            } else {
+              line.points[i].lerp(line.points[i - 1], 0.95);
+            }
+          }
+          if (line.polyline.mesh.program.uniforms.uTime) {
+            line.polyline.mesh.program.uniforms.uTime.value = currentTime * 0.001;
+          }
+          line.polyline.updateGeometry();
+        });
+
+        renderer.render({ scene });
+      }
+    }
+    
+    update();
 });
