@@ -26,12 +26,12 @@
   <div class="container">
     <!-- Header Section -->
     <header class="header">
-      <div class="header-main">
-        <div class="name-zone">
-          <h1 class="glitch-text">{{ site.name }}</h1>
-          <h2>{{ site.job }}</h2>
-        </div>
-        
+      <div class="name-zone">
+        <h1 class="glitch-text">{{ site.name }}</h1>
+        <h2>{{ site.job }}</h2>
+      </div>
+      
+      <div class="header-body">
         <!-- Social Info Badges -->
         <ul class="personal-info">
           {% if site.email %}
@@ -60,11 +60,11 @@
             </a></li>
           {% endif %}
         </ul>
-      </div>
 
-      <!-- Animated SVG Chat/About Zone -->
-      <div class="svg-showcase">
-        <object type="image/svg+xml" data="{{ '/assets/img/about-me.svg' | prepend: site.baseurl }}" class="interactive-svg"></object>
+        <!-- Animated SVG Chat/About Zone -->
+        <div class="svg-showcase">
+          <object type="image/svg+xml" data="{{ '/assets/img/about-me.svg' | prepend: site.baseurl }}" class="interactive-svg"></object>
+        </div>
       </div>
     </header>
 
