@@ -15,77 +15,84 @@
 
   <link rel="icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
   <link rel="shortcut icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Clean, modern grid background overlay -->
+  <!-- Animated gradient orb background -->
+  <div class="bg-orbs"></div>
+  <!-- Subtle grid overlay -->
   <div class="bg-grid"></div>
+  <!-- Third accent orb -->
+  <div class="orb-3"></div>
 
   <div class="container">
-    <!-- Header Section -->
+    <!-- ===================== HERO HEADER ===================== -->
     <header class="header">
       <div class="name-zone">
-        <h1 class="glitch-text">{{ site.name }}</h1>
+        <h1>{{ site.name }}</h1>
         <h2>{{ site.job }}</h2>
+        <div class="availability-badge">Open to opportunities · Pune, India</div>
       </div>
-      
+
       <div class="header-body">
-        <!-- Social Info Badges -->
+        <!-- Navigation / Social Links -->
         <ul class="personal-info">
           {% if site.email %}
           <li><a aria-label="My Email" href="mailto:{{ site.email }}">
-              <span>{{ site.email }}</span>
+              <span>✉ {{ site.email }}</span>
             </a></li>
           {% endif %}
           {% if site.linkedin_username %}
           <li><a aria-label="My LinkedIn" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank">
-              <span>LinkedIn</span>
+              <span>↗ LinkedIn</span>
             </a></li>
           {% endif %}
           {% if site.github_username %}
           <li><a aria-label="My Github" href="https://github.com/{{ site.github_username }}" target="_blank">
-              <span>GitHub</span>
+              <span>⌥ GitHub</span>
             </a></li>
           {% endif %}
           {% if site.discord_username %}
           <li><a aria-label="My Discord" href="https://discord.com/users/{{ site.discord_username }}" target="_blank">
-              <span>Discord</span>
+              <span>⟐ Discord</span>
             </a></li>
           {% endif %}
           {% if site.resume_url %}
           <li><a class="resume-btn" aria-label="Download Resume" href="{{ site.resume_url | prepend: site.baseurl }}" download>
-              <span>Download Resume</span>
+              <span>↓ Download Resume</span>
             </a></li>
           {% endif %}
         </ul>
 
-        <!-- Animated SVG Chat/About Zone -->
+        <!-- About Me SVG Showcase -->
         <div class="svg-showcase">
           <object type="image/svg+xml" data="{{ '/assets/img/about-me.svg' | prepend: site.baseurl }}" class="interactive-svg"></object>
         </div>
       </div>
     </header>
 
-    <!-- Main Content Area -->
+    <!-- ===================== MAIN CONTENT ===================== -->
     <main id="contents">
       {% for subject in meta %}
       <section class="subject" id="{{ subject.subject }}">
         <h2 class="subject-name">
           {{ subject.subject }}
         </h2>
-        
+
         <div class="items-list">
           {% for member in subject.contents %}
-          <div class="item">
+          <div class="item" data-tilt>
             <div class="item-header">
               <h3 class="item-title">{{ member.title | markdownify | remove: '<p>' | remove: '</p>' }}</h3>
               {% if member.date %}
               <span class="item-date">{{ member.date }}</span>
               {% endif %}
             </div>
-            
+
             {% if member.subtitle %}
             <h4 class="item-subtitle">{{ member.subtitle | markdownify | remove: '<p>' | remove: '</p>' }}</h4>
             {% endif %}
@@ -116,16 +123,17 @@
         </div>
       </section>
       {% endfor %}
-      
+
       {{ content }}
     </main>
 
-    <!-- Simple, Elegant Footer -->
+    <!-- ===================== FOOTER ===================== -->
     <footer id="footer">
-      <p>© {{ 'now' | date: "%Y" }} {{ site.name }}. Designed with a clean minimalist aesthetic.</p>
+      <p>© {{ 'now' | date: "%Y" }} {{ site.name }} · Built with precision & ❤️</p>
     </footer>
   </div>
 
   <script src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>
+  <script type="module" src="{{ '/assets/js/ribbon.js' | prepend: site.baseurl }}"></script>
 </body>
 </html>

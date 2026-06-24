@@ -82,7 +82,7 @@
         <rect x="20" y="80" width="0" height="26">
           <animate attributeName="width"
             from="0"
-            to="742.4"
+            to="730.8"
             dur="0.9s"
             begin="13.549999999999997s"
             fill="freeze"/>
@@ -372,7 +372,7 @@
     
       <text x="20" y="68" class="text" clip-path="url(#clip-m4-1)">and 316 over the last year.</text>
     
-      <text x="20" y="98" class="text" clip-path="url(#clip-m4-2)">He's likely deep in systems design (or chasing sunsets in Pune).</text>
+      <text x="20" y="98" class="text" clip-path="url(#clip-m4-2)">I'm likely deep in systems design (or chasing sunsets in Pune).</text>
     
     </g>
   

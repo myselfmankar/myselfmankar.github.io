@@ -88,15 +88,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     window.addEventListener('resize', resize);
 
-    // Subtle, elegant colors that complement the white glassmorphic theme
-    const colors = ['#3b82f6', '#6366f1', '#a855f7'];
+    // Vibrant electric palette: violet, cyan, emerald
+    const colors = ['#8b5cf6', '#06b6d4', '#10b981'];
     
-    // Parameters tuned for a smooth, trailing ribbon feel
-    const baseSpring = 0.03;
-    const baseFriction = 0.85;
-    const baseThickness = 18;
-    const offsetFactor = 0.02;
-    const pointCount = 50;
+    // Parameters tuned for a dramatic, visible ribbon effect
+    const baseSpring = 0.04;
+    const baseFriction = 0.87;
+    const baseThickness = 22;
+    const offsetFactor = 0.025;
+    const pointCount = 60;
 
     const center = (colors.length - 1) / 2;
     colors.forEach((color, index) => {
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
         uniforms: {
           uColor: { value: new Color(color) },
           uThickness: { value: thickness },
-          uOpacity: { value: 0.5 }
+          uOpacity: { value: 0.65 }
         }
       });
       line.polyline.mesh.setParent(scene);
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let hasMoved = false;
     let lastMouseTime = 0;
     let idleFadeOpacity = 0.5;
-    const maxOpacity = 0.5;
+    const maxOpacity = 0.65;
 
     function updateMouse(e) {
       let x, y;
