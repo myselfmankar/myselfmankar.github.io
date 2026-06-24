@@ -113,13 +113,13 @@ async function getGithubStats(token, username) {
 
 function getFunnyComment(weekCount) {
     if (weekCount === 0) {
-        return "He's probably offline touching grass, building a life, or debugging in a cave.";
+        return "I'm probably offline touching grass, building a life, or debugging in a cave.";
     } else if (weekCount < 4) {
-        return "He's likely deep in systems design (or chasing sunsets in Pune).";
+        return "I'm likely deep in systems design (or chasing sunsets in Pune).";
     } else if (weekCount < 12) {
-        return "Steadily shipping high-performance updates and refactoring code!";
+        return "I'm steadily shipping high-performance updates and refactoring code!";
     } else {
-        return "Absolute beast mode! Pushing code like there's no tomorrow.";
+        return "I'm in absolute beast mode! Pushing code like there's no tomorrow.";
     }
 }
 
