@@ -1,0 +1,59 @@
+name: Generate Profile Chat SVG & Sync Homepage
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # runs every Sunday at midnight
+  workflow_dispatch: # allows manual run from GitHub actions tab
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout website repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          cd github-profile
+          npm ci || npm install
+
+      - name: Generate SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }} # Uses your custom PAT secret to query GraphQL API
+        run: |
+          cd github-profile
+          node scripts/generateSvg.js
+
+      - name: Sync to Profile README Repo
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          # Configure Git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Clone the destination profile repository
+          git clone https://${PAT_TOKEN}@github.com/myselfmankar/myselfmankar.git temp-profile
+          
+          # Ensure destination folders exist
+          mkdir -p temp-profile/assets
+          
+          # Copy the updated files
+          cp github-profile/README.md temp-profile/README.md
+          cp github-profile/assets/about-me.svg temp-profile/assets/about-me.svg
+          
+          # Push to the profile repository
+          cd temp-profile
+          git add README.md assets/about-me.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-sync profile stats and SVG" && git push origin main || git push origin master)
