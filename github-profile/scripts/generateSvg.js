@@ -9,12 +9,15 @@ const LON = "73.8567";
 
 const GITHUB_USERNAME = "myselfmankar";
 
-// Get day
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const today = days[new Date().getDay()];
+// Get day in IST (Asia/Kolkata)
+const dayOptions = { timeZone: "Asia/Kolkata", weekday: "long" };
+const dayFormatter = new Intl.DateTimeFormat("en-US", dayOptions);
+const today = dayFormatter.format(new Date());
 
-// Greeting
-const hour = new Date().getHours();
+// Greeting in IST (Asia/Kolkata)
+const options = { timeZone: "Asia/Kolkata", hour: "numeric", hour12: false };
+const formatter = new Intl.DateTimeFormat("en-US", options);
+const hour = parseInt(formatter.format(new Date()), 10);
 const greeting =
     hour < 12 ? "Good morning" :
         hour < 18 ? "Good afternoon" :
