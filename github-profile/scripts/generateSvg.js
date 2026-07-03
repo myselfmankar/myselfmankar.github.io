@@ -1,6 +1,5 @@
 require("dotenv").config();
 const fs = require("fs");
-const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 const CITY = "Pune";
 // Pune coordinates: Lat 18.5204, Lon 73.8567
