@@ -9,6 +9,11 @@
             dur="0.9s"
             begin="1.5499999999999998s; loop.begin + 1.5499999999999998s"
             fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
         </rect>
       </clipPath>
     
@@ -20,6 +25,11 @@
             dur="0.9s"
             begin="4.35s; loop.begin + 4.35s"
             fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
         </rect>
       </clipPath>
     
@@ -27,9 +37,14 @@
         <rect x="20" y="50" width="0" height="26">
           <animate attributeName="width"
             from="0"
-            to="684.4"
+            to="661.1999999999999"
             dur="0.9s"
             begin="5.1499999999999995s; loop.begin + 5.1499999999999995s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
             fill="freeze"/>
         </rect>
       </clipPath>
@@ -42,6 +57,11 @@
             dur="0.9s"
             begin="8.15s; loop.begin + 8.15s"
             fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
         </rect>
       </clipPath>
     
@@ -52,6 +72,11 @@
             to="719.1999999999999"
             dur="0.9s"
             begin="8.950000000000001s; loop.begin + 8.950000000000001s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
             fill="freeze"/>
         </rect>
       </clipPath>
@@ -64,6 +89,11 @@
             dur="0.9s"
             begin="11.949999999999998s; loop.begin + 11.949999999999998s"
             fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
         </rect>
       </clipPath>
     
@@ -74,6 +104,11 @@
             to="313.2"
             dur="0.9s"
             begin="12.749999999999998s; loop.begin + 12.749999999999998s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
             fill="freeze"/>
         </rect>
       </clipPath>
@@ -86,6 +121,11 @@
             dur="0.9s"
             begin="13.549999999999997s; loop.begin + 13.549999999999997s"
             fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
         </rect>
       </clipPath>
     
@@ -96,6 +136,11 @@
             to="266.8"
             dur="0.9s"
             begin="16.75s; loop.begin + 16.75s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
             fill="freeze"/>
         </rect>
       </clipPath>
@@ -168,6 +213,11 @@
         dur="0.35s"
         begin="1.2s; loop.begin + 1.2s"
         fill="freeze"/>
+      <animate attributeName="opacity"
+        to="0"
+        dur="0.01s"
+        begin="loop.begin"
+        fill="freeze"/>
         
       <g transform="scale(0.85)">
         <animateTransform
@@ -219,6 +269,11 @@
         dur="0.35s"
         begin="4s; loop.begin + 4s"
         fill="freeze"/>
+      <animate attributeName="opacity"
+        to="0"
+        dur="0.01s"
+        begin="loop.begin"
+        fill="freeze"/>
         
       <g transform="scale(0.85)">
         <animateTransform
@@ -234,7 +289,7 @@
         
       <text x="20" y="38" class="text" clip-path="url(#clip-m2-0)">Good evening!</text>
     
-      <text x="20" y="68" class="text" clip-path="url(#clip-m2-1)">I am from Pune, India where it is 23°C and drizzling today.</text>
+      <text x="20" y="68" class="text" clip-path="url(#clip-m2-1)">I am from Pune, India where it is 23°C and showery today.</text>
     
       </g>
     </g>
@@ -271,6 +326,11 @@
         from="0" to="1"
         dur="0.35s"
         begin="7.8s; loop.begin + 7.8s"
+        fill="freeze"/>
+      <animate attributeName="opacity"
+        to="0"
+        dur="0.01s"
+        begin="loop.begin"
         fill="freeze"/>
         
       <g transform="scale(0.85)">
@@ -324,6 +384,11 @@
         from="0" to="1"
         dur="0.35s"
         begin="11.599999999999998s; loop.begin + 11.599999999999998s"
+        fill="freeze"/>
+      <animate attributeName="opacity"
+        to="0"
+        dur="0.01s"
+        begin="loop.begin"
         fill="freeze"/>
         
       <g transform="scale(0.85)">
@@ -379,6 +444,11 @@
         from="0" to="1"
         dur="0.35s"
         begin="16.4s; loop.begin + 16.4s"
+        fill="freeze"/>
+      <animate attributeName="opacity"
+        to="0"
+        dur="0.01s"
+        begin="loop.begin"
         fill="freeze"/>
         
       <g transform="scale(0.85)">

@@ -181,6 +181,11 @@ function createMessageBubble({ id, x, y, width, height, lines, start }) {
             dur="${revealDur}s"
             begin="${revealStart}s; loop.begin + ${revealStart}s"
             fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
         </rect>
       </clipPath>
     `;
@@ -196,6 +201,11 @@ function createMessageBubble({ id, x, y, width, height, lines, start }) {
         from="0" to="1"
         dur="${bubbleDuration}s"
         begin="${start}s; loop.begin + ${start}s"
+        fill="freeze"/>
+      <animate attributeName="opacity"
+        to="0"
+        dur="0.01s"
+        begin="loop.begin"
         fill="freeze"/>
         
       <g transform="scale(0.85)">

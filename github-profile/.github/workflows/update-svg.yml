@@ -27,7 +27,7 @@ jobs:
         run: node scripts/generateSvg.js
         env:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
-
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
