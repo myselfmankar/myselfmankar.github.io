@@ -137,7 +137,7 @@ function createTypingDots(id, x, y, start, duration = 1.2) {
       <animate attributeName="opacity" values="0;1;1;0"
         keyTimes="0;0.05;0.95;1"
         dur="${duration}s"
-        begin="${start}s"
+        begin="${start}s; loop.begin + ${start}s"
         fill="freeze"/>
 
       <g transform="translate(${x}, ${y})">
@@ -145,17 +145,17 @@ function createTypingDots(id, x, y, start, duration = 1.2) {
 
         <circle cx="25" cy="25" r="5" class="typing-dot">
           <animate attributeName="opacity" values="0.25;1;0.25"
-            dur="0.9s" begin="${start}s" repeatCount="indefinite"/>
+            dur="0.9s" begin="${start}s; loop.begin + ${start}s" repeatCount="indefinite"/>
         </circle>
 
         <circle cx="45" cy="25" r="5" class="typing-dot">
           <animate attributeName="opacity" values="0.25;1;0.25"
-            dur="0.9s" begin="${start + 0.15}s" repeatCount="indefinite"/>
+            dur="0.9s" begin="${start + 0.15}s; loop.begin + ${start + 0.15}s" repeatCount="indefinite"/>
         </circle>
 
         <circle cx="65" cy="25" r="5" class="typing-dot">
           <animate attributeName="opacity" values="0.25;1;0.25"
-            dur="0.9s" begin="${start + 0.3}s" repeatCount="indefinite"/>
+            dur="0.9s" begin="${start + 0.3}s; loop.begin + ${start + 0.3}s" repeatCount="indefinite"/>
         </circle>
       </g>
     </g>
@@ -180,7 +180,7 @@ function createMessageBubble({ id, x, y, width, height, lines, start }) {
             from="0"
             to="${clipWidth}"
             dur="${revealDur}s"
-            begin="${revealStart}s"
+            begin="${revealStart}s; loop.begin + ${revealStart}s"
             fill="freeze"/>
         </rect>
       </clipPath>
@@ -192,34 +192,26 @@ function createMessageBubble({ id, x, y, width, height, lines, start }) {
     });
 
     const bubble = `
-    <g opacity="0" transform="translate(${x}, ${y}) scale(0.85)">
+    <g opacity="0" transform="translate(${x}, ${y})">
       <animate attributeName="opacity"
         from="0" to="1"
         dur="${bubbleDuration}s"
-        begin="${start}s"
+        begin="${start}s; loop.begin + ${start}s"
         fill="freeze"/>
+        
+      <g transform="scale(0.85)">
+        <animateTransform
+          attributeName="transform"
+          type="scale"
+          values="0.85;1.06;1"
+          keyTimes="0;0.6;1"
+          dur="${bubbleDuration}s"
+          begin="${start}s; loop.begin + ${start}s"
+          fill="freeze"/>
 
-      <animateTransform
-        attributeName="transform"
-        type="scale"
-        values="0.85;1.06;1"
-        keyTimes="0;0.6;1"
-        dur="${bubbleDuration}s"
-        begin="${start}s"
-        additive="sum"
-        fill="freeze"/>
-
-      <animateTransform
-        attributeName="transform"
-        type="translate"
-        values="${x} ${y}; ${x} ${y}"
-        dur="${bubbleDuration}s"
-        begin="${start}s"
-        additive="replace"
-        fill="freeze"/>
-
-      <rect x="0" y="0" rx="22" ry="22" width="${width}" height="${height}" class="bubble"/>
-      ${texts}
+        <rect x="0" y="0" rx="22" ry="22" width="${width}" height="${height}" class="bubble"/>
+        ${texts}
+      </g>
     </g>
   `;
 
@@ -347,14 +339,11 @@ async function generate() {
     }
   </style>
 
-  <rect width="100%" height="100%" class="bg"/>
+  <rect width="100%" height="100%" class="bg">
+    <!-- loop reset element -->
+    <animate id="loop" attributeName="opacity" dur="${totalDuration}s" begin="0s; loop.end" />
+  </rect>
   ${content}
-
-  <!-- loop reset -->
-  <animate attributeName="opacity"
-           values="1;1"
-           dur="${totalDuration}s"
-           repeatCount="indefinite"/>
 </svg>
 `;
 
