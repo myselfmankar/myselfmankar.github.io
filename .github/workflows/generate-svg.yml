@@ -34,7 +34,7 @@ jobs:
 
       - name: Generate SVG
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }} # Uses your custom PAT secret to query GraphQL API
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd github-profile
           node scripts/generateSvg.js
@@ -60,4 +60,11 @@ jobs:
           # Push to the profile repository
           cd temp-profile
           git add README.md assets/about-me.svg
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-sync profile stats and SVG" && git push origin main || git push origin master)
+          
+          # Check if there are changes to commit
+          if ! git diff --quiet --cached; then
+            git commit -m "chore: auto-sync profile stats and SVG"
+            # Get the default branch name
+            DEFAULT_BRANCH=$(git rev-parse --abbrev-ref origin/HEAD | cut -d'/' -f2)
+            git push origin HEAD:${DEFAULT_BRANCH}
+          fi
