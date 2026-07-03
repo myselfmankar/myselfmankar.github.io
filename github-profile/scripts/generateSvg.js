@@ -53,7 +53,7 @@ async function getWeather() {
 }
 
 async function getGithubStats(token, username) {
-    const fallback = { total: 316, lastWeek: 3 };
+    const fallback = { total: 316, thisWeek: 3, lastWeek: 5 };
     if (!token) {
         console.log("No GITHUB_TOKEN environment variable found. Using fallback stats.");
         return fallback;
@@ -102,10 +102,13 @@ async function getGithubStats(token, username) {
             // Extract last 7 days of contributions
             const allDays = calendar.weeks.flatMap(w => w.contributionDays);
             const last7Days = allDays.slice(-7);
-            const lastWeek = last7Days.reduce((sum, day) => sum + day.contributionCount, 0);
+            const previous7Days = allDays.slice(-14, -7);
             
-            console.log(`Fetched stats for ${username}: Total=${total}, LastWeek=${lastWeek}`);
-            return { total, lastWeek };
+            const thisWeek = last7Days.reduce((sum, day) => sum + day.contributionCount, 0);
+            const lastWeek = previous7Days.reduce((sum, day) => sum + day.contributionCount, 0);
+            
+            console.log(`Fetched stats for ${username}: Total=${total}, ThisWeek=${thisWeek}, LastWeek=${lastWeek}`);
+            return { total, thisWeek, lastWeek };
         }
     } catch (e) {
         console.warn("Failed to fetch GitHub stats, falling back:", e.message);
@@ -234,9 +237,9 @@ async function generate() {
     
     const [weather, stats] = await Promise.all([weatherPromise, statsPromise]);
     const { temp, condition } = weather;
-    const { total, lastWeek } = stats;
+    const { total, thisWeek, lastWeek } = stats;
     
-    const funnyComment = getFunnyComment(lastWeek);
+    const funnyComment = getFunnyComment(thisWeek);
 
     const messages = [
         {
@@ -276,8 +279,8 @@ async function generate() {
             width: 850,
             height: 120,
             lines: [
-                `Building Go/Rust backends. Pushed ${lastWeek} contributions this week`,
-                `and ${total} over the last year.`,
+                `Pushed ${thisWeek} commits this week, ${lastWeek} last week,`,
+                `and ${total} commits this year.`,
                 `${funnyComment}`
             ]
         },
