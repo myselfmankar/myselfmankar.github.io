@@ -9,8 +9,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "dotenv": "^17.3.1"
-  }
+  "type": "commonjs"
 }

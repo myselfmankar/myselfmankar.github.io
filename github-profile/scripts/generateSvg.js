@@ -1,4 +1,4 @@
-require("dotenv").config();
+try { process.loadEnvFile(); } catch (e) { /* ignore if .env is missing */ }
 const fs = require("fs");
 
 const CITY = "Pune";
