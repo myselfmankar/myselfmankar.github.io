@@ -276,8 +276,8 @@ async function generate() {
             width: 850,
             height: 120,
             lines: [
-                `Building Go/Rust backends. Pushed ${lastWeek} contributions this week`,
-                `and ${total} over the last year.`,
+                `Pushed ${lastWeek} commits this week`,
+                `and ${total} commits this year.`,
                 `${funnyComment}`
             ]
         },
