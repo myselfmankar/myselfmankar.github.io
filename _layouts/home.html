@@ -13,8 +13,9 @@
   <title>{{ site.title }}</title>
   {% seo %}
 
-  <link rel="icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
-  <link rel="shortcut icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
+  <link rel="icon" type="image/svg+xml" href="{{ site.icon_img | prepend: site.baseurl }}">
+  <link rel="alternate icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" href="{{ site.icon_img | prepend: site.baseurl }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -70,7 +71,7 @@
 
         <!-- About Me SVG Showcase -->
         <div class="svg-showcase">
-          <object type="image/svg+xml" data="{{ '/assets/img/about-me.svg' | prepend: site.baseurl }}" class="interactive-svg"></object>
+          <img src="{{ '/assets/img/about-me.svg' | prepend: site.baseurl }}" alt="About Me" class="interactive-svg">
         </div>
       </div>
     </header>

@@ -2,12 +2,15 @@ name: Generate Profile Chat SVG & Sync Homepage
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # runs every Sunday at midnight
+    - cron: '0 0,12 * * *' # runs every day at 00:00 and 12:00 UTC (05:30 and 17:30 IST)
   workflow_dispatch: # allows manual run from GitHub actions tab
+  repository_dispatch:
+    types: [trigger-bot]
   push:
     branches:
       - main
       - master
+      - project-showcase
 
 jobs:
   build:
@@ -20,8 +23,9 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: 'npm'
+          cache-dependency-path: github-profile/package-lock.json
 
       - name: Install dependencies
         run: |
@@ -30,7 +34,7 @@ jobs:
 
       - name: Generate SVG
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }} # Uses your custom PAT secret to query GraphQL API
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd github-profile
           node scripts/generateSvg.js
@@ -56,4 +60,11 @@ jobs:
           # Push to the profile repository
           cd temp-profile
           git add README.md assets/about-me.svg
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-sync profile stats and SVG" && git push origin main || git push origin master)
+          
+          # Check if there are changes to commit
+          if ! git diff --quiet --cached; then
+            git commit -m "chore: auto-sync profile stats and SVG"
+            # Get the default branch name
+            DEFAULT_BRANCH=$(git rev-parse --abbrev-ref origin/HEAD | cut -d'/' -f2)
+            git push origin HEAD:${DEFAULT_BRANCH}
+          fi
