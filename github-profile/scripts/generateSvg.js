@@ -68,6 +68,7 @@ async function getGithubStats(token, username) {
               weeks {
                 contributionDays {
                   contributionCount
+                  date
                 }
               }
             }
@@ -104,11 +105,16 @@ async function getGithubStats(token, username) {
             const last7Days = allDays.slice(-7);
             const previous7Days = allDays.slice(-14, -7);
             
+            const currentYear = new Date().getFullYear().toString();
+            const thisYear = allDays
+                .filter(day => day.date.startsWith(currentYear))
+                .reduce((sum, day) => sum + day.contributionCount, 0);
+            
             const thisWeek = last7Days.reduce((sum, day) => sum + day.contributionCount, 0);
             const lastWeek = previous7Days.reduce((sum, day) => sum + day.contributionCount, 0);
             
-            console.log(`Fetched stats for ${username}: Total=${total}, ThisWeek=${thisWeek}, LastWeek=${lastWeek}`);
-            return { total, thisWeek, lastWeek };
+            console.log(`Fetched stats for ${username}: ThisYear=${thisYear}, ThisWeek=${thisWeek}, LastWeek=${lastWeek}`);
+            return { total: thisYear, thisWeek, lastWeek };
         }
     } catch (e) {
         console.warn("Failed to fetch GitHub stats, falling back:", e.message);
