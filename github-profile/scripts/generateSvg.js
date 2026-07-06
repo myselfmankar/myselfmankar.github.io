@@ -116,14 +116,29 @@ async function getGithubStats(token, username) {
     return fallback;
 }
 
-function getFunnyComment(weekCount) {
+function getFunnyComment(weekCount, weather) {
+    const temp = weather && weather.temp ? weather.temp : 25;
+    const condition = weather && weather.condition ? weather.condition.toLowerCase() : "";
+    
     if (weekCount === 0) {
+        if (condition.includes("rain") || condition.includes("shower") || condition.includes("drizzle")) {
+            return "Taking a break from code to enjoy the Pune rain! ☔";
+        }
         return "I'm probably offline touching grass, building a life, or debugging in a cave.";
     } else if (weekCount < 4) {
+        if (temp > 35) {
+            return `It's ${temp}°C out there! Taking it easy while avoiding the heat.`;
+        }
         return "I'm likely deep in systems design (or chasing sunsets in Pune).";
     } else if (weekCount < 12) {
+        if (condition.includes("cloud") || condition.includes("overcast")) {
+            return "Cloudy days are perfect for staying in and shipping high-performance code! ☁️";
+        }
         return "I'm steadily shipping high-performance updates and refactoring code!";
     } else {
+        if (condition.includes("clear") || condition.includes("sunny")) {
+            return "Clear skies and green squares! Pushing code like there's no tomorrow. ☀️";
+        }
         return "I'm in absolute beast mode! Pushing code like there's no tomorrow.";
     }
 }
@@ -239,7 +254,7 @@ async function generate() {
     const { temp, condition } = weather;
     const { total, thisWeek, lastWeek } = stats;
     
-    const funnyComment = getFunnyComment(thisWeek);
+    const funnyComment = getFunnyComment(thisWeek, weather);
 
     const messages = [
         {

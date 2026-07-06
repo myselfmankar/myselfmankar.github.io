@@ -1,0 +1,471 @@
+<svg width="950" height="660" viewBox="0 0 950 660" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+      <clipPath id="clip-m1-0">
+        <rect x="20" y="20" width="0" height="26">
+          <animate attributeName="width"
+            from="0"
+            to="266.8"
+            dur="0.9s"
+            begin="1.5499999999999998s; loop.begin + 1.5499999999999998s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
+        </rect>
+      </clipPath>
+    
+      <clipPath id="clip-m2-0">
+        <rect x="20" y="20" width="0" height="26">
+          <animate attributeName="width"
+            from="0"
+            to="150.79999999999998"
+            dur="0.9s"
+            begin="4.35s; loop.begin + 4.35s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
+        </rect>
+      </clipPath>
+    
+      <clipPath id="clip-m2-1">
+        <rect x="20" y="50" width="0" height="26">
+          <animate attributeName="width"
+            from="0"
+            to="661.1999999999999"
+            dur="0.9s"
+            begin="5.1499999999999995s; loop.begin + 5.1499999999999995s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
+        </rect>
+      </clipPath>
+    
+      <clipPath id="clip-m3-0">
+        <rect x="20" y="20" width="0" height="26">
+          <animate attributeName="width"
+            from="0"
+            to="649.6"
+            dur="0.9s"
+            begin="8.15s; loop.begin + 8.15s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
+        </rect>
+      </clipPath>
+    
+      <clipPath id="clip-m3-1">
+        <rect x="20" y="50" width="0" height="26">
+          <animate attributeName="width"
+            from="0"
+            to="719.1999999999999"
+            dur="0.9s"
+            begin="8.950000000000001s; loop.begin + 8.950000000000001s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
+        </rect>
+      </clipPath>
+    
+      <clipPath id="clip-m4-0">
+        <rect x="20" y="20" width="0" height="26">
+          <animate attributeName="width"
+            from="0"
+            to="464"
+            dur="0.9s"
+            begin="11.949999999999998s; loop.begin + 11.949999999999998s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
+        </rect>
+      </clipPath>
+    
+      <clipPath id="clip-m4-1">
+        <rect x="20" y="50" width="0" height="26">
+          <animate attributeName="width"
+            from="0"
+            to="301.59999999999997"
+            dur="0.9s"
+            begin="12.749999999999998s; loop.begin + 12.749999999999998s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
+        </rect>
+      </clipPath>
+    
+      <clipPath id="clip-m4-2">
+        <rect x="20" y="80" width="0" height="26">
+          <animate attributeName="width"
+            from="0"
+            to="730.8"
+            dur="0.9s"
+            begin="13.549999999999997s; loop.begin + 13.549999999999997s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
+        </rect>
+      </clipPath>
+    
+      <clipPath id="clip-m5-0">
+        <rect x="20" y="20" width="0" height="26">
+          <animate attributeName="width"
+            from="0"
+            to="266.8"
+            dur="0.9s"
+            begin="16.75s; loop.begin + 16.75s"
+            fill="freeze"/>
+          <animate attributeName="width"
+            to="0"
+            dur="0.01s"
+            begin="loop.begin"
+            fill="freeze"/>
+        </rect>
+      </clipPath>
+    
+  </defs>
+
+  <style>
+    .bg {
+      fill: transparent;
+    }
+
+    .bubble {
+      fill: #27272a;
+      filter: drop-shadow(0px 6px 18px rgba(0,0,0,0.4));
+    }
+
+    .typing-bubble {
+      fill: #3f3f46;
+      filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
+    }
+
+    .text {
+      fill: #f4f4f5;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .typing-dot {
+      fill: #d4d4d8;
+    }
+  </style>
+
+  <rect width="100%" height="100%" class="bg">
+    <!-- loop reset element -->
+    <animate id="loop" attributeName="opacity" dur="20s" begin="0s; loop.end" />
+  </rect>
+  
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.05;0.95;1"
+        dur="1.2s"
+        begin="0s; loop.begin + 0s"
+        fill="freeze"/>
+
+      <g transform="translate(20, 25)">
+        <rect x="0" y="0" rx="22" ry="22" width="90" height="50" class="typing-bubble"/>
+
+        <circle cx="25" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="0s; loop.begin + 0s" repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="45" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="0.15s; loop.begin + 0.15s" repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="65" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="0.3s; loop.begin + 0.3s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+  
+    <g opacity="0" transform="translate(20, 20)">
+      <animate attributeName="opacity"
+        from="0" to="1"
+        dur="0.35s"
+        begin="1.2s; loop.begin + 1.2s"
+        fill="freeze"/>
+      <animate attributeName="opacity"
+        to="0"
+        dur="0.01s"
+        begin="loop.begin"
+        fill="freeze"/>
+        
+      <g transform="scale(0.85)">
+        <animateTransform
+          attributeName="transform"
+          type="scale"
+          values="0.85;1.06;1"
+          keyTimes="0;0.6;1"
+          dur="0.35s"
+          begin="1.2s; loop.begin + 1.2s"
+          fill="freeze"/>
+
+        <rect x="0" y="0" rx="22" ry="22" width="320" height="60" class="bubble"/>
+        
+      <text x="20" y="38" class="text" clip-path="url(#clip-m1-0)">Hi, I'm Vaishnav Mankar</text>
+    
+      </g>
+    </g>
+  
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.05;0.95;1"
+        dur="1.2s"
+        begin="2.8s; loop.begin + 2.8s"
+        fill="freeze"/>
+
+      <g transform="translate(20, 105)">
+        <rect x="0" y="0" rx="22" ry="22" width="90" height="50" class="typing-bubble"/>
+
+        <circle cx="25" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="2.8s; loop.begin + 2.8s" repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="45" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="2.9499999999999997s; loop.begin + 2.9499999999999997s" repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="65" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="3.0999999999999996s; loop.begin + 3.0999999999999996s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+  
+    <g opacity="0" transform="translate(20, 100)">
+      <animate attributeName="opacity"
+        from="0" to="1"
+        dur="0.35s"
+        begin="4s; loop.begin + 4s"
+        fill="freeze"/>
+      <animate attributeName="opacity"
+        to="0"
+        dur="0.01s"
+        begin="loop.begin"
+        fill="freeze"/>
+        
+      <g transform="scale(0.85)">
+        <animateTransform
+          attributeName="transform"
+          type="scale"
+          values="0.85;1.06;1"
+          keyTimes="0;0.6;1"
+          dur="0.35s"
+          begin="4s; loop.begin + 4s"
+          fill="freeze"/>
+
+        <rect x="0" y="0" rx="22" ry="22" width="760" height="90" class="bubble"/>
+        
+      <text x="20" y="38" class="text" clip-path="url(#clip-m2-0)">Good evening!</text>
+    
+      <text x="20" y="68" class="text" clip-path="url(#clip-m2-1)">I am from Pune, India where it is 24°C and showery today.</text>
+    
+      </g>
+    </g>
+  
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.05;0.95;1"
+        dur="1.2s"
+        begin="6.6s; loop.begin + 6.6s"
+        fill="freeze"/>
+
+      <g transform="translate(20, 215)">
+        <rect x="0" y="0" rx="22" ry="22" width="90" height="50" class="typing-bubble"/>
+
+        <circle cx="25" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="6.6s; loop.begin + 6.6s" repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="45" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="6.75s; loop.begin + 6.75s" repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="65" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="6.8999999999999995s; loop.begin + 6.8999999999999995s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+  
+    <g opacity="0" transform="translate(20, 210)">
+      <animate attributeName="opacity"
+        from="0" to="1"
+        dur="0.35s"
+        begin="7.8s; loop.begin + 7.8s"
+        fill="freeze"/>
+      <animate attributeName="opacity"
+        to="0"
+        dur="0.01s"
+        begin="loop.begin"
+        fill="freeze"/>
+        
+      <g transform="scale(0.85)">
+        <animateTransform
+          attributeName="transform"
+          type="scale"
+          values="0.85;1.06;1"
+          keyTimes="0;0.6;1"
+          dur="0.35s"
+          begin="7.8s; loop.begin + 7.8s"
+          fill="freeze"/>
+
+        <rect x="0" y="0" rx="22" ry="22" width="860" height="90" class="bubble"/>
+        
+      <text x="20" y="38" class="text" clip-path="url(#clip-m3-0)">I'm a Computer Engineering student at PICT interested in</text>
+    
+      <text x="20" y="68" class="text" clip-path="url(#clip-m3-1)">high-performance systems engineering, distributed IoT, and AI.</text>
+    
+      </g>
+    </g>
+  
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.05;0.95;1"
+        dur="1.2s"
+        begin="10.399999999999999s; loop.begin + 10.399999999999999s"
+        fill="freeze"/>
+
+      <g transform="translate(20, 325)">
+        <rect x="0" y="0" rx="22" ry="22" width="90" height="50" class="typing-bubble"/>
+
+        <circle cx="25" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="10.399999999999999s; loop.begin + 10.399999999999999s" repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="45" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="10.549999999999999s; loop.begin + 10.549999999999999s" repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="65" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="10.7s; loop.begin + 10.7s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+  
+    <g opacity="0" transform="translate(20, 320)">
+      <animate attributeName="opacity"
+        from="0" to="1"
+        dur="0.35s"
+        begin="11.599999999999998s; loop.begin + 11.599999999999998s"
+        fill="freeze"/>
+      <animate attributeName="opacity"
+        to="0"
+        dur="0.01s"
+        begin="loop.begin"
+        fill="freeze"/>
+        
+      <g transform="scale(0.85)">
+        <animateTransform
+          attributeName="transform"
+          type="scale"
+          values="0.85;1.06;1"
+          keyTimes="0;0.6;1"
+          dur="0.35s"
+          begin="11.599999999999998s; loop.begin + 11.599999999999998s"
+          fill="freeze"/>
+
+        <rect x="0" y="0" rx="22" ry="22" width="850" height="120" class="bubble"/>
+        
+      <text x="20" y="38" class="text" clip-path="url(#clip-m4-0)">Pushed 3 commits this week, 5 last week,</text>
+    
+      <text x="20" y="68" class="text" clip-path="url(#clip-m4-1)">and 316 commits this year.</text>
+    
+      <text x="20" y="98" class="text" clip-path="url(#clip-m4-2)">I'm likely deep in systems design (or chasing sunsets in Pune).</text>
+    
+      </g>
+    </g>
+  
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.05;0.95;1"
+        dur="1.2s"
+        begin="15.2s; loop.begin + 15.2s"
+        fill="freeze"/>
+
+      <g transform="translate(20, 465)">
+        <rect x="0" y="0" rx="22" ry="22" width="90" height="50" class="typing-bubble"/>
+
+        <circle cx="25" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="15.2s; loop.begin + 15.2s" repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="45" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="15.35s; loop.begin + 15.35s" repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="65" cy="25" r="5" class="typing-dot">
+          <animate attributeName="opacity" values="0.25;1;0.25"
+            dur="0.9s" begin="15.5s; loop.begin + 15.5s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+  
+    <g opacity="0" transform="translate(20, 460)">
+      <animate attributeName="opacity"
+        from="0" to="1"
+        dur="0.35s"
+        begin="16.4s; loop.begin + 16.4s"
+        fill="freeze"/>
+      <animate attributeName="opacity"
+        to="0"
+        dur="0.01s"
+        begin="loop.begin"
+        fill="freeze"/>
+        
+      <g transform="scale(0.85)">
+        <animateTransform
+          attributeName="transform"
+          type="scale"
+          values="0.85;1.06;1"
+          keyTimes="0;0.6;1"
+          dur="0.35s"
+          begin="16.4s; loop.begin + 16.4s"
+          fill="freeze"/>
+
+        <rect x="0" y="0" rx="22" ry="22" width="530" height="60" class="bubble"/>
+        
+      <text x="20" y="38" class="text" clip-path="url(#clip-m5-0)">Have a great Monday! 🚀</text>
+    
+      </g>
+    </g>
+  
+</svg>

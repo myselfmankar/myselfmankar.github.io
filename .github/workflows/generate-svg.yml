@@ -68,3 +68,26 @@ jobs:
             DEFAULT_BRANCH=$(git rev-parse --abbrev-ref origin/HEAD | cut -d'/' -f2)
             git push origin HEAD:${DEFAULT_BRANCH}
           fi
+
+      - name: Deploy to deploy branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Configure Git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Copy the generated SVG to the website's image folder
+          cp github-profile/assets/about-me.svg assets/img/about-me.svg
+          
+          # Create and switch to the deploy branch (from the current state)
+          git checkout -B deploy
+          
+          # Add the SVG
+          git add assets/img/about-me.svg
+          
+          # Commit and force push to the deploy branch
+          if ! git diff --quiet --cached; then
+            git commit -m "chore: deploy updated SVG to website"
+            git push origin deploy --force
+          fi
