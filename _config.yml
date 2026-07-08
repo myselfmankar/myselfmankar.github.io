@@ -15,8 +15,8 @@ twitter_username: twitter
 youtube_username: Vaishnav-Mankar
 discord_username: mrtupperware
 resume_url: /docs/vaishnav_mankar_resume.pdf
-# Cloudflare Turnstile testing sitekey (always passes)
-turnstile_sitekey: "1x00000000000000000000AA"
+# Cloudflare Turnstile sitekey
+turnstile_sitekey: "0x4AAAAAADyG_Mk8ufgC1zU6"
 # blog_url: homepage-url
 
 # If your repo name follows the format "<user-name>.github.io", then leave the below blank.
