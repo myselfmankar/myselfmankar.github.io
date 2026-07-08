@@ -20,6 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
+  <!-- Cloudflare Turnstile API -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -30,8 +32,14 @@
   <!-- Third accent orb -->
   <div class="orb-3"></div>
 
-  <div class="container">
-    <!-- ===================== HERO HEADER ===================== -->
+  <!-- Turnstile Gateway Overlay -->
+  <div id="turnstile-overlay" style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; z-index: 9999; background: var(--bg-color);">
+    <div class="cf-turnstile" data-sitekey="{{ site.turnstile_sitekey }}" data-callback="unlockSite" data-theme="dark"></div>
+  </div>
+
+  <div id="main-content" style="opacity: 0; pointer-events: none; transition: opacity 0.8s ease;">
+    <div class="container">
+      <!-- ===================== HERO HEADER ===================== -->
     <header class="header">
       <div class="name-zone">
         <h1>{{ site.name }}</h1>
@@ -132,9 +140,26 @@
     <footer id="footer">
       <p>© {{ 'now' | date: "%Y" }} {{ site.name }} · Built with precision & ❤️</p>
     </footer>
-  </div>
+  </div> <!-- end of container -->
+  </div> <!-- end of main-content -->
 
   <script src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>
   <script type="module" src="{{ '/assets/js/ribbon.js' | prepend: site.baseurl }}"></script>
+  <script>
+    function unlockSite(token) {
+      const overlay = document.getElementById('turnstile-overlay');
+      const content = document.getElementById('main-content');
+      
+      // Fade out overlay
+      overlay.style.transition = "opacity 0.5s ease";
+      overlay.style.opacity = "0";
+      setTimeout(() => {
+        overlay.style.display = "none";
+        // Fade in content
+        content.style.opacity = "1";
+        content.style.pointerEvents = "auto";
+      }, 500);
+    }
+  </script>
 </body>
 </html>
