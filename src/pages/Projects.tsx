@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { TerminalHeader } from '../components/TerminalHeader';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Youtube } from 'lucide-react';
 import { PROJECTS_BY_CATEGORY } from '../data/portfolio';
 
 export const Projects = () => {
@@ -103,6 +103,18 @@ export const Projects = () => {
                       >
                         <ExternalLink size={16} className="group-hover/btn:scale-110 transition-transform" />
                         <span className="text-sm font-mono">Live</span>
+                      </a>
+                    )}
+
+                    {'videoLink' in project && project.videoLink && (
+                      <a
+                        href={project.videoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 text-neutral-400 hover:text-primary-500 transition-colors group/btn"
+                      >
+                        <Youtube size={16} className="group-hover/btn:scale-110 transition-transform" />
+                        <span className="text-sm font-mono">Demo</span>
                       </a>
                     )}
                   </div>

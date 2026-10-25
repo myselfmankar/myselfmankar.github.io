@@ -101,6 +101,7 @@ export const PROJECTS = [
     category: "backend",
     githubLink: "https://github.com/myselfmankar/agentcart",
     websiteLink: "",
+    videoLink: "https://youtu.be/Ohklz4oMt0o",
   },
   {
     title: "ros2-jazzy — Edge Telemetry Ingestion",
@@ -155,6 +156,7 @@ export const CONTACT = {
     github: "https://github.com/myselfmankar",
     linkedin: "https://www.linkedin.com/in/vaishnav-mankar",
     twitter: "",
+    youtube: "https://www.youtube.com/@Vaishnav-Mankar",
   },
 };
 
