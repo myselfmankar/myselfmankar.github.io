@@ -1,8 +1,0 @@
-subject: Achievements
-listing-order: 5
-icon: "/assets/img/clipboard-list.svg"
-contents:
-  - title: "IEEE Publication"
-    subtitle: IEEE International Conference
-    description:
-      - 'Published "GNN-Based Friend Recommendation: A Graph Embedding Approach for Social Networks" in an IEEE International Conference.'
