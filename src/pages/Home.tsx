@@ -124,7 +124,7 @@ export const Home = () => {
               Featured Technologies
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              A curated selection of the technologies I work with daily to build and deploy scalable systems
+              A quick look at the languages, protocols, and tools I reach for most
             </p>
           </motion.div>
 

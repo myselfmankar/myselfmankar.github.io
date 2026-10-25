@@ -53,16 +53,8 @@ export const Skills = () => {
       'Available commands:',
       '  ls <category>     - List skills in a category',
       '  cat <skill>       - Show skill details',
-      '  levels            - Show proficiency levels',
       '  clear             - Clear terminal',
       '  help              - Show this help',
-    ],
-    levels: [
-      'Proficiency Levels:',
-      '  Beginner (30%)     - Basic understanding',
-      '  Intermediate (60%) - Practical experience',
-      '  Advanced (85%)     - Production usage',
-      '  Expert (100%)      - Deep expertise',
     ],
     clear: () => setTerminalOutput([]),
     default: (input: string) => [
@@ -85,9 +77,6 @@ export const Skills = () => {
         case 'help':
           output = commands.help;
           break;
-        case 'levels':
-          output = commands.levels;
-          break;
         case 'clear':
           commands.clear();
           setIsProcessing(false);
@@ -98,7 +87,7 @@ export const Skills = () => {
             const cat = categories.find(c => c.id === category)!;
             output = [
               `${cat.title}:`,
-              ...cat.skills.map(skill => `  ${skill.name} (${skill.level}%)`)
+              ...cat.skills.map(skill => `  ${skill.name}`)
             ];
           } else {
             output = [
@@ -119,9 +108,6 @@ export const Skills = () => {
             output = [
               `Skill: ${skill.name}`,
               `Category: ${skill.category}`,
-              `Proficiency: ${skill.level}%`,
-              '',
-              `Icon: ${skill.icon}`,
             ];
           } else {
             output = [`Skill "${skillName}" not found`];
@@ -148,7 +134,7 @@ export const Skills = () => {
       {/* Terminal Header */}
       <TerminalHeader
         command="ls -la skills/"
-        description="Exploring technical expertise across cloud, development, and DevOps domains"
+        description="Languages, systems, and tools I build backend services with"
       />
 
       {/* Skills Categories */}
@@ -165,7 +151,7 @@ export const Skills = () => {
               Technical Expertise
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              Comprehensive skill set spanning cloud infrastructure, development, and DevOps practices
+              What I use day to day, grouped by where it fits in a backend system
             </p>
           </motion.div>
 
@@ -206,7 +192,7 @@ export const Skills = () => {
                           whileHover={{ scale: 1.02 }}
                           className="bg-bg-elevated border border-neutral-700 p-4 rounded-lg hover:border-primary-500/50 transition-all duration-300 group"
                         >
-                          <div className="flex items-center space-x-3 mb-3">
+                          <div className="flex items-center space-x-3">
                             <img
                               src={skill.icon}
                               alt={skill.name}
@@ -215,23 +201,6 @@ export const Skills = () => {
                             <span className="font-mono font-medium text-neutral-200">
                               {skill.name}
                             </span>
-                          </div>
-                          
-                          {/* Proficiency Bar */}
-                          <div className="space-y-2">
-                            <div className="flex justify-between text-xs">
-                              <span className="text-neutral-400">Proficiency</span>
-                              <span className="text-primary-500 font-mono">{skill.level}%</span>
-                            </div>
-                            <div className="w-full bg-neutral-700 rounded-full h-2">
-                              <motion.div
-                                initial={{ width: 0 }}
-                                whileInView={{ width: `${skill.level}%` }}
-                                transition={{ delay: (categoryIndex * 0.1) + (skillIndex * 0.05) + 0.3, duration: 0.8 }}
-                                viewport={{ once: true }}
-                                className="h-2 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full"
-                              />
-                            </div>
                           </div>
                         </motion.div>
                       ))}
@@ -344,7 +313,6 @@ export const Skills = () => {
               {[
                 { cmd: 'help', desc: 'Show commands' },
                 { cmd: 'ls cloud', desc: 'Cloud skills' },
-                { cmd: 'levels', desc: 'Proficiency guide' },
                 { cmd: 'cat Docker', desc: 'Skill details' },
               ].map((item) => (
                 <button

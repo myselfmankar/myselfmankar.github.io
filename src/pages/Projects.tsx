@@ -1,20 +1,10 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { TerminalHeader } from '../components/TerminalHeader';
-import { ExternalLink, Github, Filter } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { PROJECTS_BY_CATEGORY } from '../data/portfolio';
 
 export const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
-
-  const filters = [
-    { id: 'all', label: 'All Projects', count: PROJECTS_BY_CATEGORY.all.length },
-    { id: 'backend', label: 'Backend', count: PROJECTS_BY_CATEGORY.backend.length },
-  ];
-
-  const getProjects = () => {
-    return PROJECTS_BY_CATEGORY[activeFilter as keyof typeof PROJECTS_BY_CATEGORY] || PROJECTS_BY_CATEGORY.all;
-  };
+  const getProjects = () => PROJECTS_BY_CATEGORY.all;
 
   return (
     <div className="min-h-screen bg-bg-page">
@@ -23,38 +13,6 @@ export const Projects = () => {
         command="docker ps -a"
         description="Listing deployed projects and applications"
       />
-
-      {/* Filter Tabs */}
-      <section className="py-12 bg-bg-surface/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-wrap justify-center gap-4"
-          >
-            {filters.map((filter) => (
-              <button
-                key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-mono font-medium transition-all duration-200 ${
-                  activeFilter === filter.id
-                    ? 'bg-primary-500 text-bg-surface shadow-glow'
-                    : 'bg-bg-elevated text-neutral-200 border border-neutral-700 hover:border-primary-500/50 hover:text-primary-500'
-                }`}
-              >
-                <Filter size={16} />
-                <span>{filter.label}</span>
-                <span className={`text-xs px-2 py-1 rounded-full ${
-                  activeFilter === filter.id ? 'bg-bg-surface text-primary-500' : 'bg-neutral-700 text-neutral-400'
-                }`}>
-                  {filter.count}
-                </span>
-              </button>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* Projects Grid */}
       <section className="py-24">
@@ -188,10 +146,6 @@ export const Projects = () => {
                   <span className="text-primary-500">{PROJECTS_BY_CATEGORY.all.length}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Backend Projects:</span>
-                  <span className="text-primary-500">{PROJECTS_BY_CATEGORY.backend.length}</span>
-                </div>
-                <div className="flex justify-between">
                   <span>Technologies Used:</span>
                   <span className="text-primary-500">
                     {new Set(PROJECTS_BY_CATEGORY.all.flatMap(p => p.technologies)).size}+
@@ -202,7 +156,7 @@ export const Projects = () => {
               <div className="pt-4 border-t border-neutral-700 text-sm text-neutral-400">
                 <div className="flex items-center space-x-2">
                   <span className="text-accent-500">$</span>
-                  <span>echo "Each project demonstrates real-world implementation of cloud-native architecture and modern development practices"</span>
+                  <span>echo "Each project is something I built and run myself, not a tutorial clone"</span>
                 </div>
               </div>
             </div>

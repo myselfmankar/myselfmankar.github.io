@@ -10,13 +10,11 @@ export const SKILLS = [
     name: "Go",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
     category: "languages",
-    level: 85,
   },
   {
     name: "Python",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     category: "languages",
-    level: 85,
   },
 
   // Cloud & Infra
@@ -24,19 +22,16 @@ export const SKILLS = [
     name: "AWS (Lambda)",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
     category: "cloud",
-    level: 70,
   },
   {
     name: "Docker",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
     category: "cloud",
-    level: 75,
   },
   {
     name: "Git",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     category: "cloud",
-    level: 85,
   },
 
   // Systems & Messaging
@@ -44,31 +39,26 @@ export const SKILLS = [
     name: "gRPC",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grpc/grpc-plain.svg",
     category: "systems",
-    level: 75,
   },
   {
     name: "MQTT",
     icon: "https://cdn.simpleicons.org/mqtt",
     category: "systems",
-    level: 70,
   },
   {
     name: "REST APIs",
     icon: "https://cdn.simpleicons.org/fastapi",
     category: "systems",
-    level: 85,
   },
   {
     name: "Event-Driven Architecture",
     icon: "https://cdn.simpleicons.org/apachekafka",
     category: "systems",
-    level: 75,
   },
   {
     name: "Microservices",
     icon: "https://cdn.simpleicons.org/kubernetes",
     category: "systems",
-    level: 70,
   },
 
   // Databases
@@ -76,7 +66,6 @@ export const SKILLS = [
     name: "PostgreSQL",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     category: "database",
-    level: 80,
   },
 
   // Tools
@@ -84,13 +73,11 @@ export const SKILLS = [
     name: "Postman",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
     category: "tools",
-    level: 80,
   },
   {
     name: "Playwright",
     icon: "https://cdn.simpleicons.org/playwright",
     category: "tools",
-    level: 70,
   },
 ];
 
@@ -166,7 +153,7 @@ export const CONTACT = {
   email: "vaishnavmankar04@gmail.com",
   social: {
     github: "https://github.com/myselfmankar",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/vaishnav-mankar",
     twitter: "",
   },
 };
