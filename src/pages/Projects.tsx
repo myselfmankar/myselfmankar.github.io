@@ -9,8 +9,7 @@ export const Projects = () => {
 
   const filters = [
     { id: 'all', label: 'All Projects', count: PROJECTS_BY_CATEGORY.all.length },
-    { id: 'devops', label: 'DevOps', count: PROJECTS_BY_CATEGORY.devops.length },
-    { id: 'fullstack', label: 'Full-Stack', count: PROJECTS_BY_CATEGORY.fullstack.length },
+    { id: 'backend', label: 'Backend', count: PROJECTS_BY_CATEGORY.backend.length },
   ];
 
   const getProjects = () => {
@@ -74,22 +73,24 @@ export const Projects = () => {
                 className="bg-bg-surface border border-neutral-700 rounded-xl overflow-hidden group hover:border-primary-500/50 transition-all duration-300 shadow-card hover:shadow-card-hover"
               >
                 {/* Project Image */}
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                <div className="relative aspect-video overflow-hidden bg-bg-elevated">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center font-mono text-neutral-600 text-sm">
+                      {project.title.split(' ')[0]}
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-surface via-transparent to-transparent opacity-60" />
-                  
+
                   {/* Project Type Badge */}
                   <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-mono font-medium ${
-                      project.category === 'devops' 
-                        ? 'bg-green-500/20 text-green-500 border border-green-500/30'
-                        : 'bg-blue-500/20 text-blue-500 border border-blue-500/30'
-                    }`}>
-                      {project.category === 'devops' ? 'DevOps' : 'Full-Stack'}
+                    <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-green-500/20 text-green-500 border border-green-500/30">
+                      Backend
                     </span>
                   </div>
                 </div>
@@ -187,12 +188,8 @@ export const Projects = () => {
                   <span className="text-primary-500">{PROJECTS_BY_CATEGORY.all.length}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>DevOps Projects:</span>
-                  <span className="text-primary-500">{PROJECTS_BY_CATEGORY.devops.length}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Full-Stack Projects:</span>
-                  <span className="text-primary-500">{PROJECTS_BY_CATEGORY.fullstack.length}</span>
+                  <span>Backend Projects:</span>
+                  <span className="text-primary-500">{PROJECTS_BY_CATEGORY.backend.length}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Technologies Used:</span>
@@ -227,12 +224,12 @@ export const Projects = () => {
               Interested in Collaboration?
             </h2>
             <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              These projects showcase my expertise in DevOps and full-stack development. 
-              Let's discuss how we can work together on your next project.
+              These projects show how I approach backend systems — reliability, clear data flow,
+              and sane failure handling. Check out the code or get in touch.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://github.com/neerajnakka"
+                href="https://github.com/myselfmankar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-primary-500 text-bg-surface font-semibold rounded-lg hover:bg-primary-700 transition-all duration-200 shadow-glow hover:shadow-card-hover"

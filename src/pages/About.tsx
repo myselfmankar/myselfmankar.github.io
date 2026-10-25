@@ -6,19 +6,27 @@ import { Calendar, MapPin, Code, Zap } from 'lucide-react';
 export const About = () => {
 const timeline = [
   {
-    year: '2023 - Present',
-    title: 'DevOps Engineer',
-    company: '',
+    year: 'May 2026 - Aug 2026',
+    title: 'Backend Engineering Intern',
+    company: 'Golain',
     description:
-      'Building and managing cloud infrastructure, CI/CD pipelines, containerized workloads, and automation solutions across AWS and Google Cloud Platform (GCP) using Terraform, Docker, Kubernetes, and modern DevOps practices.',
+      'Integrated a Go real-time-communication service with a React dashboard over REST APIs, giving operators live robot video, audio, telemetry, and control for remote fleet operation. Built a one-click Copy cURL feature so engineers could reproduce failing device requests directly in Postman.',
     icon: Code,
   },
   {
-    year: '2019 - 2023',
-    title: 'Computer Science Graduate',
-    company: 'CVR College Of Engineering',
+    year: 'Aug 2025 - May 2026',
+    title: 'AI Software Developer Intern',
+    company: 'ATG',
     description:
-      "Bachelor's degree with focus on software engineering and cloud computing.",
+      'Sped up an AWS Lambda video-generation workflow by replacing sequential slide processing with concurrent processing. Automated generation of AI-based notes and Markdown-to-PDF conversion, turning a manual document workflow into a repeatable pipeline.',
+    icon: Zap,
+  },
+  {
+    year: '2023 - 2027',
+    title: 'B.E. Computer Engineering',
+    company: 'Pune Institute of Computer Technology',
+    description:
+      "Bachelor's degree with a focus on software engineering and distributed systems. CGPA 9.02/10.",
     icon: Calendar,
   },
 ];
@@ -26,18 +34,18 @@ const timeline = [
   const philosophyPoints = [
     {
       icon: Zap,
-      title: 'Automation First',
-      description: 'Every manual process should be automated, every deployment should be reproducible.',
+      title: 'Design for Failure',
+      description: 'Networks drop, processes crash, requests arrive out of order. Systems should expect it, not be surprised by it.',
     },
     {
       icon: Code,
-      title: 'Infrastructure as Code',
-      description: 'Treat infrastructure with the same discipline as application code.',
+      title: 'Simplicity Over Cleverness',
+      description: 'The simplest design that handles the real failure modes beats a clever one that handles none of them.',
     },
     {
       icon: MapPin,
-      title: 'Cloud Native',
-      description: 'Build for the cloud from day one, embrace containerization and orchestration.',
+      title: 'Observability First',
+      description: "If you can't see what a system is doing in production, you don't actually understand it.",
     },
   ];
 
@@ -69,27 +77,28 @@ const timeline = [
                 </div>
                 <div className="space-y-4 text-neutral-200 leading-relaxed">
                   <Typewriter
-                    text="Hello, I'm Neeraj Chandra Nakka, and I build reliable cloud platforms that transform ideas into production-ready systems."
+                    text="Hello, I'm Vaishnav Mankar, and I build backend systems that stay reliable under real-world messiness."
                     delay={30}
                     className="text-primary-500 font-semibold block mb-4"
                   />
                   <p>
-                    I design, automate, and deploy systems that turn code into production-grade reality. 
-                    My journey began with full-stack development—building web apps with Java, React, and Node.js.
+                    I'm a computer engineering student at PICT, graduating in 2027. My internships have
+                    focused on backend systems that have to keep working under pressure — flaky networks,
+                    concurrent requests, long-running processes that can't afford to lose state.
                   </p>
                   <p>
-                    Over time, that foundation evolved into a passion for DevOps and Cloud Engineering, 
-                    where I now focus on crafting scalable infrastructure, clean CI/CD pipelines, and resilient deployments.
+                    At Golain, I worked on live video/telemetry pipelines for remote robot control. At ATG,
+                    I sped up an AI video-generation pipeline and automated a manual document workflow
+                    end-to-end.
                   </p>
-                 <p>
-                    I work across AWS and Google Cloud Platform (GCP), orchestrate containers with Docker and Kubernetes,
-                    and define infrastructure using Terraform and automation tooling. Behind the command line,
-                    I'm equally comfortable in version control and workflow automation, using Git, GitHub,
-                    GitLab CI/CD, and modern observability practices to bridge collaboration and delivery.
+                  <p>
+                    Outside of work, I build distributed systems projects for fun — an IoT backend that
+                    processes real-time sensor data from industrial devices, and an AI shopping agent that
+                    handles real payments safely with built-in spending limits.
                   </p>
                   <p className="text-primary-500 font-medium">
-                    For me, DevOps isn't just about speed—it's about precision, repeatability, 
-                    and creating systems that empower developers to ship confidently and innovate faster.
+                    I'm looking for backend/SRE roles where I can keep learning how to make systems that
+                    don't fall over.
                   </p>
                 </div>
               </div>
@@ -109,20 +118,20 @@ const timeline = [
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-neutral-400">Experience</span>
-                    <span className="text-primary-500 font-mono">1+ years</span>
+                    <span className="text-neutral-400">Graduating</span>
+                    <span className="text-primary-500 font-mono">2027</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-neutral-400">Cloud Platforms</span>
-                    <span className="text-primary-500 font-mono">AWS, GCP</span>
+                    <span className="text-neutral-400">Internships</span>
+                    <span className="text-primary-500 font-mono">Golain, ATG</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-neutral-400">Projects</span>
-                    <span className="text-primary-500 font-mono">7+ deployed</span>
+                    <span className="text-neutral-400">Languages</span>
+                    <span className="text-primary-500 font-mono">Go, Python</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-neutral-400">Technologies</span>
-                    <span className="text-primary-500 font-mono">19+ mastered</span>
+                    <span className="text-neutral-400">Published Paper</span>
+                    <span className="text-primary-500 font-mono">IEEE, 2026</span>
                   </div>
                 </div>
               </div>
@@ -133,11 +142,11 @@ const timeline = [
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {[
-  'Cloud Architecture',
-  'Site Reliability Engineering',
-  'Infrastructure as Code',
-  'CI/CD Automation',
-  'Kubernetes & Containers'
+  'Distributed Systems',
+  'Backend APIs',
+  'Event-Driven Architecture',
+  'Real-Time Data Pipelines',
+  'Site Reliability'
 ].map((skill) => (
                     <span
                       key={skill}
@@ -167,7 +176,7 @@ const timeline = [
               Career Timeline
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              My journey from software development to Cloud, DevOps, and Site Reliability Engineering
+              From coursework to internships — building backend systems that hold up under pressure
             </p>
           </motion.div>
 
@@ -231,7 +240,7 @@ const timeline = [
               Tech Philosophy
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              Core principles that guide my approach to software engineering and DevOps
+              Core principles that guide how I design and build backend systems
             </p>
           </motion.div>
 

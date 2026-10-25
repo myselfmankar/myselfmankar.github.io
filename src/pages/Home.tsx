@@ -7,10 +7,10 @@ import { HERO_CONTENT, SKILLS, PROJECTS } from '../data/portfolio';
 
 export const Home = () => {
   const stats = [
-    { label: 'Years Experience', value: '1+' },
-    { label: 'Cloud Platforms', value: '3' },
-    { label: 'Projects Completed', value: '10+' },
-    { label: 'Technologies', value: '19+' },
+    { label: 'Internships', value: '2' },
+    { label: 'Projects Shipped', value: '3' },
+    { label: 'Published Paper', value: '1' },
+    { label: 'Graduating', value: '2027' },
   ];
 
   const featuredSkills = SKILLS.slice(0, 6);
@@ -37,7 +37,7 @@ export const Home = () => {
 
             {/* Typewriter heading */}
             <div className="font-mono text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight text-primary-500">
-              <Typewriter text="DevOps & Cloud Engineer" delay={80} />
+              <Typewriter text="Backend Engineer" delay={80} />
               <span className="terminal-cursor ml-2" />
             </div>
 
@@ -186,21 +186,21 @@ export const Home = () => {
             className="bg-bg-elevated border border-primary-500/20 p-12 rounded-2xl shadow-glow"
           >
             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-6">
-              Ready to Deploy Your Vision?
+              Let's Talk
             </h2>
             <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              Let's build something amazing together. From infrastructure automation to full-stack development, 
-              I'm here to turn your ideas into production reality.
+              I'm looking for backend/SRE roles starting 2027. If you're hiring, or just want to
+              talk systems design, reach out.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 bg-primary-500 text-bg-surface font-semibold rounded-lg hover:bg-primary-700 transition-all duration-200 shadow-glow hover:shadow-card-hover"
               >
-                Start a Project
+                Get in Touch
               </Link>
               <a
-                href="https://github.com/neerajnakka"
+                href="https://github.com/myselfmankar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-600 text-neutral-200 hover:border-primary-500 hover:text-primary-500 font-semibold rounded-lg transition-all duration-200"

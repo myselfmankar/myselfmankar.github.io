@@ -111,20 +111,23 @@ export const Contact = () => {
       color: 'text-blue-500',
     },
     {
-      icon: Phone,
-      label: 'Phone',
-      value: CONTACT.phoneNo,
-      href: `tel:${CONTACT.phoneNo}`,
-      color: 'text-green-500',
-    },
-    {
       icon: MapPin,
       label: 'Location',
       value: CONTACT.address,
       href: '#',
       color: 'text-purple-500',
     },
-  ];
+  ].concat(
+    CONTACT.phoneNo
+      ? [{
+          icon: Phone,
+          label: 'Phone',
+          value: CONTACT.phoneNo,
+          href: `tel:${CONTACT.phoneNo}`,
+          color: 'text-green-500',
+        }]
+      : []
+  );
 
   const socialLinks = [
     {
@@ -145,7 +148,7 @@ export const Contact = () => {
       icon: Twitter,
       color: 'hover:text-blue-400',
     },
-  ];
+  ].filter((link) => link.url);
 
   return (
     <div className="min-h-screen bg-bg-page">
@@ -337,7 +340,7 @@ export const Contact = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-primary-500 rounded-full animate-pulse" />
-                    <span className="font-mono text-sm text-neutral-200">Available for new projects</span>
+                    <span className="font-mono text-sm text-neutral-200">Open to backend/SRE roles starting 2027</span>
                   </div>
                   <div className="text-sm text-neutral-400">
                     <div className="mb-2">Response time: Within 24 hours</div>
@@ -388,9 +391,9 @@ export const Contact = () => {
               $ echo "Thank you for visiting!"
             </div>
             <div className="space-y-2 text-neutral-200">
-              <p>I'm always interested in discussing new opportunities and challenging projects.</p>
+              <p>I'm always up for talking systems design, internship/new-grad roles, or just backend engineering in general.</p>
               <p className="text-primary-500">
-                Let's build something amazing together.
+                Let's talk.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-neutral-700 text-sm text-neutral-400">

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { TerminalHeader } from '../components/TerminalHeader';
 import { Typewriter } from '../components/Typewriter';
-import { Cloud, Container, Code, Database, Terminal as TerminalIcon } from 'lucide-react';
+import { Cloud, Code, Database, Terminal as TerminalIcon, Wrench } from 'lucide-react';
 import { SKILLS_BY_CATEGORY } from '../data/portfolio';
 
 export const Skills = () => {
@@ -12,39 +12,25 @@ export const Skills = () => {
 
   const categories = [
     {
+      id: 'languages',
+      title: 'Languages',
+      icon: Code,
+      skills: SKILLS_BY_CATEGORY.languages,
+      color: 'text-orange-500',
+    },
+    {
       id: 'cloud',
-      title: 'Cloud Platforms',
+      title: 'Cloud & Infra',
       icon: Cloud,
       skills: SKILLS_BY_CATEGORY.cloud,
       color: 'text-blue-500',
     },
     {
-      id: 'containers',
-      title: 'Container & Orchestration',
-      icon: Container,
-      skills: SKILLS_BY_CATEGORY.containers,
-      color: 'text-blue-400',
-    },
-    {
-      id: 'infrastructure',
-      title: 'Infrastructure as Code',
+      id: 'systems',
+      title: 'Systems & Messaging',
       icon: TerminalIcon,
-      skills: SKILLS_BY_CATEGORY.infrastructure,
+      skills: SKILLS_BY_CATEGORY.systems,
       color: 'text-purple-500',
-    },
-    {
-      id: 'devops',
-      title: 'DevOps & Automation',
-      icon: Code,
-      skills: SKILLS_BY_CATEGORY.devops,
-      color: 'text-green-500',
-    },
-    {
-      id: 'development',
-      title: 'Development Stack',
-      icon: Code,
-      skills: SKILLS_BY_CATEGORY.development,
-      color: 'text-orange-500',
     },
     {
       id: 'database',
@@ -52,6 +38,13 @@ export const Skills = () => {
       icon: Database,
       skills: SKILLS_BY_CATEGORY.database,
       color: 'text-red-500',
+    },
+    {
+      id: 'tools',
+      title: 'Tools',
+      icon: Wrench,
+      skills: SKILLS_BY_CATEGORY.tools,
+      color: 'text-green-500',
     },
   ];
 
@@ -117,10 +110,9 @@ export const Skills = () => {
         case 'cat':
           const skillName = args.slice(1).join(' ');
           const skill = SKILLS_BY_CATEGORY.cloud.find(s => s.name.toLowerCase() === skillName) ||
-                       SKILLS_BY_CATEGORY.containers.find(s => s.name.toLowerCase() === skillName) ||
-                       SKILLS_BY_CATEGORY.infrastructure.find(s => s.name.toLowerCase() === skillName) ||
-                       SKILLS_BY_CATEGORY.devops.find(s => s.name.toLowerCase() === skillName) ||
-                       SKILLS_BY_CATEGORY.development.find(s => s.name.toLowerCase() === skillName) ||
+                       SKILLS_BY_CATEGORY.languages.find(s => s.name.toLowerCase() === skillName) ||
+                       SKILLS_BY_CATEGORY.systems.find(s => s.name.toLowerCase() === skillName) ||
+                       SKILLS_BY_CATEGORY.tools.find(s => s.name.toLowerCase() === skillName) ||
                        SKILLS_BY_CATEGORY.database.find(s => s.name.toLowerCase() === skillName);
 
           if (skill) {

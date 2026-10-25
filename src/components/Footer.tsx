@@ -26,7 +26,7 @@ export const Footer = () => {
       url: `mailto:${CONTACT.email}`,
       icon: Mail,
     },
-  ];
+  ].filter((link) => link.url);
 
   return (
     <footer className="bg-bg-elevated border-t border-neutral-700 mt-24">
@@ -63,9 +63,8 @@ export const Footer = () => {
               <span>copyright.txt</span>
             </div>
             <div className="mt-2 space-y-1 text-xs">
-              <p>© {currentYear} DevOps & Cloud Engineer</p>
-              <p>Built with React, TypeScript, and Cyber Terminal Aesthetic</p>
-              <p className="text-primary-500">Status: Available for opportunities</p>
+              <p>© {currentYear} Vaishnav Mankar</p>
+              <p className="text-primary-500">Status: Open to backend/SRE roles starting 2027</p>
             </div>
           </div>
 
@@ -76,7 +75,6 @@ export const Footer = () => {
               <span className="px-2 py-1 bg-neutral-800 rounded text-primary-500">React</span>
               <span className="px-2 py-1 bg-neutral-800 rounded text-primary-500">TypeScript</span>
               <span className="px-2 py-1 bg-neutral-800 rounded text-primary-500">Tailwind</span>
-              <span className="px-2 py-1 bg-neutral-800 rounded text-primary-500">Three.js</span>
             </div>
           </div>
         </div>
