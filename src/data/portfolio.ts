@@ -167,6 +167,7 @@ export const CONTACT = {
     linkedin: "https://www.linkedin.com/in/vaishnav-mankar",
     twitter: "",
     youtube: "https://www.youtube.com/@Vaishnav-Mankar",
+    neetcode: "https://neetcode.io/user/AstuteSpeeder675",
   },
 };
 
