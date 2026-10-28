@@ -7,6 +7,7 @@ import { Skills } from './pages/Skills';
 import { Projects } from './pages/Projects';
 import Blog from './pages/Blog';
 import Research from './pages/Research';
+import Dsa from './pages/Dsa';
 import { Contact } from './pages/Contact';
 import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/research" element={<Research />} />
+            <Route path="/dsa" element={<Dsa />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

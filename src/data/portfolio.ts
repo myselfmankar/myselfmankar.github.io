@@ -125,6 +125,19 @@ export const PROJECTS = [
   },
 ];
 
+export const DSA = {
+  profileUrl: "https://neetcode.io/user/AstuteSpeeder675",
+  totalSolved: 271,
+  totalProblems: 1126,
+  easy: { solved: 66, total: 241 },
+  medium: { solved: 168, total: 702 },
+  hard: { solved: 37, total: 183 },
+  topPercent: 0.3,
+  currentStreak: 258,
+  bestStreak: 258,
+  asOf: "Oct 2026",
+};
+
 export const RESEARCH = [
   {
     title: "Friend Recommendation using Graph Embeddings for Social Media",

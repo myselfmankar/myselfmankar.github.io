@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { TerminalHeader } from '../components/TerminalHeader';
 import { Typewriter } from '../components/Typewriter';
 import { Calendar, MapPin, Code, Zap } from 'lucide-react';
@@ -133,6 +134,13 @@ const timeline = [
                     <span className="text-neutral-400">Published Paper</span>
                     <span className="text-primary-500 font-mono">IEEE, 2026</span>
                   </div>
+                  <Link
+                    to="/dsa"
+                    className="flex items-center justify-between hover:text-primary-400 transition-colors group"
+                  >
+                    <span className="text-neutral-400 group-hover:text-primary-400">DSA (NeetCode)</span>
+                    <span className="text-primary-500 font-mono">Top 0.3% →</span>
+                  </Link>
                 </div>
               </div>
 
