@@ -113,6 +113,16 @@ export const PROJECTS = [
     githubLink: "https://github.com/myselfmankar/ros2-jazzy",
     websiteLink: "",
   },
+  {
+    title: "PhotoStack — Self-Hosted Photo Library",
+    image: "/projects/photostack.webp",
+    description:
+      "A self-hosted photo library that reads EXIF data to build a timeline, groups photos into albums, maps them by GPS, and finds duplicates even when resized or re-saved. FastAPI backend with SQLAlchemy, a TypeScript frontend, and integrity checks (file-type verification, SHA-256 hashing, edit detection) running underneath.",
+    technologies: ["Python", "FastAPI", "TypeScript", "SQLAlchemy", "Docker"],
+    category: "fullstack",
+    githubLink: "https://github.com/myselfmankar/photostack",
+    websiteLink: "https://myselfmankar.github.io/photostack/",
+  },
 ];
 
 export const RESEARCH = [

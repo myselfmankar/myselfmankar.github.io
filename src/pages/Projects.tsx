@@ -48,7 +48,7 @@ export const Projects = () => {
                   {/* Project Type Badge */}
                   <div className="absolute top-4 right-4">
                     <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-green-500/20 text-green-500 border border-green-500/30">
-                      Backend
+                      {project.category === 'fullstack' ? 'Full-Stack' : 'Backend'}
                     </span>
                   </div>
                 </div>
