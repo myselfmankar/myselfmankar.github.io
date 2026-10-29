@@ -74,7 +74,7 @@ export const Footer = () => {
             </div>
             <div className="mt-2 space-y-1 text-xs">
               <p>© {currentYear} Vaishnav Mankar</p>
-              <p className="text-primary-500">Status: Open to backend/SRE roles starting 2027</p>
+              <p className="text-primary-500">Status: Open to new-grad Software Engineering, Backend, Cloud & SRE roles</p>
             </div>
           </div>
 

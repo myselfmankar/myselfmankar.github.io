@@ -10,8 +10,8 @@ export const Projects = () => {
     <div className="min-h-screen bg-bg-page">
       {/* Terminal Header */}
       <TerminalHeader
-        command="docker ps -a"
-        description="Listing deployed projects and applications"
+        command="ls projects/"
+        description="Selected backend, distributed systems, edge telemetry, and full-stack projects"
       />
 
       {/* Projects Grid */}
@@ -168,7 +168,7 @@ export const Projects = () => {
               <div className="pt-4 border-t border-neutral-700 text-sm text-neutral-400">
                 <div className="flex items-center space-x-2">
                   <span className="text-accent-500">$</span>
-                  <span>echo "Each project is something I built and run myself, not a tutorial clone"</span>
+                  <span>echo "Selected work across backend systems, data flow, and infrastructure"</span>
                 </div>
               </div>
             </div>
@@ -187,7 +187,7 @@ export const Projects = () => {
             className="bg-gradient-to-br from-bg-elevated to-bg-surface border border-primary-500/20 p-12 rounded-2xl shadow-glow"
           >
             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-6">
-              Interested in Collaboration?
+              Interested in My Work?
             </h2>
             <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
               These projects show how I approach backend systems — reliability, clear data flow,
@@ -208,7 +208,7 @@ export const Projects = () => {
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-600 text-neutral-200 hover:border-primary-500 hover:text-primary-500 font-semibold rounded-lg transition-all duration-200"
               >
                 <ExternalLink className="mr-2 h-5 w-5" />
-                Start a Project
+                Contact Me
               </a>
             </div>
           </motion.div>

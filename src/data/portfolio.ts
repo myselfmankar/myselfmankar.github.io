@@ -1,8 +1,8 @@
 export const HERO_CONTENT =
-  "I build backend systems that keep working when things go wrong — distributed services, real-time data pipelines, and the debugging tools to understand them when they break.";
+  "I build and debug backend systems, real-time data pipelines, and the infrastructure that keeps services dependable when things go wrong.";
 
 export const ABOUT_TEXT =
-  "I'm a computer engineering student (graduating 2027) who's spent my internships building backend systems that have to stay reliable under real-world messiness — flaky networks, concurrent requests, long-running processes that can't just restart and lose everything. At Golain, I worked on live video/telemetry pipelines for remote robot control. At ATG, I sped up an AI video-generation pipeline and automated a manual document workflow end-to-end. Outside of work, I build distributed systems projects for fun — an IoT backend that processes real-time sensor data from industrial devices, and an AI shopping agent that handles real payments safely. I'm aiming for backend/SRE roles where I can keep learning how to make systems that don't fall over.";
+  "I'm a computer engineering student (graduating 2027) who's spent my internships building backend systems that have to stay reliable under real-world messiness — flaky networks, concurrent requests, long-running processes that can't just restart and lose everything. At Golain, I worked on live video/telemetry pipelines for remote robot control. At ATG, I sped up an AI video-generation pipeline and automated a manual document workflow end-to-end. Outside of work, I build distributed systems projects for fun — an IoT backend that processes real-time sensor data from industrial devices, and an AI shopping agent that handles real payments safely. I'm looking for new-graduate opportunities in software engineering, backend systems, cloud infrastructure, and SRE.";
 
 export const SKILLS = [
   // Languages
@@ -33,8 +33,23 @@ export const SKILLS = [
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     category: "cloud",
   },
+  {
+    name: "Cloudflare Workers",
+    icon: "https://cdn.simpleicons.org/cloudflare",
+    category: "cloud",
+  },
 
   // Systems & Messaging
+  {
+    name: "Linux",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    category: "systems",
+  },
+  {
+    name: "Networking (TCP/IP, DNS, HTTP)",
+    icon: "https://cdn.simpleicons.org/wireshark",
+    category: "systems",
+  },
   {
     name: "gRPC",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grpc/grpc-plain.svg",
@@ -86,7 +101,7 @@ export const PROJECTS = [
     title: "FieldPulse — Distributed Industrial IoT Backend",
     image: "",
     description:
-      "A backend that collects live data from connected industrial devices, routes it reliably, and never loses a reading. Built as a multi-service system in Go using gRPC and MQTT to ingest, route, and persist telemetry, with PostgreSQL for storage.",
+      "A multi-service industrial IoT backend that ingests, routes, and persists telemetry from connected devices. Built in Go with gRPC, MQTT, and PostgreSQL.",
     technologies: ["Go", "gRPC", "MQTT", "PostgreSQL", "Microservices"],
     category: "backend",
     githubLink: "https://github.com/myselfmankar/FieldPulse",
@@ -131,7 +146,7 @@ export const RESEARCH = [
     venue: "IEEE, 2026",
     authors: "Vaishnav Mankar, Omkar Mutyalwar, Abhishek Bobade, Madhuri Wakode",
     abstract:
-      "Real-time friend suggestions at social-network scale come down to a trade-off: accurate but slow, or fast but approximate. We built both — a neural network classifier and a fast approximate-nearest-neighbor retrieval system — on the same graph data, and measured the difference directly. The retrieval approach turned out to be orders of magnitude faster with almost no accuracy loss, confirming why large platforms like Meta use retrieval-based systems in production rather than brute-force models.",
+      "Real-time friend suggestions at social-network scale come down to a trade-off: accurate but slow, or fast but approximate. We built both — a neural network classifier and a fast approximate-nearest-neighbor retrieval system — on the same graph data, and measured the difference directly. The comparison highlights the latency–accuracy trade-off between model-based prediction and retrieval-based recommendation.",
     paperLink: "https://ieeexplore.ieee.org/abstract/document/11484910",
     githubLink: "https://github.com/myselfmankar/graph_embedding_recommendation",
   },
