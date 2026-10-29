@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github, Code2 } from 'lucide-react';
+import { ExternalLink, Github, Code2, Linkedin } from 'lucide-react';
 import { Grid3DBackground } from '../components/Grid3D';
 import { Typewriter } from '../components/Typewriter';
 import { HERO_CONTENT, SKILLS, PROJECTS } from '../data/portfolio';
@@ -8,12 +8,15 @@ import { HERO_CONTENT, SKILLS, PROJECTS } from '../data/portfolio';
 export const Home = () => {
   const stats = [
     { label: 'Internships', value: '2' },
-    { label: 'Projects Shipped', value: '3' },
+    { label: 'Featured Projects', value: '4' },
     { label: 'Published Paper', value: '1' },
     { label: 'Graduating', value: '2027' },
   ];
 
-  const featuredSkills = SKILLS.slice(0, 6);
+  const featuredSkillNames = ["Go", "Python", "Linux", "Networking (TCP/IP, DNS, HTTP)", "Docker", "AWS (Lambda)"];
+  const featuredSkills = SKILLS
+    .filter((skill) => featuredSkillNames.includes(skill.name))
+    .sort((a, b) => featuredSkillNames.indexOf(a.name) - featuredSkillNames.indexOf(b.name));
 
   return (
     <div className="min-h-screen bg-bg-page relative overflow-hidden">
@@ -37,7 +40,7 @@ export const Home = () => {
 
             {/* Typewriter heading */}
             <div className="font-mono text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight text-primary-500">
-              <Typewriter text="Backend Engineer" delay={80} />
+              <Typewriter text="Software Engineer" delay={80} />
               <span className="terminal-cursor ml-2" />
             </div>
 
@@ -72,6 +75,15 @@ export const Home = () => {
                 <ExternalLink className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Contact Me
               </Link>
+              <a
+                href="https://www.linkedin.com/in/vaishnav-mankar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center px-8 py-4 border-2 border-neutral-600 text-neutral-200 hover:border-primary-500 hover:text-primary-500 transition-all duration-200 font-semibold tracking-wide rounded-lg"
+              >
+                <Linkedin className="mr-2 h-5 w-5" />
+                LinkedIn
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -189,8 +201,7 @@ export const Home = () => {
               Let's Talk
             </h2>
             <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              I'm looking for backend/SRE roles starting 2027. If you're hiring, or just want to
-              talk systems design, reach out.
+              I'm exploring new-graduate roles in software engineering, backend systems, cloud infrastructure, and SRE. If you're hiring, or want to talk systems design, reach out.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
