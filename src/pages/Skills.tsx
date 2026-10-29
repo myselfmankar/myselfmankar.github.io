@@ -27,7 +27,7 @@ export const Skills = () => {
     },
     {
       id: 'systems',
-      title: 'Systems & Messaging',
+      title: 'Linux, Networking & Messaging',
       icon: TerminalIcon,
       skills: SKILLS_BY_CATEGORY.systems,
       color: 'text-purple-500',
@@ -134,7 +134,7 @@ export const Skills = () => {
       {/* Terminal Header */}
       <TerminalHeader
         command="ls -la skills/"
-        description="Languages, systems, and tools I build backend services with"
+        description="Programming, Linux, networking, cloud, and systems skills for software engineering roles"
       />
 
       {/* Skills Categories */}
@@ -296,7 +296,7 @@ export const Skills = () => {
                     type="text"
                     value={currentInput}
                     onChange={(e) => setCurrentInput(e.target.value)}
-                    onKeyPress={handleKeyPress}
+                    onKeyDown={handleKeyPress}
                     className="flex-1 bg-transparent text-primary-500 outline-none placeholder-neutral-600 font-mono"
                     placeholder={isProcessing ? "processing..." : "enter command..."}
                     disabled={isProcessing}
@@ -317,7 +317,7 @@ export const Skills = () => {
               ].map((item) => (
                 <button
                   key={item.cmd}
-                  onClick={() => setCurrentInput(item.cmd)}
+                  onClick={() => executeCommand(item.cmd)}
                   className="p-3 bg-bg-elevated border border-neutral-700 rounded-lg text-left hover:border-primary-500/50 transition-colors group"
                 >
                   <div className="font-mono text-sm text-primary-500 group-hover:text-primary-400">
