@@ -49,7 +49,7 @@ const Blog = () => {
               </h1>
             </div>
             <p className="text-neutral-400 leading-relaxed max-w-2xl">
-              Concise technical references from concepts I have worked through. Full articles will be published on Medium.
+              Short, practical references on topics I've studied and revisited. Links will be added as each article is published.
             </p>
           </motion.div>
 

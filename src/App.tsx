@@ -13,32 +13,32 @@ import './App.css';
 
 const PAGE_METADATA: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'Vaishnav Mankar | Software Engineer — Backend & Cloud',
-    description: 'Software engineer focused on backend systems, cloud infrastructure, distributed systems, Linux, and networking.',
+    title: "Vaishnav Mankar | PICT CE '27 | Software Engineer",
+    description: 'PICT Computer Engineering student graduating in 2027 with a 9.02/10 CGPA, two internships, and hands-on projects. Seeking new-grad software engineering roles.',
   },
   '/about': {
-    title: 'About | Vaishnav Mankar',
-    description: 'Background, internship experience, and engineering principles of Vaishnav Mankar.',
+    title: "About Vaishnav Mankar | PICT CE '27",
+    description: 'Meet Vaishnav Mankar, a PICT Computer Engineering student graduating in 2027, with a 9.02/10 CGPA and two internship experiences.',
   },
   '/skills': {
     title: 'Skills | Vaishnav Mankar',
-    description: 'Programming languages, cloud tools, Linux, networking, messaging, and databases.',
+    description: 'Technologies practised in internships and projects, including Python, Go, PostgreSQL, Linux, networking, Docker, and APIs.',
   },
   '/projects': {
     title: 'Projects | Vaishnav Mankar',
-    description: 'Selected backend, distributed systems, edge telemetry, and full-stack projects.',
+    description: 'Projects built across coursework, internships, backend development, IoT telemetry, AI workflows, and full-stack development.',
   },
   '/blog': {
     title: 'Technical Notes | Vaishnav Mankar',
-    description: 'Planned technical notes on Linux, algorithms, and networking, with articles published on Medium.',
+    description: 'Planned short notes on Linux command-line data wrangling, LCA in trees and BSTs, and networking revision.',
   },
   '/research': {
     title: 'Research | Vaishnav Mankar',
-    description: 'Research work and paper links from Vaishnav Mankar.',
+    description: 'Undergraduate research and a published IEEE paper by Vaishnav Mankar and co-authors.',
   },
   '/contact': {
-    title: 'Contact | Vaishnav Mankar',
-    description: 'Contact Vaishnav Mankar about software engineering, backend, cloud, and infrastructure roles.',
+    title: "Contact Vaishnav Mankar | PICT CE '27",
+    description: 'Contact Vaishnav Mankar, a PICT Computer Engineering student graduating in 2027, about new-grad Software Engineer opportunities.',
   },
 };
 

@@ -11,7 +11,7 @@ export const Projects = () => {
       {/* Terminal Header */}
       <TerminalHeader
         command="ls projects/"
-        description="Selected backend, distributed systems, edge telemetry, and full-stack projects"
+        description="Selected projects from coursework, internships, and personal experimentation"
       />
 
       {/* Projects Grid */}

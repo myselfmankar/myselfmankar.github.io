@@ -10,7 +10,7 @@ const timeline = [
     title: 'Backend Engineering Intern',
     company: 'Golain',
     description:
-      'Integrated a Go real-time-communication service with a React dashboard over REST APIs, giving operators live robot video, audio, telemetry, and control for remote fleet operation. Built a one-click Copy cURL feature so engineers could reproduce failing device requests directly in Postman.',
+      'Connected a Go real-time communication service to a React dashboard so operators could access live robot video, audio, and telemetry. Added a one-click Copy cURL feature to help engineers reproduce device requests in Postman while debugging.',
     icon: Code,
   },
   {
@@ -18,7 +18,7 @@ const timeline = [
     title: 'AI Software Developer Intern',
     company: 'ATG',
     description:
-      'Sped up an AWS Lambda video-generation workflow by replacing sequential slide processing with concurrent processing. Automated generation of AI-based notes and Markdown-to-PDF conversion, turning a manual document workflow into a repeatable pipeline.',
+      'Improved an AWS Lambda video-generation workflow by processing slides concurrently. Also automated AI-generated notes and Markdown-to-PDF conversion with Playwright, making a manual document workflow repeatable.',
     icon: Zap,
   },
   {
@@ -26,7 +26,7 @@ const timeline = [
     title: 'B.E. Computer Engineering',
     company: 'Pune Institute of Computer Technology',
     description:
-      "Bachelor's degree with a focus on software engineering and distributed systems. CGPA 9.02/10.",
+      "B.E. in Computer Engineering; graduating in 2027 with a CGPA of 9.02/10.",
     icon: Calendar,
   },
 ];
@@ -34,18 +34,18 @@ const timeline = [
   const philosophyPoints = [
     {
       icon: Zap,
-      title: 'Design for Failure',
-      description: 'Networks drop, processes crash, requests arrive out of order. Systems should expect it, not be surprised by it.',
+      title: 'Learn by Building',
+      description: 'I learn concepts by applying them to projects, then revisiting what was confusing or inefficient.',
     },
     {
       icon: Code,
-      title: 'Simplicity Over Cleverness',
-      description: 'The simplest design that handles the real failure modes beats a clever one that handles none of them.',
+      title: 'Keep It Understandable',
+      description: 'I prefer clear code and small components that are easier to understand, test, and maintain.',
     },
     {
       icon: MapPin,
-      title: 'Observability First',
-      description: "If you can't see what a system is doing in production, you don't actually understand it.",
+      title: 'Debug with Evidence',
+      description: 'I use logs, reproducible requests, and small experiments to narrow down a problem instead of guessing.',
     },
   ];
 
@@ -77,27 +77,25 @@ const timeline = [
                 </div>
                 <div className="space-y-4 text-neutral-200 leading-relaxed">
                   <Typewriter
-                    text="Hello, I'm Vaishnav Mankar, and I build backend systems that stay reliable under real-world messiness."
+                    text="Hello, I'm Vaishnav Mankar, a PICT Computer Engineering student graduating in 2027."
                     delay={30}
                     className="text-primary-500 font-semibold block mb-4"
                   />
                   <p>
-                    I'm a computer engineering student at PICT, graduating in 2027. My internships have
-                    focused on backend systems that have to keep working under pressure — flaky networks,
-                    concurrent requests, long-running processes that can't afford to lose state.
+                    I'm studying Computer Engineering at PICT and graduating in 2027 with a 9.02/10 CGPA.
+                    I enjoy learning by building projects and understanding how the pieces fit together.
                   </p>
                   <p>
-                    At Golain, I worked on live video/telemetry pipelines for remote robot control. At ATG,
-                    I sped up an AI video-generation pipeline and automated a manual document workflow
-                    end-to-end.
+                    At Golain, I worked on a robot operations dashboard and tools that helped engineers
+                    debug requests. At ATG, I improved a video-generation workflow and automated document
+                    conversion tasks.
                   </p>
                   <p>
-                    Outside of work, I build distributed systems projects for fun — an IoT backend that
-                    processes real-time sensor data from industrial devices, and an AI shopping agent that
-                    handles real payments safely with built-in spending limits.
+                    My personal projects cover areas such as APIs, databases, IoT telemetry, and AI-assisted
+                    workflows. They give me a place to practise skills from coursework and internships.
                   </p>
                   <p className="text-primary-500 font-medium">
-                    I'm looking for new-graduate Software Engineering, Backend, Cloud Infrastructure, and SRE roles where I can keep building and debugging real systems.
+                    I'm looking for my first full-time Software Engineer role. I'm especially interested in backend and cloud work, while remaining open to general software engineering opportunities.
                   </p>
                 </div>
               </div>
@@ -125,6 +123,10 @@ const timeline = [
                     <span className="text-primary-500 font-mono">Golain, ATG</span>
                   </div>
                   <div className="flex items-center justify-between">
+                    <span className="text-neutral-400">CGPA</span>
+                    <span className="text-primary-500 font-mono">9.02/10</span>
+                  </div>
+                  <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Languages</span>
                     <span className="text-primary-500 font-mono">Go, Python</span>
                   </div>
@@ -137,15 +139,15 @@ const timeline = [
 
               <div className="bg-bg-elevated border border-neutral-700 rounded-xl p-6">
                 <h3 className="font-mono text-primary-500 font-semibold mb-4 text-lg">
-                  Specializations
+                  Areas of Interest
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {[
-  'Distributed Systems',
-  'Backend APIs',
-  'Event-Driven Architecture',
-  'Real-Time Data Pipelines',
-  'Site Reliability'
+  'Backend Development',
+  'Cloud & Infrastructure',
+  'Linux & Networking',
+  'APIs & Data Pipelines',
+  'AI-Assisted Tools'
 ].map((skill) => (
                     <span
                       key={skill}
@@ -175,7 +177,7 @@ const timeline = [
               Career Timeline
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              From coursework to internships — building backend systems that hold up under pressure
+              Education, internships, and projects that have shaped my experience so far
             </p>
           </motion.div>
 
@@ -236,10 +238,10 @@ const timeline = [
             className="text-center mb-16"
           >
             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-4">
-              Tech Philosophy
+              How I Approach Projects
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              Core principles that guide how I design and build backend systems
+              A few habits I try to bring to coursework, internships, and personal projects
             </p>
           </motion.div>
 
