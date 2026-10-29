@@ -97,8 +97,7 @@ const timeline = [
                     handles real payments safely with built-in spending limits.
                   </p>
                   <p className="text-primary-500 font-medium">
-                    I'm looking for backend/SRE roles where I can keep learning how to make systems that
-                    don't fall over.
+                    I'm looking for new-graduate Software Engineering, Backend, Cloud Infrastructure, and SRE roles where I can keep building and debugging real systems.
                   </p>
                 </div>
               </div>
