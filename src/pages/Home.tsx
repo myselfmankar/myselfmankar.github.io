@@ -7,13 +7,13 @@ import { HERO_CONTENT, SKILLS, PROJECTS } from '../data/portfolio';
 
 export const Home = () => {
   const stats = [
+    { label: 'CGPA', value: '9.02/10' },
     { label: 'Internships', value: '2' },
-    { label: 'Featured Projects', value: '4' },
-    { label: 'Published Paper', value: '1' },
+    { label: 'Projects', value: '4' },
     { label: 'Graduating', value: '2027' },
   ];
 
-  const featuredSkillNames = ["Go", "Python", "Linux", "Networking (TCP/IP, DNS, HTTP)", "Docker", "AWS (Lambda)"];
+  const featuredSkillNames = ["Python", "Go", "PostgreSQL", "Linux", "Docker", "AWS (Lambda)"];
   const featuredSkills = SKILLS
     .filter((skill) => featuredSkillNames.includes(skill.name))
     .sort((a, b) => featuredSkillNames.indexOf(a.name) - featuredSkillNames.indexOf(b.name));
@@ -136,7 +136,7 @@ export const Home = () => {
               Featured Technologies
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              A quick look at the languages, protocols, and tools I reach for most
+              Technologies I've used across internships and personal projects
             </p>
           </motion.div>
 
@@ -201,7 +201,7 @@ export const Home = () => {
               Let's Talk
             </h2>
             <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              I'm exploring new-graduate roles in software engineering, backend systems, cloud infrastructure, and SRE. If you're hiring, or want to talk systems design, reach out.
+              I'm graduating from PICT in 2027 and looking for my first full-time Software Engineer role. I'm especially interested in backend and cloud work, and open to general software engineering opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -74,7 +74,8 @@ export const Footer = () => {
             </div>
             <div className="mt-2 space-y-1 text-xs">
               <p>© {currentYear} Vaishnav Mankar</p>
-              <p className="text-primary-500">Status: Open to new-grad Software Engineering, Backend, Cloud & SRE roles</p>
+              <p className="text-primary-500">PICT Computer Engineering · Class of 2027 · CGPA 9.02/10</p>
+              <p className="text-neutral-500">Open to new-graduate Software Engineer roles</p>
             </div>
           </div>
 

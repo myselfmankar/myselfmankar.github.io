@@ -53,9 +53,24 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare form data for Web3Forms API
+      const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+
+      // GitHub Pages builds may not have a Web3Forms key configured.
+      // Open an email draft instead of reporting a false success in that case.
+      if (!accessKey) {
+        const body = [
+          `Name: ${formData.name}`,
+          `Email: ${formData.email}`,
+          "",
+          formData.message,
+        ].join("\n");
+        window.location.href =
+          `mailto:${CONTACT.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(body)}`;
+        return;
+      }
+
       const formDataToSubmit = new FormData();
-      formDataToSubmit.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+      formDataToSubmit.append("access_key", accessKey);
       formDataToSubmit.append("name", formData.name);
       formDataToSubmit.append("email", formData.email);
       formDataToSubmit.append("subject", formData.subject);
@@ -167,7 +182,7 @@ export const Contact = () => {
       {/* Terminal Header */}
       <TerminalHeader
         command="ping contact.server"
-        description="Establishing connection to communication endpoint"
+        description="Get in touch about new-graduate software engineering roles or collaboration"
       />
 
       <section className="py-24">
@@ -203,7 +218,7 @@ export const Contact = () => {
                       Message Sent Successfully!
                     </h3>
                     <Typewriter
-                      text="> Message delivered. Expect response within 24 hours."
+                      text="> Thanks for reaching out. I'll get back to you as soon as I can."
                       delay={50}
                       className="text-neutral-400 text-sm"
                     />

@@ -134,7 +134,7 @@ export const Skills = () => {
       {/* Terminal Header */}
       <TerminalHeader
         command="ls -la skills/"
-        description="Programming, Linux, networking, cloud, and systems skills for software engineering roles"
+        description="Technologies I've used in coursework, internships, and personal projects"
       />
 
       {/* Skills Categories */}
@@ -148,10 +148,10 @@ export const Skills = () => {
             className="text-center mb-16"
           >
             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-4">
-              Technical Expertise
+              Technical Skills
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              What I use day to day, grouped by where it fits in a backend system
+              A quick overview of the languages, databases, and tools I have practised
             </p>
           </motion.div>
 

@@ -1,8 +1,8 @@
 export const HERO_CONTENT =
-  "I build and debug backend systems, real-time data pipelines, and the infrastructure that keeps services dependable when things go wrong.";
+  "I'm Vaishnav Mankar, a Computer Engineering student at Pune Institute of Computer Technology (PICT), graduating in 2027 with a 9.02/10 CGPA. I've completed two internships and built projects across backend development, data processing, and AI.";
 
 export const ABOUT_TEXT =
-  "I'm a computer engineering student (graduating 2027) who's spent my internships building backend systems that have to stay reliable under real-world messiness — flaky networks, concurrent requests, long-running processes that can't just restart and lose everything. At Golain, I worked on live video/telemetry pipelines for remote robot control. At ATG, I sped up an AI video-generation pipeline and automated a manual document workflow end-to-end. Outside of work, I build distributed systems projects for fun — an IoT backend that processes real-time sensor data from industrial devices, and an AI shopping agent that handles real payments safely. I'm looking for new-graduate opportunities in software engineering, backend systems, cloud infrastructure, and SRE.";
+  "I'm a PICT Computer Engineering student graduating in 2027 with a 9.02/10 CGPA. During internships at Golain and ATG, I worked on a robot operations dashboard, live telemetry, an AWS Lambda video-generation workflow, and document automation. My projects let me keep practising backend development, databases, APIs, Linux, and AI-related workflows. I'm looking for my first full-time Software Engineer role, with a particular interest in backend and cloud work while remaining open to general software engineering opportunities.";
 
 export const SKILLS = [
   // Languages
@@ -66,12 +66,12 @@ export const SKILLS = [
     category: "systems",
   },
   {
-    name: "Event-Driven Architecture",
+    name: "Event-Driven Workflows",
     icon: "https://cdn.simpleicons.org/apachekafka",
     category: "systems",
   },
   {
-    name: "Microservices",
+    name: "Microservices (Project Work)",
     icon: "https://cdn.simpleicons.org/kubernetes",
     category: "systems",
   },
@@ -101,7 +101,7 @@ export const PROJECTS = [
     title: "FieldPulse — Distributed Industrial IoT Backend",
     image: "",
     description:
-      "A multi-service industrial IoT backend that ingests, routes, and persists telemetry from connected devices. Built in Go with gRPC, MQTT, and PostgreSQL.",
+      "An industrial IoT backend project for ingesting and storing telemetry from connected devices. Uses Go, gRPC, MQTT, and PostgreSQL to connect services and persist device data.",
     technologies: ["Go", "gRPC", "MQTT", "PostgreSQL", "Microservices"],
     category: "backend",
     githubLink: "https://github.com/myselfmankar/FieldPulse",
@@ -111,7 +111,7 @@ export const PROJECTS = [
     title: "AgentCart — Autonomous Shopping Agent",
     image: "",
     description:
-      "An AI agent that shops for you — compares offers, waits on unmet goals and resumes automatically when prices or inventory change, and pays safely through Razorpay with signed spending limits so it can't go rogue. Built from natural-language intent through merchant discovery to checkout.",
+      "A prototype shopping agent that compares offers and explores a payment flow with signed spending limits. Connects natural-language intent, merchant discovery, and checkout in one project.",
     technologies: ["Python", "Event-Driven Architecture", "AP2", "Razorpay", "Agentic AI"],
     category: "backend",
     githubLink: "https://github.com/myselfmankar/agentcart",
@@ -122,7 +122,7 @@ export const PROJECTS = [
     title: "ros2-jazzy — Edge Telemetry Ingestion",
     image: "",
     description:
-      "An edge-side endpoint that collects sensor and robot telemetry data in real time and forwards it for processing — the data-collection layer any robotics or IoT backend depends on.",
+      "A small ROS 2 project that collects robot sensor telemetry and forwards it to a backend for processing. Built while experimenting with ROS 2 Jazzy and edge-side data collection.",
     technologies: ["ROS 2", "Python", "Telemetry", "Edge Computing"],
     category: "backend",
     githubLink: "https://github.com/myselfmankar/ros2-jazzy",
@@ -132,7 +132,7 @@ export const PROJECTS = [
     title: "PhotoStack — Self-Hosted Photo Library",
     image: "/projects/photostack.webp",
     description:
-      "A self-hosted photo library that reads EXIF data to build a timeline, groups photos into albums, maps them by GPS, and finds duplicates even when resized or re-saved. FastAPI backend with SQLAlchemy, a TypeScript frontend, and integrity checks (file-type verification, SHA-256 hashing, edit detection) running underneath.",
+      "A self-hosted photo library that organizes images by timeline, album, and GPS metadata, with duplicate detection. Built with a FastAPI backend, SQLAlchemy, and a TypeScript frontend.",
     technologies: ["Python", "FastAPI", "TypeScript", "SQLAlchemy", "Docker"],
     category: "fullstack",
     githubLink: "https://github.com/myselfmankar/photostack",
@@ -158,8 +158,8 @@ export const EXPERIENCE = [
     company: "Golain",
     period: "May 2026 – Aug 2026",
     points: [
-      "Integrated a Go real-time-communication service with a React dashboard over REST APIs, giving operators live robot video, audio, telemetry, and control for remote fleet operation.",
-      "Built a one-click Copy cURL feature in the RPC UI so engineers can reproduce failing device requests directly in Postman, removing manual browser network-tab inspection from the debugging workflow.",
+      "Connected a Go real-time communication service to a React dashboard, helping operators access live robot video, audio, and telemetry for remote operation.",
+      "Added a one-click Copy cURL feature so engineers could reproduce device requests in Postman while debugging.",
     ],
   },
   {
@@ -167,8 +167,8 @@ export const EXPERIENCE = [
     company: "ATG",
     period: "Aug 2025 – May 2026",
     points: [
-      "Sped up an AWS Lambda video-generation workflow by replacing sequential slide processing with concurrent processing, cutting end-to-end execution time.",
-      "Automated generation of personalized AI-based notes and Markdown-to-PDF conversion using HTML and Playwright, turning a manual document workflow into a repeatable pipeline.",
+      "Improved an AWS Lambda video-generation workflow by processing slides concurrently instead of sequentially.",
+      "Automated AI-generated notes and Markdown-to-PDF conversion with HTML and Playwright, making a manual document workflow repeatable.",
     ],
   },
 ];
