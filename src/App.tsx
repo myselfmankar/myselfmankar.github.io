@@ -29,8 +29,8 @@ const PAGE_METADATA: Record<string, { title: string; description: string }> = {
     description: 'Projects built across coursework, internships, backend development, IoT telemetry, AI workflows, and full-stack development.',
   },
   '/blog': {
-    title: 'Technical Notes | Vaishnav Mankar',
-    description: 'Planned short notes on Linux command-line data wrangling, LCA in trees and BSTs, and networking revision.',
+    title: 'Computer Networks & Linux Articles | Vaishnav Mankar',
+    description: 'Technical articles by Vaishnav Mankar covering Computer Networks (CNS), OSI layers, routing protocols, IP subnetting, TCP/IP, DNS, DHCP, ARP, NAT, and Linux command-line data wrangling with awk, sort, uniq, and grep.',
   },
   '/research': {
     title: 'Research | Vaishnav Mankar',
