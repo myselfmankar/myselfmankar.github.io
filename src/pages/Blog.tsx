@@ -11,8 +11,8 @@ const articles = [
     tags: ['OSI Model', 'Routing', 'Subnetting', 'TCP/IP'],
     coverMark: 'CNS',
     coverSubtitle: 'NETWORKING FUNDAMENTALS',
-    status: 'Scheduled',
-    url: 'https://medium.com/@pict.vaishnav/eebb4f1dee51',
+    status: 'Published',
+    url: 'https://medium.com/@pict.vaishnav/computer-networks-cns-complete-revision-notes-for-osi-tcp-ip-routing-subnetting-and-important-eebb4f1dee51',
   },
   {
     title: 'Data Wrangling with Linux Commands: From Raw Logs to Useful Insights',
@@ -124,7 +124,7 @@ const Blog = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-400 font-medium transition-colors"
                     >
-                      {article.status === 'Published' ? 'Read on Medium' : 'View scheduled article'}
+                      Read on Medium
                       <ExternalLink size={16} />
                     </a>
                   </div>
