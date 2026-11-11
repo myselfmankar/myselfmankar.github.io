@@ -4,25 +4,26 @@ import { TerminalHeader } from '../components/TerminalHeader';
 
 const articles = [
   {
-    title: 'Data Wrangling with Linux Commands',
-    description: 'A practical reference for working with logs and CSV data from the command line.',
-    topic: 'Linux · CLI',
-    status: 'Planned',
-    url: '',
+    title: 'Computer Networks (CNS): Complete Revision Notes for OSI, TCP/IP, Routing, Subnetting and Important Protocols',
+    description:
+      'Quick-revision notes covering the OSI model, routing protocols, IPv4 subnetting, TCP vs UDP, DNS, DHCP, ARP, NAT, and packet forwarding.',
+    topic: 'Computer Networks · CNS',
+    tags: ['OSI Model', 'Routing', 'Subnetting', 'TCP/IP'],
+    coverMark: 'CNS',
+    coverSubtitle: 'NETWORKING FUNDAMENTALS',
+    status: 'Scheduled',
+    url: 'https://medium.com/@pict.vaishnav/eebb4f1dee51',
   },
   {
-    title: 'Lowest Common Ancestor in Trees and BSTs',
-    description: 'A focused algorithm reference for LCA queries in binary trees and binary search trees.',
-    topic: 'DSA · Trees',
-    status: 'Planned',
-    url: '',
-  },
-  {
-    title: 'Networking Revision Notes',
-    description: 'A compact collection of networking concepts and troubleshooting notes.',
-    topic: 'Networking · Systems',
-    status: 'Planned',
-    url: '',
+    title: 'Data Wrangling with Linux Commands: From Raw Logs to Useful Insights',
+    description:
+      'A hands-on guide to analysing access logs with awk, sort, uniq, grep, and shell pipelines, with equivalent SQL queries.',
+    topic: 'Linux · Data Wrangling',
+    tags: ['awk', 'sort', 'uniq', 'grep'],
+    coverMark: 'CLI',
+    coverSubtitle: 'LINUX DATA WRANGLING',
+    status: 'Published',
+    url: 'https://medium.com/@pict.vaishnav/data-wrangling-with-linux-commands-from-raw-logs-to-useful-insights-d0168a2e087c',
   },
 ];
 
@@ -30,12 +31,12 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-bg-page">
       <TerminalHeader
-        command="cat engineering-notes.txt"
-        description="Technical references on Linux, algorithms, and networking"
+        command="ls writing/"
+        description="Technical articles and revision notes on systems, networking, and practical tooling"
       />
 
       <section className="py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -45,35 +46,92 @@ const Blog = () => {
             <div className="flex items-center gap-3 mb-4">
               <PenLine size={24} className="text-primary-500" />
               <h1 className="font-mono text-3xl md:text-4xl font-bold text-primary-500">
-                Technical Notes
+                Technical Writing
               </h1>
             </div>
             <p className="text-neutral-400 leading-relaxed max-w-2xl">
-              Short, practical references on topics I've studied and revisited. Links will be added as each article is published.
+              Practical write-ups and quick-revision notes from topics I have studied, built with, and revisited.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-5">
-            {articles.map((article) => (
-              <article key={article.title} className="bg-bg-surface border border-neutral-700 rounded-xl p-6 flex flex-col">
-                <div className="flex items-center justify-between gap-3 mb-3">
-                  <span className="font-mono text-xs text-accent-500">{article.topic}</span>
-                  <span className="text-xs text-neutral-500 border border-neutral-700 rounded px-2 py-1">{article.status}</span>
+          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {articles.map((article, index) => (
+              <motion.article
+                key={article.title}
+                layout
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                className="bg-bg-surface border border-neutral-700 rounded-xl overflow-hidden group hover:border-primary-500/50 transition-all duration-300 shadow-card hover:shadow-card-hover flex flex-col"
+              >
+                <div className="relative aspect-video overflow-hidden bg-bg-elevated">
+                  <div className="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-br from-bg-elevated via-bg-surface to-bg-elevated">
+                    <div className="font-mono text-xs tracking-[0.2em] text-neutral-500">
+                      VAISHNAV / TECHNICAL NOTES
+                    </div>
+                    <div>
+                      <div className="font-mono text-5xl md:text-6xl font-bold text-primary-500/80 group-hover:text-primary-500 transition-colors">
+                        {article.coverMark}
+                      </div>
+                      <div className="font-mono text-xs tracking-[0.18em] text-neutral-400 mt-2">
+                        {article.coverSubtitle}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-surface/70 via-transparent to-transparent" />
+
+                  <div className="absolute top-4 right-4">
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-mono font-medium border ${
+                        article.status === 'Published'
+                          ? 'bg-green-500/20 text-green-500 border-green-500/30'
+                          : 'bg-amber-500/15 text-amber-400 border-amber-500/30'
+                      }`}
+                    >
+                      {article.status}
+                    </span>
+                  </div>
                 </div>
-                <h2 className="font-mono text-xl font-semibold text-neutral-100 mb-3">{article.title}</h2>
-                <p className="text-neutral-400 text-sm leading-relaxed mb-5">{article.description}</p>
-                <div className="mt-auto pt-2">
-                  {article.url ? (
-                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-400 font-medium">
-                      Read on Medium <ExternalLink size={16} />
+
+                <div className="p-6 space-y-4 flex flex-col flex-1">
+                  <div className="font-mono text-xs text-accent-500">
+                    {article.topic}
+                  </div>
+
+                  <h2 className="font-mono text-xl font-bold text-primary-500 group-hover:text-primary-400 transition-colors">
+                    {article.title}
+                  </h2>
+
+                  <p className="text-neutral-200 text-sm leading-relaxed">
+                    {article.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {article.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 bg-neutral-800 text-neutral-300 text-xs rounded border border-neutral-700"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="pt-4 mt-auto">
+                    <a
+                      href={article.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-400 font-medium transition-colors"
+                    >
+                      {article.status === 'Published' ? 'Read on Medium' : 'View scheduled article'}
+                      <ExternalLink size={16} />
                     </a>
-                  ) : (
-                    <span className="text-sm text-neutral-500">Medium link will be added when published</span>
-                  )}
+                  </div>
                 </div>
-              </article>
+              </motion.article>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
