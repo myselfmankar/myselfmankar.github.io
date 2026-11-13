@@ -105,6 +105,7 @@ export const PROJECTS = [
     technologies: ["Go", "gRPC", "MQTT", "PostgreSQL", "Microservices"],
     category: "backend",
     githubLink: "https://github.com/myselfmankar/FieldPulse",
+    showcaseLink: "https://github.com/myselfmankar/FieldPulse/blob/main/index.md",
     websiteLink: "",
   },
   {
@@ -126,6 +127,7 @@ export const PROJECTS = [
     technologies: ["ROS 2", "Python", "Telemetry", "Edge Computing"],
     category: "backend",
     githubLink: "https://github.com/myselfmankar/ros2-jazzy",
+    showcaseLink: "https://github.com/myselfmankar/ros2-jazzy/blob/main/index.md",
     websiteLink: "",
   },
   {
