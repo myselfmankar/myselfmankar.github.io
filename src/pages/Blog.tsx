@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, PenLine } from 'lucide-react';
 import { TerminalHeader } from '../components/TerminalHeader';
-import cnsCover from '../../cns.jpg';
-import linuxCover from '../../linux.png';
 
 const articles = [
   {
@@ -11,7 +9,7 @@ const articles = [
       'Quick-revision notes covering the OSI model, routing protocols, IPv4 subnetting, TCP vs UDP, DNS, DHCP, ARP, NAT, and packet forwarding.',
     topic: 'Computer Networks · CNS',
     tags: ['OSI Model', 'Routing', 'Subnetting', 'TCP/IP'],
-    image: cnsCover,
+    image: 'https://raw.githubusercontent.com/myselfmankar/myselfmankar.github.io/main/cns.jpg',
     imageAlt: 'Computer networking architecture illustration with connected servers, cloud, and network devices',
     status: 'Published',
     url: 'https://medium.com/@pict.vaishnav/computer-networks-cns-complete-revision-notes-for-osi-tcp-ip-routing-subnetting-and-important-eebb4f1dee51',
@@ -22,7 +20,7 @@ const articles = [
       'A hands-on guide to analysing access logs with awk, sort, uniq, grep, and shell pipelines, with equivalent SQL queries.',
     topic: 'Linux · Data Wrangling',
     tags: ['awk', 'sort', 'uniq', 'grep'],
-    image: linuxCover,
+    image: 'https://raw.githubusercontent.com/myselfmankar/myselfmankar.github.io/main/linux.png',
     imageAlt: 'Linux data wrangling terminal banner showing a cat, grep, awk, sort, uniq pipeline',
     status: 'Published',
     url: 'https://medium.com/@pict.vaishnav/data-wrangling-with-linux-commands-from-raw-logs-to-useful-insights-d0168a2e087c',
