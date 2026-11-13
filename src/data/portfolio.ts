@@ -116,7 +116,8 @@ export const PROJECTS = [
     technologies: ["Python", "Event-Driven Architecture", "AP2", "Razorpay", "Agentic AI"],
     category: "backend",
     githubLink: "https://github.com/myselfmankar/agentcart",
-    websiteLink: "",
+    websiteLink: "https://myselfmankar.github.io/agentcart/",
+    showcaseLink: "https://myselfmankar.github.io/agentcart/",
     videoLink: "https://youtu.be/Ohklz4oMt0o",
   },
   {
