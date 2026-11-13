@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">ROS 2 Jazzy telemetry pipeline</title><desc id="desc">A simulated ROS 2 robot publishes GPS, odometry and diagnostics through an MQTT bridge and Mosquitto to a consumer, SQLite and FastAPI.</desc>
+<rect width="1200" height="675" fill="#f8fafc"/>
+<text x="64" y="82" fill="#0f172a" font-family="Arial,sans-serif" font-size="34" font-weight="700">ROS 2 Jazzy</text>
+<text x="64" y="119" fill="#475569" font-family="Arial,sans-serif" font-size="19">Robot Telemetry Pipeline</text>
+<g font-family="Arial,sans-serif" text-anchor="middle">
+<g fill="#fff" stroke="#94a3b8" stroke-width="2">
+<rect x="55" y="240" width="205" height="155" rx="16"/><rect x="335" y="240" width="205" height="155" rx="16"/>
+<rect x="615" y="240" width="170" height="155" rx="16"/><rect x="860" y="240" width="145" height="155" rx="16"/><rect x="1060" y="240" width="110" height="155" rx="16"/>
+</g>
+<g fill="#0f172a" font-size="22" font-weight="700">
+<text x="157" y="284">ROS 2</text><text x="157" y="315">Simulator</text>
+<text x="437" y="284">ROS ↔ MQTT</text><text x="437" y="315">Bridge</text>
+<text x="700" y="304">Mosquitto</text><text x="932" y="284">Consumer</text><text x="932" y="315">Worker</text>
+<text x="1115" y="304">SQLite</text>
+</g>
+<g fill="#64748b" font-size="16"><text x="157" y="350">GPS · odometry</text><text x="157" y="374">diagnostics</text><text x="437" y="355">JSON topics</text><text x="700" y="355">MQTT</text><text x="932" y="355">Validate + persist</text></g>
+</g>
+<g fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round"><path d="M260 318H335M540 318H615M785 318H860M1005 318H1060"/></g>
+<g fill="#2563eb"><path d="M325 309l12 9-12 9zM605 309l12 9-12 9zM850 309l12 9-12 9zM1050 309l12 9-12 9z"/></g>
+<path d="M1115 395V480H700V395" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8 8"/>
+<rect x="545" y="480" width="310" height="90" rx="16" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="700" y="518" fill="#1e3a8a" font-family="Arial,sans-serif" font-size="22" font-weight="700" text-anchor="middle">FastAPI</text>
+<text x="700" y="548" fill="#475569" font-family="Arial,sans-serif" font-size="17" text-anchor="middle">Read-only telemetry API</text>
+<text x="600" y="625" fill="#64748b" font-family="Arial,sans-serif" font-size="17" text-anchor="middle">Optional: recorded ROS 2 camera topics → LiveKit WebRTC</text>
+</svg>
