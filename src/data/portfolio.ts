@@ -117,7 +117,6 @@ export const PROJECTS = [
     category: "backend",
     githubLink: "https://github.com/myselfmankar/agentcart",
     websiteLink: "https://myselfmankar.github.io/agentcart/",
-    showcaseLink: "https://myselfmankar.github.io/agentcart/",
     videoLink: "https://youtu.be/Ohklz4oMt0o",
   },
   {
