@@ -109,7 +109,7 @@ export const PROJECTS = [
   },
   {
     title: "AgentCart — Autonomous Shopping Agent",
-    image: "",
+    image: "https://raw.githubusercontent.com/myselfmankar/agentcart/master/assests/architecture.png",
     description:
       "A prototype shopping agent that compares offers and explores a payment flow with signed spending limits. Connects natural-language intent, merchant discovery, and checkout in one project.",
     technologies: ["Python", "Event-Driven Architecture", "AP2", "Razorpay", "Agentic AI"],
