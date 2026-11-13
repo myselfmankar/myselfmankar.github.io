@@ -9,7 +9,6 @@ export const Home = () => {
   const stats = [
     { label: 'CGPA', value: '9.02/10' },
     { label: 'Internships', value: '2' },
-    { label: 'Hackathons Participated', value: '4+' },
     { label: 'Graduating', value: '2027' },
   ];
 
@@ -97,7 +96,7 @@ export const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="grid grid-cols-2 md:grid-cols-3 gap-8"
           >
             {stats.map((stat, index) => (
               <motion.div
