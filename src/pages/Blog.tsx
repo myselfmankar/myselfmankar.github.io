@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, PenLine } from 'lucide-react';
 import { TerminalHeader } from '../components/TerminalHeader';
+import cnsCover from '../../cns.jpg';
+import linuxCover from '../../linux.png';
 
 const articles = [
   {
@@ -9,8 +11,8 @@ const articles = [
       'Quick-revision notes covering the OSI model, routing protocols, IPv4 subnetting, TCP vs UDP, DNS, DHCP, ARP, NAT, and packet forwarding.',
     topic: 'Computer Networks · CNS',
     tags: ['OSI Model', 'Routing', 'Subnetting', 'TCP/IP'],
-    coverMark: 'CNS',
-    coverSubtitle: 'NETWORKING FUNDAMENTALS',
+    image: cnsCover,
+    imageAlt: 'Computer networking architecture illustration with connected servers, cloud, and network devices',
     status: 'Published',
     url: 'https://medium.com/@pict.vaishnav/computer-networks-cns-complete-revision-notes-for-osi-tcp-ip-routing-subnetting-and-important-eebb4f1dee51',
   },
@@ -20,8 +22,8 @@ const articles = [
       'A hands-on guide to analysing access logs with awk, sort, uniq, grep, and shell pipelines, with equivalent SQL queries.',
     topic: 'Linux · Data Wrangling',
     tags: ['awk', 'sort', 'uniq', 'grep'],
-    coverMark: 'CLI',
-    coverSubtitle: 'LINUX DATA WRANGLING',
+    image: linuxCover,
+    imageAlt: 'Linux data wrangling terminal banner showing a cat, grep, awk, sort, uniq pipeline',
     status: 'Published',
     url: 'https://medium.com/@pict.vaishnav/data-wrangling-with-linux-commands-from-raw-logs-to-useful-insights-d0168a2e087c',
   },
@@ -65,21 +67,13 @@ const Blog = () => {
                 className="bg-bg-surface border border-neutral-700 rounded-xl overflow-hidden group hover:border-primary-500/50 transition-all duration-300 shadow-card hover:shadow-card-hover flex flex-col"
               >
                 <div className="relative aspect-video overflow-hidden bg-bg-elevated">
-                  <div className="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-br from-bg-elevated via-bg-surface to-bg-elevated">
-                    <div className="font-mono text-xs tracking-[0.2em] text-neutral-500">
-                      VAISHNAV / TECHNICAL NOTES
-                    </div>
-                    <div>
-                      <div className="font-mono text-5xl md:text-6xl font-bold text-primary-500/80 group-hover:text-primary-500 transition-colors">
-                        {article.coverMark}
-                      </div>
-                      <div className="font-mono text-xs tracking-[0.18em] text-neutral-400 mt-2">
-                        {article.coverSubtitle}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg-surface/70 via-transparent to-transparent" />
-
+                  <img
+                    src={article.image}
+                    alt={article.imageAlt}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
                   <div className="absolute top-4 right-4">
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-mono font-medium border ${
