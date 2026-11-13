@@ -94,6 +94,18 @@ export const Projects = () => {
                       <span className="text-sm font-mono">Code</span>
                     </a>
                     
+                    {'showcaseLink' in project && project.showcaseLink && (
+                      <a
+                        href={project.showcaseLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 text-neutral-400 hover:text-primary-500 transition-colors group/btn"
+                      >
+                        <ExternalLink size={16} className="group-hover/btn:scale-110 transition-transform" />
+                        <span className="text-sm font-mono">Showcase</span>
+                      </a>
+                    )}
+
                     {project.websiteLink && (
                       <a
                         href={project.websiteLink}
