@@ -9,7 +9,7 @@ export const Home = () => {
   const stats = [
     { label: 'CGPA', value: '9.02/10' },
     { label: 'Internships', value: '2' },
-    { label: 'Projects', value: '4' },
+    { label: 'Hackathons Participated', value: '4+' },
     { label: 'Graduating', value: '2027' },
   ];
 
