@@ -99,9 +99,9 @@ export const SKILLS = [
 export const PROJECTS = [
   {
     title: "FieldPulse — Distributed Industrial IoT Backend",
-    image: "",
+    image: "/projects/fieldpulse-architecture.svg",
     description:
-      "An industrial IoT backend project for ingesting and storing telemetry from connected devices. Uses Go, gRPC, MQTT, and PostgreSQL to connect services and persist device data.",
+      "A distributed Industrial IoT backend for device management, MQTT telemetry ingestion, alerting, and observability. Built with Go and gRPC, using TimescaleDB for time-series data, PostgreSQL for device records, and Redis for transient state.",
     technologies: ["Go", "gRPC", "MQTT", "PostgreSQL", "Microservices"],
     category: "backend",
     githubLink: "https://github.com/myselfmankar/FieldPulse",
@@ -120,9 +120,9 @@ export const PROJECTS = [
   },
   {
     title: "ros2-jazzy — Edge Telemetry Ingestion",
-    image: "",
+    image: "/projects/ros2-telemetry.svg",
     description:
-      "A small ROS 2 project that collects robot sensor telemetry and forwards it to a backend for processing. Built while experimenting with ROS 2 Jazzy and edge-side data collection.",
+      "A reproducible ROS 2 Jazzy pipeline that sends simulated GPS, odometry, and diagnostic telemetry through MQTT into SQLite, then exposes recent records through a read-only FastAPI service. Includes an optional recorded-camera to LiveKit WebRTC workflow.",
     technologies: ["ROS 2", "Python", "Telemetry", "Edge Computing"],
     category: "backend",
     githubLink: "https://github.com/myselfmankar/ros2-jazzy",
