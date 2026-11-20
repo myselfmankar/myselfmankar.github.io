@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "name": "Vaishnav Mankar",
+  "website": "https://myselfmankar.github.io/",
+  "headline": "Computer Engineering undergraduate | Backend engineering, cloud infrastructure and SRE",
+  "summary": "Computer Engineering undergraduate at Pune Institute of Computer Technology (PICT), graduating in 2027 with a reported CGPA of 9.02/10. Completed software development internships at Golain and ATG. Interested in backend engineering, cloud infrastructure and SRE, while open to general software engineering opportunities.",
+  "education": {
+    "degree": "B.E. in Computer Engineering",
+    "institution": "Pune Institute of Computer Technology (PICT)",
+    "location": "Pune, Maharashtra, India",
+    "expected_graduation_year": 2027,
+    "cgpa": "9.02/10"
+  },
+  "skills": {
+    "languages": [
+      "Go",
+      "Python"
+    ],
+    "cloud_and_infrastructure": [
+      "AWS Lambda",
+      "Docker",
+      "Git",
+      "Cloudflare Workers"
+    ],
+    "systems_and_messaging": [
+      "Linux",
+      "TCP/IP",
+      "DNS",
+      "HTTP",
+      "gRPC",
+      "MQTT",
+      "REST APIs",
+      "Event-driven workflows",
+      "Microservices (project work)"
+    ],
+    "databases": [
+      "PostgreSQL"
+    ],
+    "tools": [
+      "Postman",
+      "Playwright"
+    ]
+  },
+  "links": {
+    "about": "https://myselfmankar.github.io/about",
+    "projects": "https://myselfmankar.github.io/projects",
+    "skills": "https://myselfmankar.github.io/skills",
+    "blog": "https://myselfmankar.github.io/blog",
+    "research": "https://myselfmankar.github.io/research",
+    "contact": "https://myselfmankar.github.io/contact",
+    "github": "https://github.com/myselfmankar",
+    "linkedin": "https://www.linkedin.com/in/vaishnav-mankar",
+    "neetcode": "https://neetcode.io/user/AstuteSpeeder675",
+    "youtube": "https://www.youtube.com/@Vaishnav-Mankar"
+  },
+  "contact": {
+    "email": "vaishnavmankar04@gmail.com",
+    "email_link": "mailto:vaishnavmankar04@gmail.com",
+    "contact_page": "https://myselfmankar.github.io/contact"
+  },
+  "data_policy": "This is a public summary of information represented on the portfolio. Listed skills do not imply expert-level proficiency. Internship contributions are not claims of sole ownership."
+}
