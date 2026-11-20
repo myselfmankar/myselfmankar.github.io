@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "source": "https://myselfmankar.github.io/about",
+  "experience": [
+    {
+      "role": "Backend Engineering Intern",
+      "company": "Golain",
+      "period": "May 2026 – August 2026",
+      "contributions": [
+        "Connected a Go real-time communication service to a React dashboard, helping operators access live robot video, audio, and telemetry for remote operation.",
+        "Added a one-click Copy cURL feature so engineers could reproduce device requests in Postman while debugging."
+      ],
+      "attribution": "Internship contributions; not a claim of sole ownership of the employer's systems."
+    },
+    {
+      "role": "AI Software Developer Intern",
+      "company": "ATG",
+      "period": "August 2025 – May 2026",
+      "contributions": [
+        "Improved an AWS Lambda video-generation workflow by processing slides concurrently instead of sequentially.",
+        "Automated AI-generated notes and Markdown-to-PDF conversion with HTML and Playwright, making a manual document workflow repeatable."
+      ],
+      "attribution": "Internship contributions; not a claim of sole ownership of the employer's systems."
+    }
+  ]
+}

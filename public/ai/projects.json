@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "source": "https://myselfmankar.github.io/projects",
+  "projects": [
+    {
+      "id": "fieldpulse",
+      "name": "FieldPulse",
+      "title": "FieldPulse — Distributed Industrial IoT Backend",
+      "summary": "A distributed Industrial IoT backend for device management, MQTT telemetry ingestion, alerting, and observability. Built with Go and gRPC, using TimescaleDB for time-series data, PostgreSQL for device records, and Redis for transient state.",
+      "technologies": [
+        "Go",
+        "gRPC",
+        "MQTT",
+        "PostgreSQL",
+        "Microservices"
+      ],
+      "repository": "https://github.com/myselfmankar/FieldPulse",
+      "category": "backend"
+    },
+    {
+      "id": "agentcart",
+      "name": "AgentCart",
+      "title": "AgentCart — Autonomous Shopping Agent",
+      "summary": "A prototype shopping agent that compares offers and explores a payment flow with signed spending limits. Connects natural-language intent, merchant discovery, and checkout in one project.",
+      "technologies": [
+        "Python",
+        "Event-Driven Architecture",
+        "AP2",
+        "Razorpay",
+        "Agentic AI"
+      ],
+      "repository": "https://github.com/myselfmankar/agentcart",
+      "demo": "https://youtu.be/Ohklz4oMt0o",
+      "category": "backend"
+    },
+    {
+      "id": "ros2-jazzy",
+      "name": "ros2-jazzy",
+      "title": "ros2-jazzy — Edge Telemetry Ingestion",
+      "summary": "A reproducible ROS 2 Jazzy pipeline that sends simulated GPS, odometry, and diagnostic telemetry through MQTT into SQLite, then exposes recent records through a read-only FastAPI service. Includes an optional recorded-camera to LiveKit WebRTC workflow.",
+      "technologies": [
+        "ROS 2",
+        "Python",
+        "Telemetry",
+        "Edge Computing"
+      ],
+      "repository": "https://github.com/myselfmankar/ros2-jazzy",
+      "category": "backend"
+    },
+    {
+      "id": "photostack",
+      "name": "PhotoStack",
+      "title": "PhotoStack — Self-Hosted Photo Library",
+      "summary": "A self-hosted photo library that organizes images by timeline, album, and GPS metadata, with duplicate detection. Built with a FastAPI backend, SQLAlchemy, and a TypeScript frontend.",
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "TypeScript",
+        "SQLAlchemy",
+        "Docker"
+      ],
+      "repository": "https://github.com/myselfmankar/photostack",
+      "live_demo": "https://myselfmankar.github.io/photostack/",
+      "category": "fullstack"
+    }
+  ]
+}

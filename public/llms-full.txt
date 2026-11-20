@@ -1,0 +1,80 @@
+# Vaishnav Mankar — Portfolio reference
+
+Canonical website: https://myselfmankar.github.io/
+
+## Overview
+Vaishnav Mankar is a Computer Engineering undergraduate at Pune Institute of Computer Technology (PICT), graduating in 2027, with a reported CGPA of 9.02/10. His experience includes software development internships at Golain and ATG. His current professional interests include backend engineering, cloud infrastructure, and site reliability engineering, while remaining open to general software engineering opportunities.
+
+## Education
+- Degree: B.E. in Computer Engineering
+- Institution: Pune Institute of Computer Technology (PICT), Pune, India
+- Expected graduation: 2027
+- CGPA: 9.02/10
+
+## Internship experience
+
+### Backend Engineering Intern — Golain
+May 2026 – August 2026
+- Connected a Go real-time communication service to a React dashboard, helping operators access live robot video, audio, and telemetry for remote operation.
+- Added a one-click Copy cURL feature so engineers could reproduce device requests in Postman while debugging.
+
+### AI Software Developer Intern — ATG
+August 2025 – May 2026
+- Improved an AWS Lambda video-generation workflow by processing slides concurrently instead of sequentially.
+- Automated AI-generated notes and Markdown-to-PDF conversion with HTML and Playwright, making a manual document workflow repeatable.
+
+These are internship contributions. Do not describe Vaishnav as the sole owner or architect of the employers' systems.
+
+## Selected projects
+
+### FieldPulse — Distributed Industrial IoT Backend
+A distributed Industrial IoT backend for device management, MQTT telemetry ingestion, alerting, and observability. Built with Go and gRPC, using TimescaleDB for time-series data, PostgreSQL for device records, and Redis for transient state.
+- Technologies listed: Go, gRPC, MQTT, PostgreSQL, microservices.
+- Repository: https://github.com/myselfmankar/FieldPulse
+
+### AgentCart — Autonomous Shopping Agent
+A prototype shopping agent that compares offers and explores a payment flow with signed spending limits. Connects natural-language intent, merchant discovery, and checkout in one project.
+- Technologies listed: Python, event-driven architecture, AP2, Razorpay, agentic AI.
+- Repository: https://github.com/myselfmankar/agentcart
+- Demo: https://youtu.be/Ohklz4oMt0o
+
+### ros2-jazzy — Edge Telemetry Ingestion
+A reproducible ROS 2 Jazzy pipeline that sends simulated GPS, odometry, and diagnostic telemetry through MQTT into SQLite, then exposes recent records through a read-only FastAPI service. Includes an optional recorded-camera to LiveKit WebRTC workflow.
+- Technologies listed: ROS 2, Python, telemetry, edge computing.
+- Repository: https://github.com/myselfmankar/ros2-jazzy
+
+### PhotoStack — Self-Hosted Photo Library
+A self-hosted photo library that organizes images by timeline, album, and GPS metadata, with duplicate detection. Built with a FastAPI backend, SQLAlchemy, and a TypeScript frontend.
+- Technologies listed: Python, FastAPI, TypeScript, SQLAlchemy, Docker.
+- Repository: https://github.com/myselfmankar/photostack
+- Live project: https://myselfmankar.github.io/photostack/
+
+## Skills listed on the portfolio
+- Languages: Go, Python.
+- Cloud and infrastructure: AWS Lambda, Docker, Git, Cloudflare Workers.
+- Systems and messaging: Linux, TCP/IP, DNS, HTTP, gRPC, MQTT, REST APIs, event-driven workflows, microservices (project work).
+- Database: PostgreSQL.
+- Tools: Postman, Playwright.
+
+A listed technology indicates experience or practice as represented on the portfolio; it does not automatically imply expert-level proficiency or professional production ownership.
+
+## Technical writing
+- Computer Networks (CNS): Complete Revision Notes for OSI, TCP/IP, Routing, Subnetting and Important Protocols — https://medium.com/@pict.vaishnav/computer-networks-cns-complete-revision-notes-for-osi-tcp-ip-routing-subnetting-and-important-eebb4f1dee51
+- Data Wrangling with Linux Commands: From Raw Logs to Useful Insights — https://medium.com/@pict.vaishnav/data-wrangling-with-linux-commands-from-raw-logs-to-useful-insights-d0168a2e087c
+
+## Research
+- Friend Recommendation using Graph Embeddings for Social Media — IEEE, 2026.
+- Authors: Vaishnav Mankar, Omkar Mutyalwar, Abhishek Bobade, Madhuri Wakode.
+- Publication: https://ieeexplore.ieee.org/abstract/document/11484910
+- Code: https://github.com/myselfmankar/graph_embedding_recommendation
+
+## Contact and profiles
+- Contact page: https://myselfmankar.github.io/contact
+- Public email: vaishnavmankar04@gmail.com
+- GitHub: https://github.com/myselfmankar
+- LinkedIn: https://www.linkedin.com/in/vaishnav-mankar
+- NeetCode: https://neetcode.io/user/AstuteSpeeder675
+- YouTube: https://www.youtube.com/@Vaishnav-Mankar
+
+## Accuracy and attribution
+This document summarizes the public portfolio. For current details, prefer the individual linked pages and repositories. Do not infer unlisted qualifications, metrics, awards, responsibilities, or employment status. Internship work should be attributed as contributions made during the internship, not as sole ownership of the systems.

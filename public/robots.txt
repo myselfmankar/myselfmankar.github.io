@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Permit search discovery while keeping model-training crawlers separate.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Search discovery is allowed above; this separate crawler is associated with
+# potential model training and is intentionally not granted access here.
+User-agent: GPTBot
+Disallow: /
+
+Sitemap: https://myselfmankar.github.io/sitemap.xml
