@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { TerminalHeader } from '../components/TerminalHeader';
 import { ExternalLink, Github, Youtube } from 'lucide-react';
 import { PROJECTS_BY_CATEGORY } from '../data/portfolio';
 
 export const Projects = () => {
+  const [expandedDescriptions, setExpandedDescriptions] = useState<Record<string, boolean>>({});
   const getProjects = () => PROJECTS_BY_CATEGORY.all;
 
   return (
@@ -60,10 +62,28 @@ export const Projects = () => {
                     {project.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-neutral-200 text-sm leading-relaxed line-clamp-3">
-                    {project.description}
-                  </p>
+                  {/* Description: click to expand the full project summary */}
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setExpandedDescriptions((current) => ({
+                        ...current,
+                        [project.title]: !current[project.title],
+                      }))
+                    }
+                    aria-expanded={Boolean(expandedDescriptions[project.title])}
+                    aria-label={`${expandedDescriptions[project.title] ? 'Collapse' : 'Read full'} description for ${project.title}`}
+                    className="block w-full text-left rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-surface"
+                  >
+                    <p
+                      className={`text-neutral-200 text-sm leading-relaxed ${expandedDescriptions[project.title] ? '' : 'line-clamp-3'}`}
+                    >
+                      {project.description}
+                    </p>
+                    <span className="inline-block mt-2 text-xs font-mono text-primary-500 hover:text-primary-400">
+                      {expandedDescriptions[project.title] ? 'Show less' : 'Read more'}
+                    </span>
+                  </button>
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2">
